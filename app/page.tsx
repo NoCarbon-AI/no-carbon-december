@@ -68,30 +68,31 @@ export default function Home() {
 
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       
-      <div className="my-16 text-center animate-fade-in">
-        <h2 className="text-sm" style={{ color: '#00FF00' }}>
-          <TypewriterEffect 
+     <div className="my-16 text-center animate-fade-in">
+       <h2 className="text-sm flex flex-wrap sm:flex-nowrap justify-center items-center gap-1" style={{ color: '#00FF00' }}>
+       <TypewriterEffect 
       text="With us, you're not just saving "
       startDelay={2000}
-      className="block"
+      className="inline"
     />
     <TypewriterEffect 
       text="pounds 💰;"
       startDelay={3500}
-      className="block font-bold inline"
+      className="font-bold inline"
     />
     <TypewriterEffect 
       text=" you're making the planet "
       startDelay={5000}
-      className="block inline"
+      className="inline"
     />
     <TypewriterEffect 
       text="greener 🌍"
       startDelay={6500}
-      className="block font-bold inline"
+      className="font-bold inline"
+      showCursor={true} // Only show cursor on the last component
     />
-        </h2>
-      </div>
+  </h2>
+</div>
     </div>
   );
 }
