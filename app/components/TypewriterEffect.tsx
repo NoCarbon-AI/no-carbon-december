@@ -1,3 +1,4 @@
+// /app/components/TypewriterEffect.tsx
 "use client";
 import React, { useState, useEffect } from 'react';
 
@@ -5,11 +6,17 @@ interface TypewriterEffectProps {
   text: string;
   startDelay: number;
   className?: string;
+  showCursor?: boolean; // Add this prop
 }
 
-export default function TypewriterEffect({ text, startDelay, className = '' }: TypewriterEffectProps) {
+export default function TypewriterEffect({ 
+  text, 
+  startDelay, 
+  className = '',
+  showCursor = false // Only show cursor when explicitly set to true
+}: TypewriterEffectProps) {
   const [displayText, setDisplayText] = useState('');
-  const [showCursor, setShowCursor] = useState(true);
+  const [isBlinking, setIsBlinking] = useState(true);
 
   useEffect(() => {
     const initialDelay = setTimeout(() => {
@@ -25,7 +32,7 @@ export default function TypewriterEffect({ text, startDelay, className = '' }: T
       }, 50);
 
       const cursorInterval = setInterval(() => {
-        setShowCursor(prev => !prev);
+        setIsBlinking(prev => !prev);
       }, 530);
 
       return () => {
@@ -40,9 +47,11 @@ export default function TypewriterEffect({ text, startDelay, className = '' }: T
   return (
     <span className={className}>
       {displayText}
-      <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}>
-        |
-      </span>
+      {showCursor && (
+        <span className={`${isBlinking ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}>
+          |
+        </span>
+      )}
     </span>
   );
 }
