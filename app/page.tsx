@@ -1,16 +1,24 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react"; // Add useState
 import Particles from "./components/particles";
 import Image from "next/image";
 import TypewriterEffect from "./components/TypewriterEffect";
+import InvitePopup from "./components/InvitePopup"; // Add this import
 
 const navigation = [
-  { name: "Have an invite", href: "/projects" },
+  { name: "Have an invite", href: "#" }, // Changed href to # for popup trigger
   { name: "What's that?", href: "/contact" },
 ];
 
 export default function Home() {
+  const [isPopupOpen, setIsPopupOpen] = useState(false); // Add state for popup
+
+  const handleInviteClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsPopupOpen(true);
+  };
+
   return (
     <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
       {/* Logo - Added to top left corner */}
@@ -40,13 +48,14 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/50" style={{ zIndex: -15 }} />
       </div>
 
-      {/* Existing Navigation */}
+      {/* Modified Navigation */}
       <nav className="my-16 animate-fade-in">
         <ul className="flex items-center justify-center gap-4">
           {navigation.map((item) => (
             <Link
               key={item.href}
               href={item.href}
+              onClick={item.name === "Have an invite" ? handleInviteClick : undefined}
               className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
             >
               {item.name}
@@ -68,31 +77,37 @@ export default function Home() {
 
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       
-     <div className="my-16 text-center animate-fade-in">
-       <h2 className="text-sm flex flex-wrap sm:flex-nowrap justify-center items-center gap-1" style={{ color: '#00FF00' }}>
-       <TypewriterEffect 
-      text="With us, you're not just saving "
-      startDelay={2000}
-      className="inline"
-    />
-    <TypewriterEffect 
-      text="pounds 💰;"
-      startDelay={3500}
-      className="font-bold inline"
-    />
-    <TypewriterEffect 
-      text=" you're making the planet "
-      startDelay={5000}
-      className="inline"
-    />
-    <TypewriterEffect 
-      text="greener 🌍"
-      startDelay={6500}
-      className="font-bold inline"
-      showCursor={true} // Only show cursor on the last component
-    />
-  </h2>
-</div>
+      <div className="my-16 text-center animate-fade-in">
+        <h2 className="text-sm flex flex-wrap sm:flex-nowrap justify-center items-center gap-1" style={{ color: '#00FF00' }}>
+          <TypewriterEffect 
+            text="With us, you're not just saving "
+            startDelay={2000}
+            className="inline"
+          />
+          <TypewriterEffect 
+            text="pounds 💰;"
+            startDelay={3500}
+            className="font-bold inline"
+          />
+          <TypewriterEffect 
+            text=" you're making the planet "
+            startDelay={5000}
+            className="inline"
+          />
+          <TypewriterEffect 
+            text="greener 🌍"
+            startDelay={6500}
+            className="font-bold inline"
+            showCursor={true}
+          />
+        </h2>
+      </div>
+
+      {/* Add Popup Component */}
+      <InvitePopup 
+        isOpen={isPopupOpen} 
+        onClose={() => setIsPopupOpen(false)} 
+      />
     </div>
   );
 }
