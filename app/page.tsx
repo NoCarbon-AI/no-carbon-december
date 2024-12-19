@@ -6,8 +6,8 @@ import Image from "next/image";
 import TypewriterEffect from "./components/TypewriterEffect";
 
 const navigation = [
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
+  { name: "Have an invite", href: "/projects" },
+  { name: "What's that?", href: "/contact" },
 ];
 
 export default function Home() {
