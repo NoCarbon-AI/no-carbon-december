@@ -33,8 +33,8 @@ export default async function handler(
       return res.status(200).json({ 
         valid: true,
         user: {
-          first_name: data.first_name,
-          last_name: data.last_name,
+          firstname: data.firstname,
+          last_name: data.lastname,
           company_name: data.company_name
         }
       });
