@@ -71,14 +71,24 @@ export default function Home() {
       <div className="my-16 text-center animate-fade-in">
         <h2 className="text-sm" style={{ color: '#00FF00' }}>
           <TypewriterEffect 
-      text="With us, you're not just saving pounds;"
+      text="With us, you're not just saving "
       startDelay={2000}
       className="block"
     />
     <TypewriterEffect 
-      text="you're making the planet greener."
-      startDelay={4000} // Increased delay to start after first line
-      className="block"
+      text="pounds 💰;"
+      startDelay={3500}
+      className="block font-bold inline"
+    />
+    <TypewriterEffect 
+      text=" you're making the planet "
+      startDelay={5000}
+      className="block inline"
+    />
+    <TypewriterEffect 
+      text="greener 🌍"
+      startDelay={6500}
+      className="block font-bold inline"
     />
         </h2>
       </div>
