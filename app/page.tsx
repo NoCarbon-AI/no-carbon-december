@@ -113,7 +113,7 @@ export default function Home() {
       {/* Bottom right signature */}
 <div className="fixed bottom-4 right-4 z-50">
   <div 
-    className="signature-container text-sm font-light tracking-wide flex items-center gap-1.5 opacity-0"
+    className="signature-container text-xs sm:text-[11px] font-light tracking-wide flex items-center gap-1.5 opacity-0"
   >
     <span className="text-zinc-400 hover:text-zinc-100 transition-all duration-300">
       with{" "}
