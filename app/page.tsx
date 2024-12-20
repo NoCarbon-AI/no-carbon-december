@@ -5,6 +5,8 @@ import Particles from "./components/particles";
 import Image from "next/image";
 import TypewriterEffect from "./components/TypewriterEffect";
 import InvitePopup from "./components/InvitePopup"; // Add this import
+import { useEffect } from 'react';
+import { gsap } from 'gsap';
 
 const navigation = [
   { name: "Have an invite", href: "#" }, // Changed href to # for popup trigger
@@ -108,6 +110,20 @@ export default function Home() {
         isOpen={isPopupOpen} 
         onClose={() => setIsPopupOpen(false)} 
       />
+      {/* Bottom right signature */}
+<div className="fixed bottom-4 right-4 z-50">
+  <div 
+    className="signature-container text-sm font-light tracking-wide flex items-center gap-1.5 opacity-0"
+  >
+    <span className="text-zinc-400 hover:text-zinc-100 transition-all duration-300">
+      with{" "}
+      <span className="heart-icon inline-block">❤️</span>
+      {" "}from Richmond{" "}
+      <span className="london-icon inline-block">🇬🇧</span>
+      {" "}London
+    </span>
+  </div>
+</div>
     </div>
   );
 }

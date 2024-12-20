@@ -35,3 +35,60 @@
 .popup-container {
   animation: popup-fade-in 0.3s ease-out forwards;
 }
+/* Signature animations */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heartBeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  40% {
+    transform: scale(0.9);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes flagWave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(8deg);
+  }
+  75% {
+    transform: rotate(-8deg);
+  }
+}
+
+.signature-container {
+  animation: fadeSlideUp 0.8s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.heart-icon {
+  animation: heartBeat 1.5s ease-in-out infinite;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.london-icon {
+  transition: transform 0.3s ease;
+}
+
+.signature-container:hover .london-icon {
+  animation: flagWave 1s ease-in-out infinite;
+}
