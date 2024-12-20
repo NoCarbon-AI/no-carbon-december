@@ -20,12 +20,13 @@ export default async function handler(
 
   try {
     const { data, error } = await supabase
-      .from('invites')
+      .from('Invite')
       .select('*')
       .eq('invite_code', req.body.invite_code)
       .single();
 
     if (error) {
+      console.error('Supabase error:', error); // Added for debugging
       return res.status(401).json({ message: 'Invalid invite code' });
     }
 
@@ -42,6 +43,7 @@ export default async function handler(
 
     return res.status(401).json({ message: 'Invalid invite code' });
   } catch (error) {
+    console.error('Server error:', error); // Added for debugging
     return res.status(500).json({ message: 'Server error' });
   }
 }
