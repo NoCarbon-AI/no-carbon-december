@@ -92,3 +92,43 @@
 .signature-container:hover .london-icon {
   animation: flagWave 1s ease-in-out infinite;
 }
+/* Existing styles... */
+
+/* Navigation hover animations */
+.nav-icon {
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Hide animations on mobile */
+@media (max-width: 768px) {
+  #flag-icon,
+  #confused-icon {
+    display: none !important;
+  }
+}
+
+/* Hover effect for navigation links */
+nav a {
+  position: relative;
+  z-index: 1;
+}
+
+nav a:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Animation utilities */
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
