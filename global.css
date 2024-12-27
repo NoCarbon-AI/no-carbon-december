@@ -132,3 +132,17 @@ nav a:hover {
     opacity: 1;
   }
 }
+.molecular-grid {
+    position: relative;
+}
+
+.molecular-grid::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    z-index: -1;
+}
