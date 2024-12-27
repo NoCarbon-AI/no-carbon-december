@@ -1,4 +1,5 @@
 "use client";
+import { PropsWithChildren } from "react"; // Add this import
 import {
     motion,
     useMotionTemplate,
@@ -7,7 +8,16 @@ import {
 } from "framer-motion";
 
 export const Card: React.FC<PropsWithChildren> = ({ children }) => {
-    // ... existing mouse movement logic ...
+    const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
+    const mouseY = useSpring(0, { stiffness: 500, damping: 100 });
+
+    function onMouseMove({ currentTarget, clientX, clientY }: any) {
+        const { left, top } = currentTarget.getBoundingClientRect();
+        mouseX.set(clientX - left);
+        mouseY.set(clientY - top);
+    }
+    const maskImage = useMotionTemplate`radial-gradient(240px at ${mouseX}px ${mouseY}px, white, transparent)`;
+    const style = { maskImage, WebkitMaskImage: maskImage };
 
     return (
         <div
@@ -30,7 +40,6 @@ export const Card: React.FC<PropsWithChildren> = ({ children }) => {
                     style={style}
                 />
             </div>
-
             {children}
         </div>
     );
