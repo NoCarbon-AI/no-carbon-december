@@ -146,3 +146,22 @@ nav a:hover {
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
     z-index: -1;
 }
+.notion-emoji {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols;
+  font-size: 1.25em;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-block;
+  animation: wave 1.8s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
