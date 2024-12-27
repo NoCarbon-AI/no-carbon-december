@@ -10,7 +10,7 @@ const socials = [
 		icon: <Twitter size={20} />,
 		href: "https://twitter.com/chronark_",
 		label: "Twitter",
-		handle: "@chronark_",
+		handle: "Get me an Invite code",
 	},
 	{
 		icon: <Mail size={20} />,
