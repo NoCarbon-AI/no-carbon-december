@@ -63,17 +63,17 @@ export default async function ProjectsPage() {
 </div>
 
 {/* Header Image */}
-       <div className="w-full relative h-[400px]">
+          <div className="w-full relative h-[400px] rounded-lg overflow-hidden bg-black">
   <Image
     src="/Page-Header.png"
     alt="Tower Bridge London Clay Model"
     fill
-    className="object-contain"
+    className="object-cover mix-blend-normal"
     priority
     quality={100}
     style={{
-      position: 'relative',
-      backgroundColor: 'transparent'
+      backgroundColor: 'transparent',
+      isolation: 'isolate'
     }}
   />
 </div>
