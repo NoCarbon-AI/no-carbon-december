@@ -58,37 +58,44 @@ export default function Home() {
     }
   }, []);
 
+// Inside your useEffect for the shooting star
 useEffect(() => {
-  // Create shooting star element after a delay
-  const shootingStarTimeout = setTimeout(() => {
+  const timer = setTimeout(() => {
     const shootingStar = document.createElement('div');
     shootingStar.className = 'shooting-star';
     document.querySelector('.main-container')?.appendChild(shootingStar);
 
-    // Set initial position
+    const tl = gsap.timeline();
+    
+    // Initial position
     gsap.set(shootingStar, {
       x: -100,
       y: '20%',
       opacity: 0,
-      scale: window.innerWidth <= 768 ? 0.5 : 1 // Responsive scaling
     });
 
-    // Animate the shooting star
-    gsap.to(shootingStar, {
+    // Animation sequence
+    tl.to(shootingStar, {
       x: window.innerWidth + 100,
       y: '40%',
-      opacity: [0, 1, 0], // Fade in and out
       duration: 1.5,
       ease: "none",
-      onComplete: () => {
-        shootingStar.remove();
-      }
+    })
+    .to(shootingStar, {
+      opacity: 1,
+      duration: 0.3,
+    }, 0) // Start at the beginning
+    .to(shootingStar, {
+      opacity: 0,
+      duration: 0.3,
+    }, 1.2) // Start fading out near the end
+    .add(() => {
+      shootingStar.remove();
     });
-  }, 6000); // Start after 6 seconds
 
-return () => {
-    clearTimeout(shootingStarTimeout);
-  };
+  }, 6000);
+
+  return () => clearTimeout(timer);
 }, []);
 
   return (
