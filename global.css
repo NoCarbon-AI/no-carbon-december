@@ -206,12 +206,17 @@ nav a:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 3px;
 }
+
+/* Shooting Star Effect */
 @keyframes shootingStar {
   0% {
     opacity: 0;
     transform: translateX(-100vw) translateY(0) rotate(-45deg);
   }
-  50% {
+  20% {
+    opacity: 1;
+  }
+  80% {
     opacity: 1;
   }
   100% {
@@ -221,12 +226,12 @@ nav a:hover {
 }
 
 .shooting-star {
-  width: 100px;
-  height: 2px;
-  background: linear-gradient(90deg, #ffffff, transparent);
+  width: 150px; /* Increased width */
+  height: 3px; /* Increased height */
+  background: linear-gradient(90deg, rgba(255,255,255,0.8), transparent);
   position: absolute;
   top: 20%;
   left: 0;
-  filter: blur(1px);
-  z-index: 10;
+  filter: blur(2px);
+  z-index: -10;
 }

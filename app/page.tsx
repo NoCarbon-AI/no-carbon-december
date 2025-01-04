@@ -58,7 +58,6 @@ export default function Home() {
     }
   }, []);
 
-// Inside your useEffect for the shooting star
 useEffect(() => {
   const timer = setTimeout(() => {
     const shootingStar = document.createElement('div');
@@ -69,37 +68,38 @@ useEffect(() => {
     
     // Initial position
     gsap.set(shootingStar, {
-      x: -100,
-      y: '20%',
+      x: -200,
+      y: '10%',
       opacity: 0,
+      rotate: -45
     });
 
     // Animation sequence
     tl.to(shootingStar, {
-      x: window.innerWidth + 100,
-      y: '40%',
-      duration: 1.5,
-      ease: "none",
+      x: window.innerWidth + 200,
+      y: '30%',
+      duration: 2,
+      ease: "power1.inOut",
     })
     .to(shootingStar, {
       opacity: 1,
       duration: 0.3,
-    }, 0) // Start at the beginning
+    }, 0)
     .to(shootingStar, {
       opacity: 0,
       duration: 0.3,
-    }, 1.2) // Start fading out near the end
+    }, 1.7)
     .add(() => {
       shootingStar.remove();
     });
 
-  }, 6000);
+  }, 3000); // Reduced delay to 3 seconds for testing
 
   return () => clearTimeout(timer);
 }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
+    <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black main-container">
       {/* Logo */}
       <div className="absolute top-4 left-4 z-50">
         <Image
