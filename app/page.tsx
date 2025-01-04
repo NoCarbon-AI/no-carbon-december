@@ -58,7 +58,6 @@ export default function Home() {
     }
   }, []);
 
-//Shooting star
 useEffect(() => {
   const timer = setTimeout(() => {
     const shootingStar = document.createElement('div');
@@ -75,17 +74,10 @@ useEffect(() => {
       rotate: -45
     });
 
-    // Animation sequence with curved path
+    // Animation sequence
     tl.to(shootingStar, {
-      bezier: {
-        type: "soft",
-        values: [
-          {x: -200, y: window.innerHeight * 0.1},           // Start point
-          {x: window.innerWidth/2, y: window.innerHeight * 0.4},  // Control point
-          {x: window.innerWidth + 200, y: window.innerHeight * 0.3}  // End point
-        ],
-        autoRotate: true
-      },
+      x: window.innerWidth + 200,
+      y: '30%',
       duration: 2,
       ease: "power1.inOut",
     })
@@ -101,7 +93,7 @@ useEffect(() => {
       shootingStar.remove();
     });
 
-  }, 6000);
+  }, 3000); // Reduced delay to 3 seconds for testing
 
   return () => clearTimeout(timer);
 }, []);
