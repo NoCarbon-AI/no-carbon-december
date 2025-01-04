@@ -58,6 +58,39 @@ export default function Home() {
     }
   }, []);
 
+useEffect(() => {
+  // Create shooting star element after a delay
+  const shootingStarTimeout = setTimeout(() => {
+    const shootingStar = document.createElement('div');
+    shootingStar.className = 'shooting-star';
+    document.querySelector('.main-container')?.appendChild(shootingStar);
+
+    // Set initial position
+    gsap.set(shootingStar, {
+      x: -100,
+      y: '20%',
+      opacity: 0,
+      scale: window.innerWidth <= 768 ? 0.5 : 1 // Responsive scaling
+    });
+
+    // Animate the shooting star
+    gsap.to(shootingStar, {
+      x: window.innerWidth + 100,
+      y: '40%',
+      opacity: [0, 1, 0], // Fade in and out
+      duration: 1.5,
+      ease: "none",
+      onComplete: () => {
+        shootingStar.remove();
+      }
+    });
+  }, 6000); // Start after 6 seconds
+
+return () => {
+    clearTimeout(shootingStarTimeout);
+  };
+}, []);
+
   return (
     <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
       {/* Logo */}
