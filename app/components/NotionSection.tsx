@@ -15,7 +15,7 @@ export const NotionSection = () => {
             🎯 Project Goals
           </div>
           <div className="text-zinc-400 text-sm font-medium hover:bg-zinc-700/50 p-2 rounded cursor-pointer transition-colors">
-            📚 Documentation
+            📚 Documentatio
           </div>
         </div>
       </div>
