@@ -8,7 +8,6 @@ import { Redis } from "@upstash/redis";
 import { Eye } from "lucide-react";
 import { WelcomeMessage } from '../components/WelcomeMessage';
 import Image from "next/image";
-import { NotionSection } from '../components/NotionSection';
 import { NotionWithLogos } from '../components/NotionSection';
 
 const redis = Redis.fromEnv();
@@ -76,9 +75,6 @@ export default async function ProjectsPage() {
             />
           </div>
         </div>
-
-{/* Notion-like Section */}
-        <NotionSection />
 
 {/* Notion-like Section with Logos */}
         <NotionWithLogos />
