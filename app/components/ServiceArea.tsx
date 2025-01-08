@@ -46,13 +46,13 @@ export const ServiceArea = () => {
   }, []);
 
   return (
-    <div className="mt-16 mb-16 flex justify-around items-center w-full px-4 py-12">
+    <div className="mt-16 mb-16 flex justify-around items-center w-full px-4 py-12 relative z-10">
       {/* Cloud SVG */}
       <div className="w-40 h-40 flex items-center justify-center">
         <svg viewBox="0 0 100 100" className="w-full h-full">
           <path
             ref={cloudRef}
-            className="stroke-white fill-none hover:cursor-pointer"
+            className="stroke-zinc-100 fill-none hover:cursor-pointer"
             strokeWidth="2"
             d="M25 60 
                C20 60, 15 55, 15 50 

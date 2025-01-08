@@ -258,9 +258,9 @@ nav a:hover {
 }
 /* Enhanced ServiceArea Animations */
 .service-area-container {
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+  position: relative;
+  z-index: 10;
 }
-
 .circuit-pulse {
   stroke-linecap: round;
   filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
@@ -285,4 +285,22 @@ nav a:hover {
 
 .service-area svg path:hover {
   stroke-width: 3;
+}
+/* SVG Path animations */
+svg path {
+  opacity: 1;
+  stroke-opacity: 1;
+  transition: stroke-width 0.3s ease;
+}
+
+/* Initial state for paths */
+svg path[data-animated="true"] {
+  stroke-dasharray: 0;
+  stroke-dashoffset: 0;
+}
+
+/* Ensure SVG containers are visible */
+.service-area svg {
+  opacity: 1;
+  visibility: visible;
 }
