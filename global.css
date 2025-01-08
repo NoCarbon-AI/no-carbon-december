@@ -278,3 +278,11 @@ nav a:hover {
 .tree-leaves {
   filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3));
 }
+/* Service Area SVG Interactions */
+.service-area svg path {
+  transition: stroke-width 0.3s ease;
+}
+
+.service-area svg path:hover {
+  stroke-width: 3;
+}
