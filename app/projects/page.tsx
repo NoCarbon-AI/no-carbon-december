@@ -78,7 +78,7 @@ export default async function ProjectsPage() {
         </div>
 
 {/* Notion-like Section */}
-      <NotionSection
+      <NotionSection />
 
 {/* Service Area */}
     <ServiceArea />
