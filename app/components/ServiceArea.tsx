@@ -4,9 +4,9 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 export const ServiceArea = () => {
-  const cloudRef = useRef(null);
-  const infinityRef = useRef(null);
-  const scribbleRef = useRef(null);
+  const cloudRef = useRef<SVGPathElement>(null);
+  const infinityRef = useRef<SVGPathElement>(null);
+  const scribbleRef = useRef<SVGPathElement>(null);
 
   useEffect(() => {
     // Function to calculate path length
