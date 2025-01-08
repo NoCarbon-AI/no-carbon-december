@@ -256,3 +256,25 @@ nav a:hover {
 .floating-animation {
   animation: float 3s ease-in-out infinite;
 }
+/* Enhanced ServiceArea Animations */
+.service-area-container {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+}
+
+.circuit-pulse {
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
+}
+
+.flower-group {
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3));
+}
+
+.sun-ray {
+  transform-origin: 35px 40px;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
+}
+
+.tree-leaves {
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3));
+}
