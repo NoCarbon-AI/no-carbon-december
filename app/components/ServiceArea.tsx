@@ -3,7 +3,7 @@
 
 import React from 'react';
 
-export const SimpleLogos = () => {
+export const ServiceArea = () => {
     return (
       <div className="mt-16 mb-16 flex justify-around items-center w-full px-4">
         {/* Cloud with Sun Logo */}
