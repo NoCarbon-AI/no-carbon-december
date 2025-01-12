@@ -9,6 +9,7 @@ import { Eye } from "lucide-react";
 import { WelcomeMessage } from '../components/WelcomeMessage';
 import Image from "next/image";
 import { NotionSection } from "../components/NotionSection";
+import { ServiceArea } from "../components/ServiceArea";
 
 const redis = Redis.fromEnv();
 
@@ -78,6 +79,9 @@ export default async function ProjectsPage() {
 
 {/* Notion-like Section */}
       <NotionSection />
+
+{/* Add ServiceArea component */}
+<ServiceArea />
 
 {/* Featured Project */}
 

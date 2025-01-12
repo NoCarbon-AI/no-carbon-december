@@ -235,3 +235,27 @@ nav a:hover {
   filter: blur(2px);
   z-index: -10;
 }
+/* Add these styles to make service area */
+
+.service-area {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+}
+
+.string {
+  transform-origin: top;
+  transition: all 0.3s ease;
+}
+
+.service-image {
+  transition: transform 0.3s ease;
+}
+
+.service-card {
+  transition: transform 0.3s ease;
+}
+
+.service-image:hover {
+  transform: translateY(-5px);
+}
