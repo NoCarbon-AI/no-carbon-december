@@ -23,10 +23,14 @@ const services = [
 ];
 
 export const ServiceArea = () => {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const container = containerRef.current;
+    
+    // Add null check here
+    if (!container) return;
+
     const images = container.querySelectorAll('.service-image');
     const cards = container.querySelectorAll('.service-card');
     const strings = container.querySelectorAll('.string');
