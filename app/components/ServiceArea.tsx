@@ -3,22 +3,27 @@ import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { Card } from './card';
+import Link from 'next/link';
 
 const services = [
   {
     title: "CloudOps",
     image: "/No-Carbon-Cloud-UK-Management.png",
     description: "Cloud operations and management services for optimal performance"
+    slug: "cloudops"
+
   },
   {
     title: "DevOps",
     image: "/No-Carbon-Devops.png",
     description: "Streamlined development and operations integration"
+    slug: "devops"
   },
   {
     title: "AIOps",
     image: "/No-Carbon-UK-AI-OPS.png",
     description: "AI-powered operational intelligence and automation"
+    slug: "aiops"
   }
 ];
 
@@ -90,14 +95,14 @@ export const ServiceArea = () => {
               />
             </div>
             <div className="string h-32 w-0.5 bg-zinc-400 my-4" />
-            <div className="service-card">
+            <Link href={`/projects/${service.slug}`} className="service-card w-full">
               <Card>
                 <div className="p-4">
                   <h3 className="text-xl font-bold mb-2">{service.title}</h3>
                   <p className="text-sm text-zinc-500">{service.description}</p>
                 </div>
               </Card>
-            </div>
+            </Link>
           </div>
         ))}
       </div>
