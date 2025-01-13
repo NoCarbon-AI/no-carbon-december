@@ -9,20 +9,20 @@ const services = [
   {
     title: "CloudOps",
     image: "/No-Carbon-Cloud-UK-Management.png",
-    description: "Cloud operations and management services for optimal performance"
+    description: "Cloud operations and management services for optimal performance",
     slug: "cloudops"
 
   },
   {
     title: "DevOps",
     image: "/No-Carbon-Devops.png",
-    description: "Streamlined development and operations integration"
+    description: "Streamlined development and operations integration",
     slug: "devops"
   },
   {
     title: "AIOps",
     image: "/No-Carbon-UK-AI-OPS.png",
-    description: "AI-powered operational intelligence and automation"
+    description: "AI-powered operational intelligence and automation",
     slug: "aiops"
   }
 ];
