@@ -10,6 +10,7 @@ import { WelcomeMessage } from '../components/WelcomeMessage';
 import Image from "next/image";
 import { NotionSection } from "../components/NotionSection";
 import { ServiceArea } from "../components/ServiceArea";
+import Script from 'next/script';
 
 const redis = Redis.fromEnv();
 
@@ -88,6 +89,17 @@ export default async function ProjectsPage() {
 
 {/* Divider line */}
 <div className="w-full h-px bg-zinc-800" />
+
+{/* Climate Clock Footer */}
+<footer className="w-full py-8">
+  <div className="climate-clock-container">
+    <Script 
+      src="https://climateclock.world/widget-v2.js" 
+      strategy="afterInteractive"
+    />
+    <climate-clock />
+  </div>
+</footer>
 
       </div>
     </div>

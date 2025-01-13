@@ -259,3 +259,33 @@ nav a:hover {
 .service-image:hover {
   transform: translateY(-5px);
 }
+
+/* Climate Clock Responsive Styles */
+.climate-clock-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .climate-clock-container {
+    padding: 0.5rem;
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 640px) {
+  .climate-clock-container {
+    transform: scale(0.8);
+  }
+}
+
+/* Optional: Add animation for smooth loading */
+.climate-clock-container {
+  animation: fadeSlideUp 0.8s ease-out forwards;
+}
