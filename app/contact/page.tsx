@@ -8,55 +8,55 @@ import { motion } from "framer-motion";
 // Add this new component
 const DinoHeader = () => {
 	return (
-	  <div className="relative h-24 w-full overflow-hidden border-b border-zinc-800">
-		<div className="absolute w-full h-full">
-		  {/* Ground */}
-		  <div className="absolute bottom-0 w-full border-b border-zinc-600" />
-		  
-		  {/* Dinosaur */}
-		  <motion.div
-			className="absolute bottom-0 text-2xl sm:text-3xl md:text-4xl"
-			initial={{ x: "-100%" }}
-			animate={{
-			  x: ["-100%", "100%"],
-			  y: [0, -40, 0],
-			}}
-			transition={{
-			  x: {
-				duration: 6,
-				repeat: Infinity,
-				ease: "linear"
-			  },
-			  y: {
-				duration: 0.8,
-				repeat: Infinity,
-				ease: "easeOut",
-				times: [0, 0.5, 1]
-			  }
-			}}
-		  >
-			🦖
-		  </motion.div>
-  
-		  {/* Cactus */}
-		  <motion.div
-			className="absolute bottom-0 text-xl sm:text-2xl md:text-3xl"
-			initial={{ x: "-100%" }}
-			animate={{
-			  x: ["-100%", "100%"],
-			}}
-			transition={{
-			  duration: 6,
-			  repeat: Infinity,
-			  ease: "linear"
-			}}
-		  >
-			🌵
-		  </motion.div>
+		<div className="relative w-full h-24 mb-8 overflow-hidden border-b border-zinc-800">
+			<div className="absolute w-full h-full">
+				{/* Ground */}
+				<div className="absolute bottom-0 w-full border-b border-zinc-600" />
+				
+				{/* Dinosaur */}
+				<motion.div
+					className="absolute bottom-0 text-2xl sm:text-3xl md:text-4xl"
+					initial={{ x: "-100%" }}
+					animate={{
+						x: ["0%", "100%"],
+						y: [0, -40, 0],
+					}}
+					transition={{
+						x: {
+							duration: 6,
+							repeat: Infinity,
+							ease: "linear"
+						},
+						y: {
+							duration: 0.8,
+							repeat: Infinity,
+							ease: "easeOut",
+							times: [0, 0.5, 1]
+						}
+					}}
+				>
+					🦖
+				</motion.div>
+
+				{/* Cactus */}
+				<motion.div
+					className="absolute bottom-0 text-xl sm:text-2xl md:text-3xl"
+					initial={{ x: "-100%" }}
+					animate={{
+						x: ["20%", "120%"],
+					}}
+					transition={{
+						duration: 6,
+						repeat: Infinity,
+						ease: "linear"
+					}}
+				>
+					🌵
+				</motion.div>
+			</div>
 		</div>
-	  </div>
 	);
-  };
+};
 
 
 const socials = [
@@ -84,8 +84,8 @@ export default function Example() {
 	return (
 		<div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
 			<Navigation />
-			<DinoHeader />
 			<div className="container flex items-center justify-center min-h-screen px-4 mx-auto">
+			<DinoHeader />
 				<div className="grid w-full grid-cols-1 gap-16 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-24 molecular-grid">
     {socials.map((s) => (
         <Card key={s.href}>
