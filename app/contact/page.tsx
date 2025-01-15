@@ -2,8 +2,8 @@
 import { Github, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "../components/nav";
+import Image from "next/image";
 import { Card } from "../components/card";
-import { motion } from "framer-motion";
 
 
 const socials = [
@@ -32,6 +32,20 @@ export default function Example() {
 		<div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
 			<Navigation />
 			<div className="container flex items-center justify-center min-h-screen px-4 mx-auto">
+
+				{/* GIF Container */}
+				<div className="w-full max-w-[600px] h-[200px] relative mb-16 mt-8">
+          <Image
+            src="/NoCarbon-London-AI.gif"
+            alt="No Carbon December Animation"
+            fill
+            priority
+            style={{ objectFit: 'contain' }}
+            className="transition-opacity duration-300"
+          />
+        </div>
+
+        {/* Cards Grid */}
 				<div className="grid w-full grid-cols-1 gap-16 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-24 molecular-grid">
     {socials.map((s) => (
         <Card key={s.href}>
