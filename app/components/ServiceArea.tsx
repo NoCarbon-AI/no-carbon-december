@@ -83,29 +83,27 @@ export const ServiceArea = () => {
 
   return (
     <div ref={containerRef} className="relative w-full py-20">
-      <div className="flex justify-around items-start max-w-7xl mx-auto">
-        {services.map((service, index) => (
-          <div key={index} className="flex flex-col items-center">
-            <div className="relative service-image w-48 h-48">
-              <Image
-                src={service.image}
-                alt={service.title}
-                fill
-                style={{ objectFit: 'contain' }}
-              />
-            </div>
-            <div className="string h-32 w-0.5 bg-zinc-400 my-4" />
-            <Link href={`/projects/${service.slug}`} className="service-card w-full">
-              <Card>
-                <div className="p-4">
-                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                  <p className="text-sm text-zinc-500">{service.description}</p>
+        <div className="flex justify-around items-start max-w-7xl mx-auto">
+            {services.map((service, index) => (
+                <div key={index} className="flex flex-col items-center">
+                    <div className="relative service-image w-48 h-48">
+                        <Image
+                            src={service.image}
+                            alt={service.title}
+                            fill
+                            style={{ objectFit: 'contain' }}
+                        />
+                    </div>
+                    <div className="string h-32 w-0.5 bg-zinc-400 my-4" />
+                    <Link href={`/projects/${service.slug}`} className="service-card w-full">
+                        <Card
+                            title={service.title}
+                            description={service.description}
+                        />
+                    </Link>
                 </div>
-              </Card>
-            </Link>
-          </div>
-        ))}
-      </div>
+            ))}
+        </div>
     </div>
-  );
+);
 };

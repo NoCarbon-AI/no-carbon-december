@@ -289,3 +289,20 @@ nav a:hover {
 .climate-clock-container {
   animation: fadeSlideUp 0.8s ease-out forwards;
 }
+/* Add these to your existing global.css for service area cards */
+.group:hover .bg-gradient-to-r {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
