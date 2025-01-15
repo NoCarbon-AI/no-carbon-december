@@ -8,16 +8,17 @@ import { motion } from "framer-motion";
 // Add this new component
 const DinoHeader = () => {
 	return (
-	  <div className="relative h-24 w-full overflow-hidden border-b border-zinc-800 z-10">
-		<div className="absolute w-full">
+	  <div className="relative h-24 w-full overflow-hidden border-b border-zinc-800">
+		<div className="absolute w-full h-full">
 		  {/* Ground */}
 		  <div className="absolute bottom-0 w-full border-b border-zinc-600" />
 		  
 		  {/* Dinosaur */}
 		  <motion.div
-			className="absolute bottom-0 left-1/2 text-2xl sm:text-3xl md:text-4xl z-20"
+			className="absolute bottom-0 text-2xl sm:text-3xl md:text-4xl"
+			initial={{ x: "-100%" }}
 			animate={{
-			  x: ["-100vw", "100vw"],  // Using viewport units instead of fixed pixels
+			  x: ["-100%", "100%"],
 			  y: [0, -40, 0],
 			}}
 			transition={{
@@ -39,9 +40,10 @@ const DinoHeader = () => {
   
 		  {/* Cactus */}
 		  <motion.div
-			className="absolute bottom-0 left-1/2 text-xl sm:text-2xl md:text-3xl z-20"
+			className="absolute bottom-0 text-xl sm:text-2xl md:text-3xl"
+			initial={{ x: "-100%" }}
 			animate={{
-			  x: ["-100vw", "100vw"],
+			  x: ["-100%", "100%"],
 			}}
 			transition={{
 			  duration: 6,
