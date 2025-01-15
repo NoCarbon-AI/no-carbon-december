@@ -8,53 +8,53 @@ import { motion } from "framer-motion";
 // Add this new component
 const DinoHeader = () => {
 	return (
-	  <div className="relative h-24 w-full overflow-hidden border-b border-zinc-800">
+	  <div className="relative h-24 w-full overflow-hidden border-b border-zinc-800 z-10">
 		<div className="absolute w-full">
 		  {/* Ground */}
 		  <div className="absolute bottom-0 w-full border-b border-zinc-600" />
 		  
 		  {/* Dinosaur */}
 		  <motion.div
-			className="absolute bottom-0 left-1/2 text-4xl"
+			className="absolute bottom-0 left-1/2 text-2xl sm:text-3xl md:text-4xl z-20"
 			animate={{
-			  x: [-800, 800],
-			  y: [0, -60, 0],
+			  x: ["-100vw", "100vw"],  // Using viewport units instead of fixed pixels
+			  y: [0, -40, 0],
 			}}
 			transition={{
 			  x: {
-				duration: 8,
+				duration: 6,
 				repeat: Infinity,
 				ease: "linear"
 			  },
 			  y: {
-				duration: 1.2,
+				duration: 0.8,
 				repeat: Infinity,
 				ease: "easeOut",
 				times: [0, 0.5, 1]
-            }
-          }}
-        >
-          🦖
-        </motion.div>
-
-        {/* Obstacles */}
-        <motion.div
-          className="absolute bottom-0 left-1/2 text-2xl"
-          animate={{
-            x: [-800, 800],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        >
-          🌵
-        </motion.div>
-      </div>
-    </div>
-  );
-};
+			  }
+			}}
+		  >
+			🦖
+		  </motion.div>
+  
+		  {/* Cactus */}
+		  <motion.div
+			className="absolute bottom-0 left-1/2 text-xl sm:text-2xl md:text-3xl z-20"
+			animate={{
+			  x: ["-100vw", "100vw"],
+			}}
+			transition={{
+			  duration: 6,
+			  repeat: Infinity,
+			  ease: "linear"
+			}}
+		  >
+			🌵
+		  </motion.div>
+		</div>
+	  </div>
+	);
+  };
 
 
 const socials = [
