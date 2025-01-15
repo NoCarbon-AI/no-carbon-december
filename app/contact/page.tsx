@@ -3,6 +3,58 @@ import { Github, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
+import { motion } from "framer-motion";
+
+// Add this new component
+const DinoHeader = () => {
+	return (
+	  <div className="relative h-24 w-full overflow-hidden border-b border-zinc-800">
+		<div className="absolute w-full">
+		  {/* Ground */}
+		  <div className="absolute bottom-0 w-full border-b border-zinc-600" />
+		  
+		  {/* Dinosaur */}
+		  <motion.div
+			className="absolute bottom-0 left-1/2 text-4xl"
+			animate={{
+			  x: [-800, 800],
+			  y: [0, -60, 0],
+			}}
+			transition={{
+			  x: {
+				duration: 8,
+				repeat: Infinity,
+				ease: "linear"
+			  },
+			  y: {
+				duration: 1.2,
+				repeat: Infinity,
+				ease: "easeOut",
+				times: [0, 0.5, 1]
+            }
+          }}
+        >
+          🦖
+        </motion.div>
+
+        {/* Obstacles */}
+        <motion.div
+          className="absolute bottom-0 left-1/2 text-2xl"
+          animate={{
+            x: [-800, 800],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        >
+          🌵
+        </motion.div>
+      </div>
+    </div>
+  );
+};
 
 
 const socials = [
@@ -30,6 +82,7 @@ export default function Example() {
 	return (
 		<div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
 			<Navigation />
+			<DinoHeader />
 			<div className="container flex items-center justify-center min-h-screen px-4 mx-auto">
 				<div className="grid w-full grid-cols-1 gap-16 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-24 molecular-grid">
     {socials.map((s) => (
