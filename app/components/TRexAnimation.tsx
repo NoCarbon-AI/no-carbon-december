@@ -29,6 +29,7 @@ export const TRexAnimation = () => {
         gsap.set(trexRef.current, { x: -100 });
       }
     }, "-=4"); // Start jump during the run
+  }, []); // Added missing closing bracket and dependency array
 
   return (
     <div ref={containerRef} className="relative w-full h-32 mb-8 overflow-hidden">
