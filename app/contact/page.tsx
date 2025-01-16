@@ -30,16 +30,23 @@ const socials = [
 
 export default function Example() {
 	return (
-		<div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
-			<Navigation />
-			<div className="container flex items-center justify-center min-h-screen px-4 mx-auto">
-			<div className="w-full max-w-4xl mx-auto mt-32">
-          <ContactNotionSection />
-        </div>
-				<div className="grid w-full grid-cols-1 gap-16 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-24 molecular-grid">
-    {socials.map((s) => (
-        <Card key={s.href}>
-            <Link
+	  <div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
+		<Navigation />
+		{/* Main container - Modified to match projects page structure */}
+		<div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
+		  {/* Notion Section */}
+		  <div className="w-full">
+			<ContactNotionSection />
+		  </div>
+  
+		  {/* Divider line - Added for consistency */}
+		  <div className="w-full h-px bg-zinc-800" />
+  
+		  {/* Cards Section */}
+		  <div className="grid w-full grid-cols-1 gap-16 mx-auto sm:grid-cols-3 lg:gap-24">
+			{socials.map((s) => (
+			  <Card key={s.href}>
+				<Link
                 href={s.href}
                 target="_blank"
                 className="p-4 relative flex flex-col items-center gap-4 duration-700 group md:gap-8 md:py-16 md:p-12"
