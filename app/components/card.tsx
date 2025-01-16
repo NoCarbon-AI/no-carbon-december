@@ -13,7 +13,7 @@ interface CardProps extends PropsWithChildren {
     className?: string;
 }
 
-export const Card: React.FC<CardProps> = ({ children, title, description }) => {
+export const Card: React.FC<CardProps> = ({ children, title, description, className = "" }) => {
     const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
     const mouseY = useSpring(0, { stiffness: 500, damping: 100 });
 
@@ -29,7 +29,7 @@ export const Card: React.FC<CardProps> = ({ children, title, description }) => {
     return (
         <div
             onMouseMove={onMouseMove}
-            className={`overflow-hidden relative duration-700 border group md:gap-8 hover:border-zinc-400/50 border-zinc-600 bg-zinc-900 ${props.className}`} // Added bg-zinc-900
+            className={`overflow-hidden relative duration-700 border group md:gap-8 hover:border-zinc-400/50 border-zinc-600 bg-zinc-900 ${className}`}
             style={{
                 clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
                 aspectRatio: "1",
@@ -56,12 +56,12 @@ export const Card: React.FC<CardProps> = ({ children, title, description }) => {
                 )}
                 {description && (
                     <p className="mt-4 text-sm text-zinc-400 group-hover:text-zinc-200
-                                transition duration-300 ease-in-out">
-                        {description}
-                    </p>
-                )}
-                {children}
-            </div>
-        </div>
-    );
+                    transition duration-300 ease-in-out">
+            {description}
+        </p>
+    )}
+    {children}
+</div>
+</div>
+);
 };
