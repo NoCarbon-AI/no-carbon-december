@@ -306,23 +306,3 @@ nav a:hover {
       background-position: 0% 50%;
   }
 }
-
-/* T - REX animation */
-@keyframes legMove {
-  0%, 100% {
-    height: 40px;
-    transform: skewX(0deg);
-  }
-  50% {
-    height: 35px;
-    transform: skewX(-15deg);
-  }
-}
-
-.animate-legMove {
-  animation: legMove 0.4s infinite;
-}
-
-.delay-100 {
-  animation-delay: 0.2s;
-}
