@@ -64,7 +64,7 @@ export default function Example() {
     </div>
 
               {/* Card Container */}
-			  <div className="relative">  // removed z-index
+			  <div className="relative">
       <Card className="bg-zinc-900"> {/* Add background color prop */}
         <Link
           href={s.href}
