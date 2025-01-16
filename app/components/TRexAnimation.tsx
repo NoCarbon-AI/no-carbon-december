@@ -26,15 +26,10 @@ export const TRexAnimation = () => {
       offset: 1.5
     });
 
-    return () => tl.kill();
+    return () => {
+      tl.kill();
+    };
   }, []);
-
-  // Proper cleanup function
-  return () => {
-    tl.kill();
-  };
-}, []);
-
 
   return (
     <div ref={containerRef} className="relative w-full h-32 mb-8 overflow-hidden">
