@@ -6,40 +6,53 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export const FooterAnimation = () => {
-  // Properly type the ref as HTMLDivElement
   const textRef = useRef<HTMLDivElement>(null);
   const letters = "NoCarbon".split("");
 
   useEffect(() => {
     const textElement = textRef.current;
-    if (!textElement) return; // Guard clause
+    if (!textElement) return;
+
+    // Get all span elements inside the container
+    const letterElements = textElement.querySelectorAll('span');
+    
+    // Initially set all letters below the viewport
+    gsap.set(letterElements, { 
+      opacity: 0,
+      y: 100 // Start from further below
+    });
 
     // Create a timeline for the animation
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: textElement,
-        start: "top bottom-=100",
-        end: "bottom center",
-        scrub: 1,
+        start: "top bottom", // Start when the top of the element hits the bottom of the viewport
+        end: "top center", // End when the top of the element hits the center of the viewport
+        scrub: 1.5, // Smooth scrubbing effect
+        markers: false, // Set to true for debugging
       }
     });
 
-    // Get all span elements inside the container
-    const letterElements = textElement.querySelectorAll('span');
-    
-    // Animate each letter
-    gsap.set(letterElements, { 
-      opacity: 0,
-      y: 50 
-    });
+    // Split animation for "No" and "Carbon"
+    const noLetters = Array.from(letterElements).slice(0, 2);
+    const carbonLetters = Array.from(letterElements).slice(2);
 
-    tl.to(letterElements, {
+    // Animate "No"
+    tl.to(noLetters, {
       opacity: 1,
       y: 0,
-      duration: 0.5,
+      duration: 0.8,
       stagger: 0.1,
       ease: "power2.out"
-    });
+    })
+    // Animate "Carbon" with a slight delay
+    .to(carbonLetters, {
+      opacity: 1,
+      y: 0,
+      duration: 1.2,
+      stagger: 0.08,
+      ease: "power2.out"
+    }, "-=0.5"); // Overlap with previous animation
 
     return () => {
       tl.kill();
@@ -54,6 +67,10 @@ export const FooterAnimation = () => {
             <span
               key={index}
               className="text-6xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-zinc-500 to-zinc-300 transition-all duration-300"
+              style={{
+                display: 'inline-block', // Ensures proper animation
+                willChange: 'transform, opacity' // Performance optimization
+              }}
             >
               {letter}
             </span>
