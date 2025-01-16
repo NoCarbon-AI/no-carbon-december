@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Navigation } from "../components/nav";
 import Image from "next/image";
 import { Card } from "../components/card";
+import { ContactNotionSection } from "../components/ContactNotionSection";
 
 
 const socials = [
@@ -15,15 +16,15 @@ const socials = [
 	},
 	{
 		icon: <Mail size={20} />,
-		href: "mailto:dev@chronark.com",
+		href: "mailto:hello@nocarbon.uk",
 		label: "Email",
-		handle: "dev@chronark.com",
+		handle: "hello@nocarbon.uk",
 	},
 	{
 		icon: <Github size={20} />,
-		href: "https://github.com/chronark",
-		label: "Github",
-		handle: "chronark",
+		href: "https://calendly.com/samarjayee/15-mins-quick-call-nocarbon-uk",
+		label: "A quick 15 mins call to discuss",
+		handle: "Schedule a call",
 	},
 ];
 
@@ -32,6 +33,9 @@ export default function Example() {
 		<div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
 			<Navigation />
 			<div className="container flex items-center justify-center min-h-screen px-4 mx-auto">
+			<div className="w-full max-w-4xl mx-auto mt-32">
+          <ContactNotionSection />
+        </div>
 				<div className="grid w-full grid-cols-1 gap-16 mx-auto mt-32 sm:mt-0 sm:grid-cols-3 lg:gap-24 molecular-grid">
     {socials.map((s) => (
         <Card key={s.href}>
