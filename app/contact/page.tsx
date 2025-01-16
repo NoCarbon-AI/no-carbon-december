@@ -30,7 +30,7 @@ const socials = [
 	  image: "/Schedule-Nocarbon-Uk.png"
 	},
   ];
-  
+
 export default function Example() {
   return (
     <div className="bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
@@ -44,27 +44,27 @@ export default function Example() {
         <div className="w-full h-px bg-zinc-800" />
 
         <div className="grid w-full grid-cols-1 gap-8 mx-auto sm:grid-cols-3 lg:gap-16 mt-32">
-          {socials.map((s) => (
-            <div key={s.href} className="relative mt-24">
-              {/* Image Container */}
-              <div 
-                className="absolute w-full h-64 z-20"
-                style={{
-                  top: '-30%',
-                  transform: 'translateY(-20%)'
-                }}
-              >
-                <Image
-                  src={s.image}
-                  alt={s.label}
-                  fill
-                  style={{ objectFit: 'contain' }}
-                  className="transition-all duration-700 hover:scale-105"
-                />
-              </div>
+		{socials.map((s) => (
+  <div key={s.href} className="relative mt-24">
+    {/* Image Container - Lower z-index */}
+    <div 
+      className="absolute w-full h-64 z-10" // Changed from z-20 to z-10
+      style={{
+        top: '-30%',
+        transform: 'translateY(-20%)'
+      }}
+    >
+      <Image
+        src={s.image}
+        alt={s.label}
+        fill
+        style={{ objectFit: 'contain' }}
+        className="transition-all duration-700 hover:scale-105"
+      />
+    </div>
 
               {/* Card Container */}
-              <div className="relative z-10">
+              <div className="relative z-20">
                 <Card>
                   <Link
                     href={s.href}
