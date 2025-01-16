@@ -8,60 +8,59 @@ export const TRexAnimation = () => {
   const trexRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({ repeat: 0 });
+    const tl = gsap.timeline({ repeat: -1 }); // Make it repeat infinitely
     
     gsap.set(trexRef.current, { x: -100 });
     
+    // Run animation
     tl.to(trexRef.current, {
       x: '120vw',
-      duration: 4,
+      duration: 6,
       ease: "none",
     })
     .to(trexRef.current, {
-      y: -50,
-      duration: 0.5,
-      ease: "power1.out",
-      repeat: 2,
+      y: -80, // Higher jump
+      duration: 0.4,
+      ease: "power2.out",
       yoyo: true,
-      offset: 1.5
-    });
-
-    return () => {
-      tl.kill();
-    };
-  }, []);
+      repeat: 1,
+      onComplete: () => {
+        // Reset position after reaching end
+        gsap.set(trexRef.current, { x: -100 });
+      }
+    }, "-=4"); // Start jump during the run
 
   return (
     <div ref={containerRef} className="relative w-full h-32 mb-8 overflow-hidden">
       {/* T-Rex */}
       <div ref={trexRef} className="absolute bottom-0 w-24 h-24">
         <div className="relative w-full h-full">
-          {/* Body */}
-          <div className="absolute bottom-0 right-0 w-16 h-20 bg-white rounded-t-lg"></div>
+          {/* Body - Made more dinosaur-like */}
+          <div className="absolute bottom-0 right-0 w-16 h-16 bg-white rounded-t-2xl transform -skew-x-12"></div>
           
-          {/* Head */}
-          <div className="absolute top-0 right-0 w-12 h-8 bg-white">
+          {/* Head - Larger and more defined */}
+          <div className="absolute top-0 right-0 w-14 h-10 bg-white transform -skew-x-6">
             {/* Eye */}
-            <div className="absolute top-2 right-2 w-2 h-2 bg-black rounded-full"></div>
-            {/* Mouth */}
-            <div className="absolute bottom-0 right-0 w-8 h-3 bg-white">
-              <div className="absolute top-1 right-1 w-4 h-px bg-black"></div>
+            <div className="absolute top-2 right-2 w-2.5 h-2.5 bg-black rounded-full"></div>
+            {/* Mouth/Jaw */}
+            <div className="absolute bottom-0 right-0 w-10 h-4 bg-white">
+              <div className="absolute top-0 right-1 w-6 h-1 bg-black rounded-full"></div>
+              {/* Teeth */}
+              <div className="absolute top-1 right-2 w-1 h-1.5 bg-white"></div>
+              <div className="absolute top-1 right-4 w-1 h-1.5 bg-white"></div>
             </div>
           </div>
           
-          {/* Arms */}
-          <div className="absolute top-8 right-6 w-4 h-3 bg-white"></div>
+          {/* Tiny Arms - Characteristic T-Rex feature */}
+          <div className="absolute top-8 right-4 w-3 h-2 bg-white transform rotate-45"></div>
           
-          {/* Legs */}
-          <div className="leg-back absolute bottom-0 right-2 w-3 h-8 bg-white animate-legMove"></div>
-          <div className="leg-front absolute bottom-0 right-10 w-3 h-8 bg-white animate-legMove delay-100"></div>
+          {/* Legs - Thicker and more defined */}
+          <div className="leg-back absolute bottom-0 right-2 w-4 h-10 bg-white rounded-b-lg animate-legMove"></div>
+          <div className="leg-front absolute bottom-0 right-12 w-4 h-10 bg-white rounded-b-lg animate-legMove delay-100"></div>
+          
+          {/* Tail - Added for better recognition */}
+          <div className="absolute bottom-8 left-0 w-12 h-4 bg-white transform -skew-x-12 rounded-l-lg"></div>
         </div>
-      </div>
-
-      {/* Obstacles */}
-      <div className="absolute bottom-0 w-full">
-        <div className="absolute bottom-0 left-[40%] w-4 h-12 bg-white"></div>
-        <div className="absolute bottom-0 left-[60%] w-4 h-10 bg-white"></div>
       </div>
 
       {/* Ground line */}
