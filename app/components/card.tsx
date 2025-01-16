@@ -28,7 +28,7 @@ export const Card: React.FC<CardProps> = ({ children, title, description }) => {
     return (
         <div
             onMouseMove={onMouseMove}
-            className="overflow-hidden relative duration-700 border group md:gap-8 hover:border-zinc-400/50 border-zinc-600"
+            className={`overflow-hidden relative duration-700 border group md:gap-8 hover:border-zinc-400/50 border-zinc-600 bg-zinc-900 ${props.className}`} // Added bg-zinc-900
             style={{
                 clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
                 aspectRatio: "1",

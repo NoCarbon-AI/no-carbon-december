@@ -46,9 +46,9 @@ export default function Example() {
         <div className="grid w-full grid-cols-1 gap-8 mx-auto sm:grid-cols-3 lg:gap-16 mt-32">
 		{socials.map((s) => (
   <div key={s.href} className="relative mt-24">
-    {/* Image Container - Lower z-index */}
+    {/* Image Container - Bottom layer */}
     <div 
-      className="absolute w-full h-64 z-10" // Changed from z-20 to z-10
+      className="absolute w-full h-64"  // removed z-index
       style={{
         top: '-30%',
         transform: 'translateY(-20%)'
@@ -59,18 +59,18 @@ export default function Example() {
         alt={s.label}
         fill
         style={{ objectFit: 'contain' }}
-        className="transition-all duration-700 hover:scale-105"
+        className="transition-all duration-700"
       />
     </div>
 
               {/* Card Container */}
-              <div className="relative z-20">
-                <Card>
-                  <Link
-                    href={s.href}
-                    target="_blank"
-                    className="p-4 relative flex flex-col items-center gap-4 duration-700 group md:gap-8 md:py-24 md:p-16"
-                  >
+			  <div className="relative">  // removed z-index
+      <Card className="bg-zinc-900"> {/* Add background color prop */}
+        <Link
+          href={s.href}
+          target="_blank"
+		  className="p-4 relative flex flex-col items-center gap-4 duration-700 group md:gap-8 md:py-24 md:p-16 bg-zinc-900" // Added background
+		  >
                     <span className="absolute w-px h-2/3 bg-gradient-to-b from-zinc-500 via-zinc-500/50 to-transparent" />
                     
                     <span className="relative z-10 flex items-center justify-center w-12 h-12 text-sm duration-1000 border rounded-full text-zinc-200 group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-zinc-200 drop-shadow-orange">
