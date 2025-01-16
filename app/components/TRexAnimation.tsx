@@ -34,7 +34,10 @@ export const TRexAnimation = () => {
       <div 
         ref={trexRef} 
         className="absolute bottom-0 text-4xl"
-        style={{ fontSize: '3rem' }}
+        style={{ 
+          fontSize: '3rem',
+          transform: 'scaleX(-1)' // This line flips the T-Rex horizontally
+        }}
       >
         🦖
       </div>
