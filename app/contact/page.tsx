@@ -5,6 +5,7 @@ import { Navigation } from "../components/nav";
 import Image from "next/image";
 import { Card } from "../components/card";
 import { ContactNotionSection } from "../components/ContactNotionSection";
+import { TRexAnimation } from "../components/TRexAnimation";
 
 
 const socials = [
@@ -34,6 +35,8 @@ export default function Example() {
 		<Navigation />
 		{/* Main container - Modified to match projects page structure */}
 		<div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
+			{/* Add T-Rex Animation here */}
+			<TRexAnimation />
 		  {/* Notion Section */}
 		  <div className="w-full">
 			<ContactNotionSection />
