@@ -6,12 +6,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export const FooterAnimation = () => {
-  const textRef = useRef(null);
+  // Properly type the ref as HTMLDivElement
+  const textRef = useRef<HTMLDivElement>(null);
   const letters = "NoCarbon".split("");
 
   useEffect(() => {
     const textElement = textRef.current;
-    
+    if (!textElement) return; // Guard clause
+
     // Create a timeline for the animation
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -22,13 +24,16 @@ export const FooterAnimation = () => {
       }
     });
 
+    // Get all span elements inside the container
+    const letterElements = textElement.querySelectorAll('span');
+    
     // Animate each letter
-    gsap.set(textElement?.children, { 
+    gsap.set(letterElements, { 
       opacity: 0,
       y: 50 
     });
 
-    tl.to(textElement?.children, {
+    tl.to(letterElements, {
       opacity: 1,
       y: 0,
       duration: 0.5,
