@@ -39,10 +39,8 @@ export const TRexAnimation = () => {
         🦖
       </div>
 
-      {/* Obstacles - Cactus */}
+      {/* Obstacles - Single Cactus */}
       <div className="absolute bottom-0 w-full">
-        <div className="absolute bottom-0 left-[40%] text-4xl">🌵</div>
-        <div className="absolute bottom-0 left-[60%] text-4xl">🌵</div>
         <div className="absolute bottom-0 left-[80%] text-4xl">🌵</div>
       </div>
 
