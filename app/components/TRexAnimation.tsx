@@ -1,4 +1,3 @@
-// /app/components/TRexAnimation.tsx
 'use client';
 
 import React, { useEffect, useRef } from 'react';
@@ -29,6 +28,13 @@ export const TRexAnimation = () => {
 
     return () => tl.kill();
   }, []);
+
+  // Proper cleanup function
+  return () => {
+    tl.kill();
+  };
+}, []);
+
 
   return (
     <div ref={containerRef} className="relative w-full h-32 mb-8 overflow-hidden">
