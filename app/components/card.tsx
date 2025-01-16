@@ -10,6 +10,7 @@ import {
 interface CardProps extends PropsWithChildren {
     title?: string;
     description?: string;
+    className?: string;
 }
 
 export const Card: React.FC<CardProps> = ({ children, title, description }) => {
