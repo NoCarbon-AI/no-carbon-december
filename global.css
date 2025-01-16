@@ -306,3 +306,14 @@ nav a:hover {
       background-position: 0% 50%;
   }
 }
+
+/* Contact page cards */
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .relative.mt-24 {
+    margin-top: 8rem;
+  }
+}
