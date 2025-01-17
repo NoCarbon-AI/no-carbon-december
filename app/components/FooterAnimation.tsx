@@ -24,8 +24,8 @@ export const FooterAnimation = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: textElement,
-        start: "top bottom", // Triggers when top of element hits bottom of viewport
-        end: "bottom bottom", // Ends when bottom of element hits bottom of viewport
+        start: "top bottom",
+        end: "bottom bottom",
         scrub: 1,
         markers: false,
       }
@@ -48,20 +48,16 @@ export const FooterAnimation = () => {
   }, []);
 
   return (
-    <div className="w-full fixed bottom-0 left-0 bg-black"> {/* Changed positioning */}
+    <div className="absolute bottom-0 left-0 w-full">
       <div 
-        className="flex justify-center items-center py-8" // Reduced padding
+        className="flex justify-center items-center py-8"
         style={{
           background: 'linear-gradient(to top, black, transparent)',
-          backdropFilter: 'blur(5px)'
         }}
       >
         <div 
           ref={textRef} 
           className="flex overflow-hidden"
-          style={{ 
-            perspective: "none"
-          }}
         >
           {letters.map((letter, index) => (
             <span
