@@ -15,31 +15,29 @@ export const FooterAnimation = () => {
 
     const letterElements = textElement.querySelectorAll('span');
     
-    // Set initial position - all letters start from same Y position
     gsap.set(letterElements, { 
       opacity: 0,
       y: 100,
-      transformOrigin: "50% 50%" // Ensure consistent transform origin
+      transformOrigin: "50% 50%"
     });
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: textElement,
-        start: "top bottom",
-        end: "top center",
+        start: "top bottom", // Triggers when top of element hits bottom of viewport
+        end: "bottom bottom", // Ends when bottom of element hits bottom of viewport
         scrub: 1,
         markers: false,
       }
     });
 
-    // Animate all letters together with same parameters
     tl.to(letterElements, {
       opacity: 1,
       y: 0,
       duration: 1,
       stagger: {
-        amount: 0.3, // Total amount of stagger for all elements
-        from: "start" // Start from first letter
+        amount: 0.3,
+        from: "start"
       },
       ease: "power2.out"
     });
@@ -50,13 +48,19 @@ export const FooterAnimation = () => {
   }, []);
 
   return (
-    <div className="w-full py-16 mt-16 border-t border-zinc-800">
-      <div className="flex justify-center items-center">
+    <div className="w-full fixed bottom-0 left-0 bg-black"> {/* Changed positioning */}
+      <div 
+        className="flex justify-center items-center py-8" // Reduced padding
+        style={{
+          background: 'linear-gradient(to top, black, transparent)',
+          backdropFilter: 'blur(5px)'
+        }}
+      >
         <div 
           ref={textRef} 
           className="flex overflow-hidden"
           style={{ 
-            perspective: "none" // Prevent 3D rendering issues
+            perspective: "none"
           }}
         >
           {letters.map((letter, index) => (
@@ -66,8 +70,8 @@ export const FooterAnimation = () => {
               style={{
                 display: 'inline-block',
                 willChange: 'transform, opacity',
-                transform: 'translateZ(0)', // Force GPU acceleration
-                backfaceVisibility: 'hidden' // Prevent 3D flipping
+                transform: 'translateZ(0)',
+                backfaceVisibility: 'hidden'
               }}
             >
               {letter}
