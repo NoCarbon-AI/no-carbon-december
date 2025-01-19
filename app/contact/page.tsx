@@ -6,7 +6,6 @@ import Image from "next/image";
 import { Card } from "../components/card";
 import { ContactNotionSection } from "../components/ContactNotionSection";
 import { TRexAnimation } from "../components/TRexAnimation";
-import { FooterAnimation } from "../components/FooterAnimation";
 
 const socials = [
 	{
@@ -92,8 +91,6 @@ export default function Example() {
             </div>
           ))}
         </div>
-		{/* Add the FooterAnimation component here */}
-        <FooterAnimation />
       </div>
     </div>
   );
