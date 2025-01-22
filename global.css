@@ -261,7 +261,7 @@ nav a:hover {
 }
 
 /* Climate Clock Responsive Styles */
-.climate-clock-container {
+climate-clock-container {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
@@ -269,19 +269,24 @@ nav a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden; /* Add this to prevent horizontal scroll */
 }
+
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .climate-clock-container {
     padding: 0.5rem;
-    transform: scale(0.9);
+    transform: scale(0.7); /* Reduce scale more */
+    transform-origin: center center;
+    width: 100vw; /* Use viewport width */
   }
 }
 
 @media (max-width: 640px) {
   .climate-clock-container {
-    transform: scale(0.8);
+    transform: scale(0.5); /* Even smaller for mobile */
+    transform-origin: center center;
   }
 }
 

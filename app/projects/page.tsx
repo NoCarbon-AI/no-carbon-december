@@ -91,13 +91,15 @@ export default async function ProjectsPage() {
 <div className="w-full h-px bg-zinc-800" />
 
 {/* Climate Clock Footer */}
-<footer className="w-full py-8">
-  <div className="climate-clock-container">
-    <Script 
-      src="https://climateclock.world/widget-v2.js" 
-      strategy="afterInteractive"
-    />
-    <climate-clock />
+<footer className="w-full py-4 md:py-8 overflow-hidden">
+  <div className="max-w-7xl mx-auto px-4">
+    <div className="climate-clock-container">
+      <Script 
+        src="https://climateclock.world/widget-v2.js" 
+        strategy="afterInteractive"
+      />
+      <climate-clock />
+    </div>
   </div>
 </footer>
 
