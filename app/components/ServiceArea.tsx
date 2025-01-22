@@ -11,7 +11,6 @@ const services = [
     image: "/No-Carbon-Cloud-UK-Management.png",
     description: "Cloud operations and management services for optimal performance",
     slug: "cloudops"
-
   },
   {
     title: "⚙️ DevOps",
@@ -32,78 +31,64 @@ export const ServiceArea = () => {
 
   useEffect(() => {
     const container = containerRef.current;
-    
-    // Add null check here
     if (!container) return;
 
     const images = container.querySelectorAll('.service-image');
     const cards = container.querySelectorAll('.service-card');
-    const strings = container.querySelectorAll('.string');
 
     // Reset positions
     gsap.set(images, { y: -50, opacity: 0 });
     gsap.set(cards, { y: 50, opacity: 0 });
-    gsap.set(strings, { scaleY: 0, opacity: 0 });
 
     // Animate elements
-    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-
-    tl.to(images, {
+    gsap.to(images, {
       duration: 1.5,
       y: 0,
       opacity: 1,
       stagger: 0.2,
-    })
-    .to(strings, {
-      duration: 0.8,
-      scaleY: 1,
-      opacity: 1,
-      stagger: 0.2,
-      transformOrigin: "top",
-    }, "-=1")
-    .to(cards, {
-      duration: 1,
+    });
+
+    gsap.to(cards, {
+      duration: 1.5,
       y: 0,
       opacity: 1,
       stagger: 0.2,
-    }, "-=0.5");
-
-    // Add floating animation
-    images.forEach((image) => {
-      gsap.to(image, {
-        y: "+=15",
-        duration: 2,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-      });
+      delay: 0.5,
     });
-
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full py-20">
-        <div className="flex justify-around items-start max-w-7xl mx-auto">
-            {services.map((service, index) => (
-                <div key={index} className="flex flex-col items-center">
-                    <div className="relative service-image w-48 h-48">
-                        <Image
-                            src={service.image}
-                            alt={service.title}
-                            fill
-                            style={{ objectFit: 'contain' }}
-                        />
-                    </div>
-                    <div className="string h-32 w-0.5 bg-zinc-400 my-4" />
-                    <Link href={`/projects/${service.slug}`} className="service-card w-full">
-                        <Card
-                            title={service.title}
-                            description={service.description}
-                        />
-                    </Link>
-                </div>
-            ))}
-        </div>
+    <div ref={containerRef} className="relative w-full">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 md:px-8">
+        {services.map((service, index) => (
+          <div key={service.slug} className="relative">
+            {/* Image floating above card */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 -top-16 md:-top-20 z-10">
+              <Image
+                src={service.image}
+                alt={service.title}
+                width={100}
+                height={100}
+                className="service-image w-24 md:w-32 h-auto"
+              />
+            </div>
+            
+            {/* Card */}
+            <div className="service-card pt-16 md:pt-20">
+              <Link href={`/services/${service.slug}`}>
+                <Card>
+                  <div className="p-4 md:p-8">
+                    <h3 className="text-lg md:text-xl font-bold mb-2">{service.title}</h3>
+                    <p className="text-sm md:text-base text-zinc-200">
+                      {service.description}
+                    </p>
+                  </div>
+                </Card>
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-);
+  );
 };
