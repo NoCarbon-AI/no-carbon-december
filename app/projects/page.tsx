@@ -104,6 +104,22 @@ export default async function ProjectsPage() {
 </footer>
 
       </div>
+      <div className="absolute bottom-0 left-0 right-0 w-full">
+  <Image
+    src="/Footer-image.png"
+    alt="Footer"
+    width={1920}
+    height={100}
+    className="w-full object-cover"
+    style={{
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+      right: 0,
+    }}
+    priority
+  />
+</div>
     </div>
   );
 }
