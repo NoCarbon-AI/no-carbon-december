@@ -74,10 +74,10 @@ export const ServiceArea = () => {
 
   return (
     <div ref={containerRef} className="relative w-full py-20 px-4">
-        <div className="flex flex-col md:flex-row justify-around items-center max-w-7xl mx-auto gap-8">
+        <div className="flex flex-col md:flex-row justify-around items-center max-w-7xl mx-auto gap-16 md:gap-8">
             {services.map((service, index) => (
-                <div key={index} className="flex flex-col items-center w-full md:w-auto">
-                    <div className="relative service-image w-48 h-48">
+                <div key={index} className="flex flex-col items-center w-full md:w-auto mb-8 md:mb-0">
+                    <div className="relative service-image w-48 h-48 mb-8 md:mb-0">
                         <Image
                             src={service.image}
                             alt={service.title}
