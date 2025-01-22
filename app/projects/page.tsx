@@ -109,7 +109,7 @@ export default async function ProjectsPage() {
     src="/Footer-image.png"
     alt="Footer"
     width={1920}
-    height={100}
+    height={50}
     className="w-full object-cover"
     style={{
       position: 'absolute',
