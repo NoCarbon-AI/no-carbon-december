@@ -56,7 +56,7 @@ export const Card: React.FC<CardProps> = ({ children, title, description, classN
                 )}
                 {description && (
                     <p className="mt-4 text-sm text-zinc-400 group-hover:text-zinc-200
-                    transition duration-300 ease-in-out h-[60px]">
+                    transition duration-300 ease-in-out">
             {description}
         </p>
     )}

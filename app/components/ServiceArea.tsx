@@ -89,6 +89,7 @@ export const ServiceArea = () => {
                         <Card
                             title={service.title}
                             description={service.description}
+                            className="w-[300px]"
                         />
                     </Link>
                 </div>
