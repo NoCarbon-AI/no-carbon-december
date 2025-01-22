@@ -38,12 +38,10 @@ export const ServiceArea = () => {
 
     const images = container.querySelectorAll('.service-image');
     const cards = container.querySelectorAll('.service-card');
-    const strings = container.querySelectorAll('.string');
 
     // Reset positions
     gsap.set(images, { y: -50, opacity: 0 });
     gsap.set(cards, { y: 50, opacity: 0 });
-    gsap.set(strings, { scaleY: 0, opacity: 0 });
 
     // Animate elements
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
@@ -54,13 +52,6 @@ export const ServiceArea = () => {
       opacity: 1,
       stagger: 0.2,
     })
-    .to(strings, {
-      duration: 0.8,
-      scaleY: 1,
-      opacity: 1,
-      stagger: 0.2,
-      transformOrigin: "top",
-    }, "-=1")
     .to(cards, {
       duration: 1,
       y: 0,
@@ -94,7 +85,6 @@ export const ServiceArea = () => {
                             style={{ objectFit: 'contain' }}
                         />
                     </div>
-                    <div className="string h-32 w-0.5 bg-zinc-400 my-4" />
                     <Link href={`/projects/${service.slug}`} className="service-card w-full">
                         <Card
                             title={service.title}
