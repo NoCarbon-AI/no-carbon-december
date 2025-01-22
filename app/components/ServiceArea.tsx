@@ -73,10 +73,10 @@ export const ServiceArea = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full py-20">
-        <div className="flex justify-around items-start max-w-7xl mx-auto">
+    <div ref={containerRef} className="relative w-full py-20 px-4">
+        <div className="flex flex-col md:flex-row justify-around items-center max-w-7xl mx-auto gap-8">
             {services.map((service, index) => (
-                <div key={index} className="flex flex-col items-center">
+                <div key={index} className="flex flex-col items-center w-full md:w-auto">
                     <div className="relative service-image w-48 h-48">
                         <Image
                             src={service.image}
@@ -89,7 +89,7 @@ export const ServiceArea = () => {
                         <Card
                             title={service.title}
                             description={service.description}
-                            className="w-[400px]"
+                            className="w-full md:w-[400px]"
                         />
                     </Link>
                 </div>
