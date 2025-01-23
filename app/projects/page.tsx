@@ -110,7 +110,7 @@ export default async function ProjectsPage() {
     alt="Footer"
     width={1920}
     height={50}
-    className="w-full object-cover"
+    className="w-full object-cover h-[50px]"
     style={{
       position: 'absolute',
       bottom: 0,
