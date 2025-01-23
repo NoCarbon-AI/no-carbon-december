@@ -104,18 +104,20 @@ export default async function ProjectsPage() {
 </footer>
 
       </div>
-<div className="absolute bottom-0 left-0 right-0 w-full h-[50px]"> {/* Added h-[50px] */}
+      <div className="absolute bottom-0 left-0 right-0 w-full">
   <Image
     src="/Footer-image.png"
     alt="Footer"
     width={1920}
-    height={100}
-    className="w-full h-full object-cover" // Modified classes
+    height={200} // Increased height
+    className="w-full h-auto" // Changed to h-auto to maintain aspect ratio
     style={{
       position: 'absolute',
       bottom: 0,
       left: 0,
       right: 0,
+      objectFit: 'contain', // Changed to contain to show full image
+      objectPosition: 'bottom' // Align to bottom
     }}
     priority
   />
