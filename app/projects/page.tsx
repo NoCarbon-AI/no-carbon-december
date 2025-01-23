@@ -103,8 +103,9 @@ export default async function ProjectsPage() {
   </div>
 </footer>
 
-<div className="absolute bottom-0 left-0 right-0 w-full">
-  <Image
+      </div>
+      <div className="absolute bottom-0 left-0 right-0 w-full">
+      <Image
     src="/Footer-image.png"
     alt="Footer"
     width={1920}
