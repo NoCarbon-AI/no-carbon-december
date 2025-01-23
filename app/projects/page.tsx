@@ -105,12 +105,12 @@ export default async function ProjectsPage() {
 
       </div>
       <div className="absolute bottom-0 left-0 right-0 w-full">
-  <Image
+      <Image
     src="/Footer-image.png"
     alt="Footer"
     width={1920}
     height={50}
-    className="w-full object-cover h-[50px]"
+    className="w-full object-cover h-[50px] md:h-[50px] h-[25px]" // Added responsive height
     style={{
       position: 'absolute',
       bottom: 0,

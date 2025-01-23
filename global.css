@@ -322,3 +322,15 @@ climate-clock-container {
     margin-top: 8rem;
   }
 }
+/* Add to your global.css */
+@media (max-width: 768px) {
+  .footer-image {
+    height: 25px;
+  }
+}
+
+@media (min-width: 769px) {
+  .footer-image {
+    height: 50px;
+  }
+}
