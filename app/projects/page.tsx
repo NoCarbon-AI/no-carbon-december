@@ -109,15 +109,15 @@ export default async function ProjectsPage() {
     src="/Footer-image.png"
     alt="Footer"
     width={1920}
-    height={50} // Increased height
-    className="w-full h-[50px]" // Changed to h-auto to maintain aspect ratio
+    height={30} // Set to desired max height
+    className="w-full h-[30px]" // Fixed height of 30px
     style={{
       position: 'absolute',
       bottom: 0,
       left: 0,
       right: 0,
-      objectFit: 'cover', // Changed to contain to show full image
-      objectPosition: 'bottom' // Align to bottom
+      objectFit: 'contain', // Changed to 'contain' to prevent vertical cropping
+      objectPosition: 'bottom center' // Ensure image stays at bottom and centered
     }}
     priority
   />
