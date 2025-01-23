@@ -322,15 +322,16 @@ climate-clock-container {
     margin-top: 8rem;
   }
 }
-/* Add to your global.css */
-@media (max-width: 768px) {
-  .footer-image {
-    height: 25px;
-  }
+/* Add or modify in global.css */
+.footer-image {
+  transform: scale(0.5); /* This will scale the image to 50% of its original size */
+  transform-origin: bottom; /* This ensures scaling happens from the bottom */
 }
 
-@media (min-width: 769px) {
+/* Responsive scaling for different screen sizes */
+@media (max-width: 768px) {
   .footer-image {
-    height: 50px;
+    transform: scale(0.3); /* Even smaller scale for mobile devices */
+    transform-origin: bottom;
   }
 }

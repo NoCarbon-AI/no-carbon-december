@@ -103,19 +103,19 @@ export default async function ProjectsPage() {
   </div>
 </footer>
 
-      </div>
-      <div className="absolute bottom-0 left-0 right-0 w-full">
-      <Image
+<div className="absolute bottom-0 left-0 right-0 w-full">
+  <Image
     src="/Footer-image.png"
     alt="Footer"
     width={1920}
-    height={50}
-    className="w-full object-cover h-[50px] md:h-[50px] h-[25px]" // Added responsive height
+    height={100}
+    className="w-full object-contain h-[25px] md:h-[50px]" // Changed object-cover to object-contain
     style={{
       position: 'absolute',
       bottom: 0,
       left: 0,
       right: 0,
+      transform: 'scale(1)', // Ensures proper scaling
     }}
     priority
   />
