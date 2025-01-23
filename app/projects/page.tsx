@@ -109,8 +109,8 @@ export default async function ProjectsPage() {
     src="/Footer-image.png"
     alt="Footer"
     width={1920}
-    height={100} // Increased height
-    className="w-full h-[100px]" // Changed to h-auto to maintain aspect ratio
+    height={50} // Increased height
+    className="w-full h-[50px]" // Changed to h-auto to maintain aspect ratio
     style={{
       position: 'absolute',
       bottom: 0,
