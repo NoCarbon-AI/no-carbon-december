@@ -109,8 +109,8 @@ export default async function ProjectsPage() {
     src="/Footer-image.png"
     alt="Footer"
     width={1920}
-    height={50} // Set to desired max height
-    className="w-full h-[50px]" // Fixed height of 30px
+    height={150} // Set to desired max height
+    className="w-full h-[150px]" // Fixed height of 30px
     style={{
       position: 'absolute',
       bottom: 0,
