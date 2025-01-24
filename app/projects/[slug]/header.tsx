@@ -125,6 +125,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 			</div>
 			{/* Add conditional image rendering based on slug */}
   {project.slug && (
+	<div className="container mx-auto relative">
     <div className="absolute -bottom-[225px] right-8 lg:right-32 z-20 hidden md:block">
       {project.slug === 'cloudops' && (
         <Image
@@ -157,6 +158,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
         />
       )}
     </div>
+	</div>
   )}
 		</header>
 	);
