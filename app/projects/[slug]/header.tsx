@@ -1,6 +1,7 @@
 "use client";
 import { ArrowLeft, Eye, Github, Twitter } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
 type Props = {
@@ -121,6 +122,41 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 					</div>
 				</div>
 			</div>
+			{/* Add conditional image rendering based on slug */}
+  {project.slug && (
+    <div className="absolute bottom-0 right-8 lg:right-32 transform translate-y-1/2 z-10 hidden md:block">
+      {project.slug === 'cloudops' && (
+        <Image
+          src="/invite-nocarbon-uk.png"
+          alt="CloudOps"
+          width={300}
+          height={225}
+          className="rounded-lg shadow-2xl transition-transform duration-300 hover:scale-105"
+          priority
+        />
+      )}
+      {project.slug === 'devops' && (
+        <Image
+          src="/Email-Nocarbon-UK.png" // Replace with your DevOps image
+          alt="DevOps"
+          width={300}
+          height={225}
+          className="rounded-lg shadow-2xl transition-transform duration-300 hover:scale-105"
+          priority
+        />
+      )}
+	  {project.slug === 'aiops' && (
+        <Image
+          src="/Schedule-Nocarbon-Uk.png" // Replace with your AIOps image
+          alt="AIOps"
+          width={300}
+          height={225}
+          className="rounded-lg shadow-2xl transition-transform duration-300 hover:scale-105"
+          priority
+        />
+      )}
+    </div>
+  )}
 		</header>
 	);
 };
