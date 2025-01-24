@@ -122,8 +122,8 @@ export default async function ProjectsPage() {
     priority
   />
 </div>
-{/* Copyright notice - not fixed */}
-<div className="absolute bottom-2 left-1/2 transform -translate-x-1/2">
+{/* Copyright notice */}
+<div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-1">
   <div className="text-[10px] text-zinc-500 hover:text-zinc-400 transition-colors duration-300 opacity-70">
     © NoCarbon Ltd, 2025
   </div>
