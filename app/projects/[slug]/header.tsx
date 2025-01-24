@@ -125,7 +125,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 			</div>
 			{/* Add conditional image rendering based on slug */}
   {project.slug && (
-    <div className="absolute -bottom-[112.5px] right-8 lg:right-32 z-10 hidden md:block">
+    <div className="absolute -bottom-[225px] right-8 lg:right-32 z-20 hidden md:block">
       {project.slug === 'cloudops' && (
         <Image
           src="/invite-nocarbon-uk.png"
