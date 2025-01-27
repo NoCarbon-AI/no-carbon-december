@@ -63,7 +63,7 @@ const PricingSection = () => {
 
   }, []);
 
-  rreturn (
+  return (
     <div className="min-h-screen bg-black overflow-hidden">
       <div ref={containerRef} className="max-w-7xl mx-auto px-4 py-20 relative">
         {/* Floating particles - changed to white/gray */}
