@@ -3,6 +3,8 @@ import { ArrowLeft, Eye, Github, Twitter } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
+import { cloudOpsFaqs, devOpsFaqs, aiOpsFaqs } from '@/app/lib/constants/faqData';
+import Faq from '@/components/Faq';
 
 type Props = {
 	project: {
@@ -161,5 +163,9 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 	</div>
   )}
 		</header>
+		// Add conditional FAQ rendering based
+		{project.slug === 'cloudops' && <Faq faqs={cloudOpsFaqs} />}
+		{project.slug === 'devops' && <Faq faqs={devOpsFaqs} />}
+		{project.slug === 'aiops' && <Faq faqs={aiOpsFaqs} />}
 	);
 };
