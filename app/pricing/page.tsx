@@ -64,13 +64,13 @@ const PricingSection = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black overflow-hidden">
+    <div className="min-h-screen bg-zinc-950/95 overflow-hidden"> {/* Changed from pure black */}
       <div ref={containerRef} className="max-w-7xl mx-auto px-4 py-20 relative">
-        {/* Floating particles - changed to white/gray */}
+        {/* Enhance floating particles visibility */}
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className="floating-particle absolute w-2 h-2 bg-gradient-to-r from-white/20 to-zinc-500/20 rounded-full blur-sm"
+            className="floating-particle absolute w-2 h-2 bg-gradient-to-r from-white/30 to-zinc-400/30 rounded-full blur-sm" // Increased opacity
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -88,11 +88,11 @@ const PricingSection = () => {
         </div>
 
         <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
-          {/* Strategy Card */}
-          <div className="pricing-card w-full md:w-1/2 max-w-md">
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-white/10 to-zinc-500/10 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
-              <div className="relative px-8 py-12 bg-zinc-900 ring-1 ring-zinc-800 rounded-lg leading-none">
+        {/* Strategy Card */}
+        <div className="pricing-card w-full md:w-1/2 max-w-md">
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-white/20 to-zinc-500/20 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" /> {/* Increased hover opacity */}
+            <div className="relative px-8 py-12 bg-zinc-900/80 backdrop-blur-sm ring-1 ring-white/10 rounded-lg leading-none"> {/* Added transparency and backdrop blur */}
                 <div className="flex flex-col h-full">
                   <div className="flex justify-between items-start mb-8">
                     <div>
@@ -128,10 +128,10 @@ const PricingSection = () => {
           </div>
 
           {/* Development Card */}
-          <div className="pricing-card w-full md:w-1/2 max-w-md">
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-zinc-500/10 to-white/10 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
-              <div className="relative px-8 py-12 bg-zinc-900 ring-1 ring-zinc-800 rounded-lg leading-none">
+        <div className="pricing-card w-full md:w-1/2 max-w-md">
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-zinc-500/20 to-white/20 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" /> {/* Increased hover opacity */}
+            <div className="relative px-8 py-12 bg-zinc-900/80 backdrop-blur-sm ring-1 ring-white/10 rounded-lg leading-none"> {/* Added transparency and backdrop blur */}
                 <div className="flex flex-col h-full">
                   <div className="flex justify-between items-start mb-8">
                     <div>
