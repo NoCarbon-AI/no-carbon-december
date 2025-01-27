@@ -45,6 +45,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 	}, []);
 
 	return (
+		<>
 		<header
 			ref={ref}
 			className="relative isolate bg-gradient-to-tl from-black via-zinc-900 to-black"
