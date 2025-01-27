@@ -2,120 +2,167 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { Card } from '../components/card';
 
 const PricingSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-
-  const pricingPlans = [
-    {
-      title: "Strategy & Planning",
-      price: "$0",
-      description: "Let's discuss your vision over coffee",
-      features: [
-        "Unlimited strategy meetings",
-        "Project scope definition",
-        "Technical consultation",
-        "No commitment required",
-        "Just buy us coffee ☕"
-      ],
-      highlight: "Most Popular"
-    },
-    {
-      title: "Development & Execution",
-      price: "From $9.99/hr",
-      description: "Flexible pricing based on project needs",
-      features: [
-        "Region-based pricing",
-        "Modular development",
-        "Pay per delivered module",
-        "Transparent milestones",
-        "Quality guaranteed ✨"
-      ],
-      highlight: "Best Value"
-    }
-  ];
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
+    // GSAP Animations
     const cards = container.querySelectorAll('.pricing-card');
+    const particles = container.querySelectorAll('.floating-particle');
     
-    // Reset positions
     gsap.set(cards, { 
-      y: 50, 
-      opacity: 0 
+      opacity: 0,
+      scale: 0.8,
+      y: 100
+    });
+
+    gsap.set(particles, {
+      opacity: 0,
+      scale: 0,
+      y: 20
     });
 
     // Animate cards
     gsap.to(cards, {
-      duration: 1,
-      y: 0,
       opacity: 1,
+      scale: 1,
+      y: 0,
+      duration: 1,
+      stagger: 0.3,
+      ease: "elastic.out(1, 0.75)"
+    });
+
+    // Animate particles
+    gsap.to(particles, {
+      opacity: 0.7,
+      scale: 1,
+      y: 0,
+      duration: 1,
       stagger: 0.2,
       ease: "power3.out"
+    });
+
+    // Floating animation for particles
+    particles.forEach((particle) => {
+      gsap.to(particle, {
+        y: "random(-20, 20)",
+        x: "random(-20, 20)",
+        rotation: "random(-15, 15)",
+        duration: "random(2, 4)",
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut"
+      });
     });
 
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-tl from-black via-zinc-600/20 to-black">
-      <div className="max-w-7xl mx-auto px-4 py-20">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-500 mb-4">
-            Simple, Transparent Pricing
+    <div className="min-h-screen bg-gradient-to-tl from-black via-zinc-900 to-black overflow-hidden">
+      <div ref={containerRef} className="max-w-7xl mx-auto px-4 py-20 relative">
+        {/* Floating particles */}
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="floating-particle absolute w-2 h-2 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full blur-sm"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+          />
+        ))}
+
+        <div className="text-center mb-16 relative">
+          <h1 className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-cyan-400 to-violet-500 mb-4">
+            Choose Your Path
           </h1>
           <p className="text-zinc-400 text-lg">
-            Pay only for what you need, when you need it
+            Transparent pricing for sustainable development
           </p>
         </div>
 
-        <div ref={containerRef} className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {pricingPlans.map((plan, index) => (
-            <div key={index} className="pricing-card">
-              <Card className="h-full transform hover:scale-105 transition-transform duration-300">
-                <div className="p-8 flex flex-col h-full">
-                  {plan.highlight && (
-                    <div className="absolute top-4 right-4">
-                      <span className="px-3 py-1 text-xs font-semibold text-green-400 bg-green-400/10 rounded-full">
-                        {plan.highlight}
-                      </span>
+        <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
+          {/* Strategy Card */}
+          <div className="pricing-card w-full md:w-1/2 max-w-md">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-600 to-cyan-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
+              <div className="relative px-8 py-12 bg-zinc-900 ring-1 ring-zinc-800 rounded-lg leading-none">
+                <div className="flex flex-col h-full">
+                  <div className="flex justify-between items-start mb-8">
+                    <div>
+                      <h3 className="text-3xl font-bold text-zinc-100">Strategy</h3>
+                      <p className="text-5xl font-bold mt-2 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400">
+                        $0
+                      </p>
                     </div>
-                  )}
-                  
-                  <h3 className="text-2xl font-bold text-zinc-100 mb-2">
-                    {plan.title}
-                  </h3>
-                  
-                  <div className="mb-4">
-                    <span className="text-4xl font-bold text-zinc-100">
-                      {plan.price}
+                    <span className="px-3 py-1 text-xs font-semibold text-emerald-400 bg-emerald-400/10 rounded-full">
+                      Coffee Required ☕
                     </span>
                   </div>
-                  
-                  <p className="text-zinc-400 mb-8">
-                    {plan.description}
-                  </p>
-                  
                   <ul className="space-y-4 mb-8 flex-grow">
-                    {plan.features.map((feature, idx) => (
+                    {[
+                      "Unlimited strategy meetings",
+                      "Project scope definition",
+                      "Technical consultation",
+                      "No commitment required",
+                      "Just buy us coffee"
+                    ].map((feature, idx) => (
                       <li key={idx} className="flex items-center text-zinc-300">
-                        <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
+                        <span className="mr-2 text-emerald-400">→</span>
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  
-                  <button className="w-full py-3 px-6 rounded bg-zinc-800 hover:bg-zinc-700 text-zinc-100 transition-colors duration-200">
+                  <button className="w-full py-4 px-6 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-semibold hover:from-emerald-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105">
+                    Let's Talk
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Development Card */}
+          <div className="pricing-card w-full md:w-1/2 max-w-md">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-violet-600 to-cyan-600 rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200" />
+              <div className="relative px-8 py-12 bg-zinc-900 ring-1 ring-zinc-800 rounded-lg leading-none">
+                <div className="flex flex-col h-full">
+                  <div className="flex justify-between items-start mb-8">
+                    <div>
+                      <h3 className="text-3xl font-bold text-zinc-100">Development</h3>
+                      <p className="text-5xl font-bold mt-2 bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-cyan-400">
+                        $9.99/hr
+                      </p>
+                    </div>
+                    <span className="px-3 py-1 text-xs font-semibold text-violet-400 bg-violet-400/10 rounded-full">
+                      Best Value ✨
+                    </span>
+                  </div>
+                  <ul className="space-y-4 mb-8 flex-grow">
+                    {[
+                      "Region-based pricing",
+                      "Modular development",
+                      "Pay per delivered module",
+                      "Transparent milestones",
+                      "Quality guaranteed"
+                    ].map((feature, idx) => (
+                      <li key={idx} className="flex items-center text-zinc-300">
+                        <span className="mr-2 text-violet-400">→</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <button className="w-full py-4 px-6 rounded-lg bg-gradient-to-r from-violet-500 to-cyan-500 text-white font-semibold hover:from-violet-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105">
                     Get Started
                   </button>
                 </div>
-              </Card>
+              </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </div>
