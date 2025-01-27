@@ -6,6 +6,8 @@ import "./mdx.css";
 import { ReportView } from "./view";
 import { Redis } from "@upstash/redis";
 import ProtectedRoute from "@/app/components/ProtectedRoute";
+import { cloudOpsFaqs, devOpsFaqs, aiOpsFaqs } from '@/app/lib/constants/faqData';
+import Faq from '@/app/components/Faq';
 
 export const revalidate = 60;
 
@@ -41,6 +43,11 @@ export default async function PostPage({ params }: Props) {
       <div className="bg-zinc-50 min-h-screen">
         <Header project={project} views={views} />
         <ReportView slug={project.slug} />
+
+        {/* FAQ sections */}
+      {project.slug === 'cloudops' && <Faq faqs={cloudOpsFaqs} />}
+      {project.slug === 'devops' && <Faq faqs={devOpsFaqs} />}
+      {project.slug === 'aiops' && <Faq faqs={aiOpsFaqs} />}
 
         <article className="px-4 py-12 mx-auto prose prose-zinc prose-quoteless">
           <Mdx code={project.body.code} />

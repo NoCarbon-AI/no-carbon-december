@@ -45,7 +45,6 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 	}, []);
 
 	return (
-		<>
 		<header
 			ref={ref}
 			className="relative isolate bg-gradient-to-tl from-black via-zinc-900 to-black"
@@ -164,10 +163,5 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 	</div>
   )}
 		</header>
-		// Add conditional FAQ rendering based
-		{project.slug === 'cloudops' && <Faq faqs={cloudOpsFaqs} />}
-		{project.slug === 'devops' && <Faq faqs={devOpsFaqs} />}
-		{project.slug === 'aiops' && <Faq faqs={aiOpsFaqs} />}
-		</>
 	);
 };
