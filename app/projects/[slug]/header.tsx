@@ -167,5 +167,6 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 		{project.slug === 'cloudops' && <Faq faqs={cloudOpsFaqs} />}
 		{project.slug === 'devops' && <Faq faqs={devOpsFaqs} />}
 		{project.slug === 'aiops' && <Faq faqs={aiOpsFaqs} />}
+		</>
 	);
 };
