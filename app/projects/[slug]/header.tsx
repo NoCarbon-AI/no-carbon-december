@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { cloudOpsFaqs, devOpsFaqs, aiOpsFaqs } from '@/app/lib/constants/faqData';
-import Faq from '@/components/Faq';
+import Faq from '@/app/components/Faq';
 
 type Props = {
 	project: {
