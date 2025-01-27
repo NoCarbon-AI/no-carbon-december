@@ -43,3 +43,25 @@ export const aiOpsFaqs = [
         answer: "Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum."
     }
 ];
+export const pricingFaqs = [
+    {
+        question: "How does your $0 strategy pricing work?",
+        answer: "Our strategy sessions are completely free when you buy us coffee! We believe in building relationships and understanding your project thoroughly before starting. Whether it takes 3 meetings or 30, we'll ensure we have a clear vision of your needs."
+    },
+    {
+        question: "What factors affect the development pricing?",
+        answer: "Our development pricing starts from $9.99/hr and varies based on several factors including the project complexity, team location, and specific technical requirements. We maintain transparency in our pricing structure and discuss all factors upfront."
+    },
+    {
+        question: "How does the payment structure work?",
+        answer: "We break down projects into smaller modules or tranches. Payment is only expected after the successful delivery of each module. This ensures you only pay for completed and verified work."
+    },
+    {
+        question: "Is there a minimum project size or commitment?",
+        answer: "No, we don't have a minimum project size. Our flexible pricing model allows us to accommodate both small and large projects. The only commitment we ask for is your time during strategy sessions."
+    },
+    {
+        question: "Can pricing change during the project?",
+        answer: "Once we agree on the price for a specific module or tranche, it remains fixed. Any changes in scope are discussed and priced separately, ensuring complete transparency."
+    }
+];
