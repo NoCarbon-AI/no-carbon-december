@@ -5,15 +5,6 @@ import { gsap } from 'gsap';
 import Faq from '../components/Faq';
 import { pricingFaqs } from '../lib/constants/faqData';
 
-const PricingPage = () => {
-    return (
-      <>
-        <PricingSection />
-        <Faq faqs={pricingFaqs} />
-      </>
-    );
-  };
-
 const PricingSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -180,5 +171,14 @@ const PricingSection = () => {
   );
 };
 
-export default PricingSection;
+// Only export PricingPage as default
+const PricingPage = () => {
+    return (
+      <>
+        <PricingSection />
+        <Faq faqs={pricingFaqs} />
+      </>
+    );
+  };
+  
 export default PricingPage;
