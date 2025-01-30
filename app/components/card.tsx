@@ -61,6 +61,7 @@ export const Card: React.FC<CardProps> = ({ children, title, description, classN
             style={{
                 clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
                 aspectRatio: "1",
+                position: 'relative'
             }}
         >
             {/* SVG Border Animation */}
@@ -89,11 +90,11 @@ export const Card: React.FC<CardProps> = ({ children, title, description, classN
     style={{ vectorEffect: 'non-scaling-stroke' }}
 />
                 <defs>
-                    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#9333EA" />
-                        <stop offset="50%" stopColor="#A855F7" />
-                        <stop offset="100%" stopColor="#7E22CE" />
-                    </linearGradient>
+                <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" stopColor="#9333EA" stopOpacity="1" />
+    <stop offset="50%" stopColor="#A855F7" stopOpacity="1" />
+    <stop offset="100%" stopColor="#7E22CE" stopOpacity="1" />
+</linearGradient>
                 </defs>
             </svg>
 
