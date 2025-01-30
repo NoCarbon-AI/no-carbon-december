@@ -77,7 +77,7 @@ export const NotionSection = () => {
             className={`text-[#37352F] text-sm font-medium p-2 rounded cursor-pointer transition-colors ${
               activeTab === 'the-matrix' ? 'bg-[#f0f0ef]' : 'hover:bg-[#f0f0ef]'
             }`}
-            onClick={() => setActiveTab('the-matrix')}
+            onClick={() => handleTabClick('the-matrix')}
           >
             <span className="notion-emoji mr-2">🕶️</span>
             The Matrix
@@ -86,7 +86,7 @@ export const NotionSection = () => {
             className={`text-[#37352F] text-sm font-medium p-2 rounded cursor-pointer transition-colors ${
               activeTab === 'the-avengers' ? 'bg-[#f0f0ef]' : 'hover:bg-[#f0f0ef]'
             }`}
-            onClick={() => setActiveTab('the-avengers')}
+            onClick={() => handleTabClick('the-avengers')}
           >
             <span className="notion-emoji mr-2">⚡️</span>
             The Avengers
@@ -95,7 +95,7 @@ export const NotionSection = () => {
             className={`text-[#37352F] text-sm font-medium p-2 rounded cursor-pointer transition-colors ${
               activeTab === 'mission-impossible' ? 'bg-[#f0f0ef]' : 'hover:bg-[#f0f0ef]'
             }`}
-            onClick={() => setActiveTab('mission-impossible')}
+            onClick={() => handleTabClick('mission-impossible')}
           >
             <span className="notion-emoji mr-2">🚁</span>
             Mission Impossible
@@ -104,7 +104,7 @@ export const NotionSection = () => {
             className={`text-[#37352F] text-sm font-medium p-2 rounded cursor-pointer transition-colors ${
               activeTab === 'kingsman' ? 'bg-[#f0f0ef]' : 'hover:bg-[#f0f0ef]'
             }`}
-            onClick={() => setActiveTab('kingsman')}
+            onClick={() => handleTabClick('kingsman')}
           >
             <span className="notion-emoji mr-2">🎩</span>
             Kingsman
