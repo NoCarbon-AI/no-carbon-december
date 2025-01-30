@@ -1,7 +1,7 @@
 // /app/components/NotionSection.tsx
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import gsap from 'gsap';
 
 export const NotionSection = () => {
