@@ -18,6 +18,8 @@ export const Card: React.FC<CardProps> = ({ children, title, description, classN
     const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
     const mouseY = useSpring(0, { stiffness: 500, damping: 100 });
 
+    const borderRef = useRef<SVGPathElement>(null);
+
     const animateBorder = () => {
         if (!borderRef.current) return;
 
