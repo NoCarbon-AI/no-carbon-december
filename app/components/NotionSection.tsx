@@ -55,7 +55,7 @@ export const NotionSection = () => {
     height="100%"
     fill="none"
     stroke="url(#purpleGradient)"
-    strokeWidth="3" // Increased stroke width for better visibility
+    strokeWidth="5" // Increased stroke width for better visibility
     strokeDasharray="100% 100%"
     strokeDashoffset="100%"
     opacity="0"
@@ -64,9 +64,9 @@ export const NotionSection = () => {
   
   <defs>
     <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stopColor="#9333EA" />
-      <stop offset="50%" stopColor="#A855F7" />
-      <stop offset="100%" stopColor="#7E22CE" />
+      <stop offset="0%" stopColor="#D8B4FE" />
+      <stop offset="50%" stopColor="#C77DFF" />
+      <stop offset="100%" stopColor="#FF6B6B" />
     </linearGradient>
   </defs>
 </svg>
