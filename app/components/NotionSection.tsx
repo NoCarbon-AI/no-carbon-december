@@ -38,23 +38,38 @@ export const NotionSection = () => {
   return (
     <div className="relative mt-8 flex flex-col md:flex-row w-full rounded-lg overflow-hidden border border-[#E6E6E6]">
     {/* SVG Border Animation */}
-    <svg
-      className="absolute inset-0 w-full h-full pointer-events-none"
-      style={{ zIndex: 1 }}
-    >
-      <rect
-        ref={borderRef}
-        x="0"
-        y="0"
-        width="100%"
-        height="100%"
-        fill="none"
-        stroke="url(#purpleGradient)"
-        strokeWidth="2"
-        strokeDasharray="100% 100%"
-        strokeDashoffset="100%"
-        opacity="0"
-      />
+<svg
+  className="absolute inset-0 w-full h-full pointer-events-none"
+  style={{ 
+    zIndex: 10,
+    position: 'absolute',
+    top: 0,
+    left: 0
+  }}
+>
+  <rect
+    ref={borderRef}
+    x="0"
+    y="0"
+    width="100%"
+    height="100%"
+    fill="none"
+    stroke="url(#purpleGradient)"
+    strokeWidth="3" // Increased stroke width for better visibility
+    strokeDasharray="100% 100%"
+    strokeDashoffset="100%"
+    opacity="0"
+    style={{ vectorEffect: 'non-scaling-stroke' }}
+  />
+  
+  <defs>
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#9333EA" />
+      <stop offset="50%" stopColor="#A855F7" />
+      <stop offset="100%" stopColor="#7E22CE" />
+    </linearGradient>
+  </defs>
+</svg>
       
       {/* Define the gradient */}
       <defs>
