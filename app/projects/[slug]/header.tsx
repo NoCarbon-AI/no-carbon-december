@@ -109,6 +109,11 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 						<h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl font-display">
 							{project.title}
 						</h1>
+						<img 
+        src="/nocarbon-ai-star.png"
+        alt="Star decoration"
+        className="absolute -top-2 -right-6 w-6 h-6"
+      />
 						<p className="mt-6 text-lg leading-8 text-zinc-300">
 							{project.description}
 						</p>
