@@ -91,9 +91,9 @@ export const Card: React.FC<CardProps> = ({ children, title, description, classN
 />
 <defs>
     <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#6A00FF" />
-        <stop offset="50%" stopColor="#AD00FF" />
-        <stop offset="100%" stopColor="#FF00F5" />
+        <stop offset="0%" stopColor="#D8B4FE" />
+        <stop offset="50%" stopColor="#C77DFF" />
+        <stop offset="100%" stopColor="#FF6B6B" />
     </linearGradient>
 </defs>
             </svg>
