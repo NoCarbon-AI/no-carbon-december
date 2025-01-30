@@ -28,11 +28,12 @@ const Faq = ({ faqs }: FaqProps) => {
                 <div className="space-y-4">
                     {faqs.map((faq, index) => (
                         <div key={index} className="relative">
-                            <div
+                         <div
                                 className={`
                                     relative rounded-lg overflow-hidden 
                                     ${openIndex === index ? 'border-glow' : 'border border-zinc-700'}
                                     bg-zinc-900 transition-all duration-300
+                                    hover:border-zinc-500
                                 `}
                             >
                                 {openIndex === index && (
