@@ -139,5 +139,6 @@ export const ContactNotionSection = () => {
         )}
       </div>
     </div>
+    </div>
   );
 };
