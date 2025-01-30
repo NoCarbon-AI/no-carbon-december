@@ -79,7 +79,7 @@ export const NotionSection = () => {
             }`}
             onClick={() => setActiveTab('the-matrix')}
           >
-            <span className="notion-emoji mr-2">🎬</span>
+            <span className="notion-emoji mr-2">🕶️</span>
             The Matrix
           </div>
           <div 
@@ -88,7 +88,7 @@ export const NotionSection = () => {
             }`}
             onClick={() => setActiveTab('the-avengers')}
           >
-            <span className="notion-emoji mr-2">🦸</span>
+            <span className="notion-emoji mr-2">⚡️</span>
             The Avengers
           </div>
           <div 
@@ -97,7 +97,7 @@ export const NotionSection = () => {
             }`}
             onClick={() => setActiveTab('mission-impossible')}
           >
-            <span className="notion-emoji mr-2">🕵️</span>
+            <span className="notion-emoji mr-2">🚁</span>
             Mission Impossible
           </div>
           <div 
