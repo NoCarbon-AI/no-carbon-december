@@ -89,13 +89,13 @@ export const Card: React.FC<CardProps> = ({ children, title, description, classN
     opacity="0"
     style={{ vectorEffect: 'non-scaling-stroke' }}
 />
-                <defs>
-                <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" stopColor="#9333EA" stopOpacity="1" />
-    <stop offset="50%" stopColor="#A855F7" stopOpacity="1" />
-    <stop offset="100%" stopColor="#7E22CE" stopOpacity="1" />
-</linearGradient>
-                </defs>
+<defs>
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#6A00FF" />
+        <stop offset="50%" stopColor="#AD00FF" />
+        <stop offset="100%" stopColor="#FF00F5" />
+    </linearGradient>
+</defs>
             </svg>
 
             <div className="pointer-events-none">
