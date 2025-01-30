@@ -335,18 +335,16 @@ climate-clock-container {
   }
 }
 /* Add these styles to make faq box animated */
-@keyframes tilt {
-  0%, 50%, 100% {
-    transform: rotate(0deg);
+@keyframes border-animation {
+  0% {
+      transform: rotate(0deg);
   }
-  25% {
-    transform: rotate(0.5deg);
-  }
-  75% {
-    transform: rotate(-0.5deg);
+  100% {
+      transform: rotate(360deg);
   }
 }
 
-.animate-tilt {
-  animation: tilt 10s infinite linear;
+.animate-border {
+  animation: border-animation 4s linear infinite;
+  opacity: 0.5;
 }
