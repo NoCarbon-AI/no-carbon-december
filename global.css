@@ -335,16 +335,48 @@ climate-clock-container {
   }
 }
 /* Add these styles to make faq box animated */
-@keyframes border-animation {
-  0% {
-      transform: rotate(0deg);
+@keyframes border-electric {
+  0%, 100% {
+      background-position: 0% 0%;
   }
-  100% {
-      transform: rotate(360deg);
+  50% {
+      background-position: 100% 100%;
   }
 }
 
-.animate-border {
-  animation: border-animation 4s linear infinite;
-  opacity: 0.5;
+.border-electric::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(168, 85, 247, 0.4) 50%, 
+      transparent 100%
+  );
+  background-size: 200% 200%;
+  animation: border-electric 3s linear infinite;
+  pointer-events: none;
+}
+
+.border-glow {
+  position: relative;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  background-color: rgb(24, 24, 27);
+}
+
+.border-glow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -1px;
+  border-radius: inherit;
+  background: linear-gradient(90deg, 
+      rgba(168, 85, 247, 0.2), 
+      rgba(236, 72, 153, 0.2)
+  );
 }

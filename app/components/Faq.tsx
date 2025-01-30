@@ -30,23 +30,17 @@ const Faq = ({ faqs }: FaqProps) => {
                         <div key={index} className="relative">
                             <div
                                 className={`
-                                    relative border rounded-lg overflow-hidden 
-                                    ${openIndex === index 
-                                        ? 'border-transparent bg-gradient-to-r from-purple-600/20 to-pink-600/20' 
-                                        : 'border-zinc-700 bg-zinc-800/30'
-                                    }
-                                    backdrop-blur-sm transition-all duration-300
+                                    relative rounded-lg overflow-hidden 
+                                    ${openIndex === index ? 'border-glow' : 'border border-zinc-700'}
+                                    bg-zinc-900 transition-all duration-300
                                 `}
                             >
-                                {/* Animated border */}
                                 {openIndex === index && (
-                                    <div className="absolute inset-0 rounded-lg">
-                                        <div className="absolute inset-px bg-zinc-900 rounded-lg z-0" />
-                                        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg animate-border" />
+                                    <div className="absolute inset-0">
+                                        <div className="absolute inset-0 border-electric" />
                                     </div>
                                 )}
                                 
-                                {/* Content */}
                                 <div className="relative z-10">
                                     <button
                                         className="w-full px-6 py-4 text-left flex justify-between items-center"
