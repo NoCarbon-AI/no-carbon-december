@@ -6,6 +6,7 @@ import {
     useMotionValue,
     useSpring,
 } from "framer-motion";
+import { gsap } from 'gsap';
 
 interface CardProps extends PropsWithChildren {
     title?: string;
@@ -17,10 +18,34 @@ export const Card: React.FC<CardProps> = ({ children, title, description, classN
     const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
     const mouseY = useSpring(0, { stiffness: 500, damping: 100 });
 
+    const animateBorder = () => {
+        if (!borderRef.current) return;
+
+        // Reset animation
+        gsap.set(borderRef.current, {
+            strokeDashoffset: '100%',
+            opacity: 1
+        });
+
+        // Create timeline
+        const tl = gsap.timeline();
+
+        tl.to(borderRef.current, {
+            strokeDashoffset: '0%',
+            duration: 1,
+            ease: "power2.inOut"
+        }).to(borderRef.current, {
+            opacity: 0,
+            duration: 0.3,
+            delay: 0.2
+        });
+    };
+
     function onMouseMove({ currentTarget, clientX, clientY }: any) {
         const { left, top } = currentTarget.getBoundingClientRect();
         mouseX.set(clientX - left);
         mouseY.set(clientY - top);
+        animateBorder();
     }
     
     const maskImage = useMotionTemplate`radial-gradient(240px at ${mouseX}px ${mouseY}px, white, transparent)`;
@@ -35,6 +60,39 @@ export const Card: React.FC<CardProps> = ({ children, title, description, classN
                 aspectRatio: "1",
             }}
         >
+            {/* SVG Border Animation */}
+            <svg
+                className="absolute inset-0 w-full h-full pointer-events-none"
+                style={{ 
+                    zIndex: 50,
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    overflow: 'visible'
+                }}
+            >
+                <path
+                    ref={borderRef}
+                    d="M50% 0% L100% 25% L100% 75% L50% 100% L0% 75% L0% 25% Z"
+                    fill="none"
+                    stroke="url(#purpleGradient)"
+                    strokeWidth="3"
+                    strokeDasharray="100% 100%"
+                    strokeDashoffset="100%"
+                    opacity="0"
+                    style={{ vectorEffect: 'non-scaling-stroke' }}
+                />
+                <defs>
+                    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#9333EA" />
+                        <stop offset="50%" stopColor="#A855F7" />
+                        <stop offset="100%" stopColor="#7E22CE" />
+                    </linearGradient>
+                </defs>
+            </svg>
+
             <div className="pointer-events-none">
                 <div className="absolute inset-0 z-0 transition duration-1000 [mask-image:linear-gradient(black,transparent)]" />
                 <motion.div
