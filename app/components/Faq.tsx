@@ -1,18 +1,17 @@
-// components/Faq.tsx
 "use client";
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
-type FaqItem = {
+interface FaqItem {
     question: string;
     answer: string;
-};
+}
 
-type FaqProps = {
+interface FaqProps {
     faqs: FaqItem[];
-};
+}
 
-const Faq: React.FC<FaqProps> = ({ faqs }) => {
+const Faq = ({ faqs }: FaqProps) => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const toggleFaq = (index: number) => {
@@ -28,33 +27,32 @@ const Faq: React.FC<FaqProps> = ({ faqs }) => {
                 <div className="space-y-4">
                     {faqs.map((faq, index) => (
                         <div key={index} className="relative">
-                            {/* Gradient Border Effect */}
                             {openIndex === index && (
                                 <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-75 transition duration-1000 animate-tilt"></div>
                             )}
-                       <div className="border border-zinc-700 rounded-lg overflow-hidden bg-zinc-800/30 backdrop-blur-sm transition-all duration-300 hover:border-zinc-500"
-                        >
-                            <button
-                                className="w-full px-6 py-4 text-left flex justify-between items-center"
-                                onClick={() => toggleFaq(index)}
-                            >
-                                <span className="text-lg font-medium text-white">
-                                    {faq.question}
-                                </span>
-                                {openIndex === index ? (
-                                    <ChevronUp className="w-5 h-5 text-zinc-400" />
-                                ) : (
-                                    <ChevronDown className="w-5 h-5 text-zinc-400" />
-                                )}
-                            </button>
-                            <div
-                                className={`px-6 transition-all duration-300 ease-in-out ${
-                                    openIndex === index
-                                        ? 'max-h-96 py-4 opacity-100'
-                                        : 'max-h-0 py-0 opacity-0'
-                                }`}
-                            >
-                                <p className="text-zinc-300">{faq.answer}</p>
+                            <div className="relative border border-zinc-700 rounded-lg overflow-hidden bg-zinc-800/30 backdrop-blur-sm transition-all duration-300 hover:border-zinc-500">
+                                <button
+                                    className="w-full px-6 py-4 text-left flex justify-between items-center"
+                                    onClick={() => toggleFaq(index)}
+                                >
+                                    <span className="text-lg font-medium text-white">
+                                        {faq.question}
+                                    </span>
+                                    {openIndex === index ? (
+                                        <ChevronUp className="w-5 h-5 text-zinc-400" />
+                                    ) : (
+                                        <ChevronDown className="w-5 h-5 text-zinc-400" />
+                                    )}
+                                </button>
+                                <div
+                                    className={`px-6 transition-all duration-300 ease-in-out ${
+                                        openIndex === index
+                                            ? 'max-h-96 py-4 opacity-100'
+                                            : 'max-h-0 py-0 opacity-0'
+                                    }`}
+                                >
+                                    <p className="text-zinc-300">{faq.answer}</p>
+                                </div>
                             </div>
                         </div>
                     ))}
