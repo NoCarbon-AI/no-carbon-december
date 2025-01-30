@@ -35,12 +35,12 @@ export const Card: React.FC<CardProps> = ({ children, title, description, classN
 
         tl.to(borderRef.current, {
             strokeDashoffset: '0%',
-            duration: 1,
-            ease: "power2.inOut"
+            duration: 0.6,
+            ease: "power2.Out"
         }).to(borderRef.current, {
             opacity: 0,
             duration: 0.3,
-            delay: 0.2
+            delay: 0.3
         });
     };
 
@@ -65,28 +65,29 @@ export const Card: React.FC<CardProps> = ({ children, title, description, classN
         >
             {/* SVG Border Animation */}
             <svg
-                className="absolute inset-0 w-full h-full pointer-events-none"
-                style={{ 
-                    zIndex: 50,
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    overflow: 'visible'
-                }}
-            >
+    className="absolute inset-0 w-full h-full pointer-events-none"
+    viewBox="0 0 346.4 346.4"
+    style={{ 
+        zIndex: 50,
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        overflow: 'visible'
+    }}
+>
                 <path
-                    ref={borderRef}
-                    d="M50% 0% L100% 25% L100% 75% L50% 100% L0% 75% L0% 25% Z"
-                    fill="none"
-                    stroke="url(#purpleGradient)"
-                    strokeWidth="3"
-                    strokeDasharray="100% 100%"
-                    strokeDashoffset="100%"
-                    opacity="0"
-                    style={{ vectorEffect: 'non-scaling-stroke' }}
-                />
+    ref={borderRef}
+    d="M173.2 0 L346.4 86.6 L346.4 259.8 L173.2 346.4 L0 259.8 L0 86.6 Z"
+    fill="none"
+    stroke="url(#purpleGradient)"
+    strokeWidth="3"
+    strokeDasharray="100% 100%"
+    strokeDashoffset="100%"
+    opacity="0"
+    style={{ vectorEffect: 'non-scaling-stroke' }}
+/>
                 <defs>
                     <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" stopColor="#9333EA" />
