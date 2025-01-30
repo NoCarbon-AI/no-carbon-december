@@ -57,7 +57,7 @@ export const ServiceArea = () => {
       y: 0,
       opacity: 1,
       stagger: 0.2,
-    }, "-=0.5");
+    }, "-=1");
 
     // Add floating animation
     images.forEach((image) => {
