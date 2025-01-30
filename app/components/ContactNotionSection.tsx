@@ -35,13 +35,13 @@ export const ContactNotionSection = () => {
 
 
   return (
-    <div className="mt-8 flex flex-col md:flex-row w-full rounded-lg overflow-hidden border border-[#E6E6E6]">
-
+    <div className="mt-8">
+<div className="relative flex flex-col md:flex-row w-full rounded-lg overflow-hidden border border-[#E6E6E6]">
       {/* SVG Border Animation */}
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none"
         style={{ 
-          zIndex: 10,
+          zIndex: 2,
           position: 'absolute',
           top: 0,
           left: 0
