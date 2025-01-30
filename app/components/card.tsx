@@ -1,5 +1,6 @@
 "use client";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useRef } from "react";
+
 import {
     motion,
     useMotionTemplate,
