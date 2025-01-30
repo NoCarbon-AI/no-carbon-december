@@ -1,5 +1,16 @@
 // components/Faq.tsx
-// ... other imports and interfaces remain the same
+"use client";
+import React, { useState } from 'react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
+
+interface FaqItem {
+    question: string;
+    answer: string;
+}
+
+interface FaqProps {
+    faqs: FaqItem[];
+}
 
 const Faq = ({ faqs }: FaqProps) => {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
