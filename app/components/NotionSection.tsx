@@ -70,17 +70,6 @@ export const NotionSection = () => {
     </linearGradient>
   </defs>
 </svg>
-      
-      {/* Define the gradient */}
-      <defs>
-        <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#9333EA" />
-          <stop offset="50%" stopColor="#A855F7" />
-          <stop offset="100%" stopColor="#7E22CE" />
-        </linearGradient>
-      </defs>
-    </svg>
-
       {/* Left Sidebar */}
       <div className="w-full md:w-64 bg-[#f8f8f7] p-4 border-r border-[#E6E6E6]">
         <div className="space-y-2">
