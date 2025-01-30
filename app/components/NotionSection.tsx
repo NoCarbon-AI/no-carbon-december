@@ -2,12 +2,70 @@
 'use client';
 
 import React, { useState } from 'react';
+import gsap from 'gsap';
 
 export const NotionSection = () => {
   const [activeTab, setActiveTab] = useState('the-matrix');
+  const borderRef = useRef(null);
+
+  const animateBorder = () => {
+    // Reset the animation
+    gsap.set(borderRef.current, {
+      strokeDashoffset: '100%',
+      opacity: 1
+    });
+
+    // Animate the border
+    gsap.to(borderRef.current, {
+      strokeDashoffset: '0%',
+      duration: 0.8,
+      ease: 'power2.out',
+      onComplete: () => {
+        gsap.to(borderRef.current, {
+          opacity: 0,
+          duration: 0.3
+        });
+      }
+    });
+  };
+
+  const handleTabClick = (tab: string) => {
+    setActiveTab(tab);
+    animateBorder();
+  };
+
 
   return (
-    <div className="mt-8 flex flex-col md:flex-row w-full rounded-lg overflow-hidden border border-[#E6E6E6]">
+    <div className="relative mt-8 flex flex-col md:flex-row w-full rounded-lg overflow-hidden border border-[#E6E6E6]">
+    {/* SVG Border Animation */}
+    <svg
+      className="absolute inset-0 w-full h-full pointer-events-none"
+      style={{ zIndex: 1 }}
+    >
+      <rect
+        ref={borderRef}
+        x="0"
+        y="0"
+        width="100%"
+        height="100%"
+        fill="none"
+        stroke="url(#purpleGradient)"
+        strokeWidth="2"
+        strokeDasharray="100% 100%"
+        strokeDashoffset="100%"
+        opacity="0"
+      />
+      
+      {/* Define the gradient */}
+      <defs>
+        <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#9333EA" />
+          <stop offset="50%" stopColor="#A855F7" />
+          <stop offset="100%" stopColor="#7E22CE" />
+        </linearGradient>
+      </defs>
+    </svg>
+
       {/* Left Sidebar */}
       <div className="w-full md:w-64 bg-[#f8f8f7] p-4 border-r border-[#E6E6E6]">
         <div className="space-y-2">
