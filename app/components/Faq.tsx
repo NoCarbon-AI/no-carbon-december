@@ -27,9 +27,12 @@ const Faq: React.FC<FaqProps> = ({ faqs }) => {
                 </h2>
                 <div className="space-y-4">
                     {faqs.map((faq, index) => (
-                        <div
-                            key={index}
-                            className="border border-zinc-700 rounded-lg overflow-hidden bg-zinc-800/30 backdrop-blur-sm transition-all duration-300 hover:border-zinc-500"
+                        <div key={index} className="relative">
+                            {/* Gradient Border Effect */}
+                            {openIndex === index && (
+                                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-75 transition duration-1000 animate-tilt"></div>
+                            )}
+                       <div className="border border-zinc-700 rounded-lg overflow-hidden bg-zinc-800/30 backdrop-blur-sm transition-all duration-300 hover:border-zinc-500"
                         >
                             <button
                                 className="w-full px-6 py-4 text-left flex justify-between items-center"
