@@ -1,5 +1,5 @@
 "use client";
-import { Github, Mail, Twitter } from "lucide-react";
+import { Mail, Calendar, Ticket } from "lucide-react";
 import Link from "next/link";
 import { Navigation } from "../components/nav";
 import Image from "next/image";
@@ -9,21 +9,21 @@ import { TRexAnimation } from "../components/TRexAnimation";
 
 const socials = [
 	{
-	  icon: <Twitter size={20} />,
-	  href: "https://twitter.com/chronark_",
-	  label: "Twitter",
+	  icon: <Ticket size={20} />,
+	  href: "https://invite.nocarbon.uk",
+	  label: "Yup! right swipe",
 	  handle: "Get me an Invite code",
 	  image: "/invite-nocarbon-uk.png"
 	},
 	{
 	  icon: <Mail size={20} />,
 	  href: "mailto:hello@nocarbon.uk",
-	  label: "Email",
+	  label: "we reply in less than 6 hours",
 	  handle: "hello@nocarbon.uk",
 	  image: "/Email-Nocarbon-UK.png"
 	},
 	{
-	  icon: <Github size={20} />,
+	  icon: <Calendar size={20} />,
 	  href: "https://calendly.com/samarjayee/15-mins-quick-call-nocarbon-uk",
 	  label: "A quick 15 mins call to discuss",
 	  handle: "Schedule a call",
