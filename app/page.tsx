@@ -213,9 +213,6 @@ useEffect(() => {
         </Link>
         {item.isMain && <div className="pulse-effect" id="pulse-effect" />}
       </div>
-    </div>
-  </li>
-))}
                 <div
                   id={item.iconId}
                   className="absolute pointer-events-none text-white hidden md:block"
