@@ -75,6 +75,7 @@ export default function Home() {
         }
     
         // Pulse effect
+        /*
         const pulse = document.getElementById('pulse-effect');
         if (pulse) {
           gsap.to(pulse, {
@@ -85,6 +86,7 @@ export default function Home() {
             ease: "power2.inOut"
           });
         }
+        */
     
         // Hover effect for main CTA
         const mainCta = document.querySelector('.main-cta');
@@ -211,7 +213,7 @@ useEffect(() => {
         >
           {item.name}
         </Link>
-        {item.isMain && <div className="pulse-effect" id="pulse-effect" />}
+        {*/item.isMain && <div className="pulse-effect" id="pulse-effect" /> */}
       </div>
                 <div
                   id={item.iconId}
