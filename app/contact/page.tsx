@@ -18,7 +18,7 @@ const socials = [
 	{
 	  icon: <Mail size={20} />,
 	  href: "mailto:hello@nocarbon.uk",
-	  label: "we reply in less than 6 hours",
+	  label: "Expect a reply within 12 hours!",
 	  handle: "hello@nocarbon.uk",
 	  image: "/Email-Nocarbon-UK.png"
 	},
