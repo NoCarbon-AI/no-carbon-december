@@ -213,7 +213,8 @@ useEffect(() => {
         >
           {item.name}
         </Link>
-        {*/item.isMain && <div className="pulse-effect" id="pulse-effect" /> */}
+
+       /* {item.isMain && <div className="pulse-effect" id="pulse-effect" />} */
       </div>
                 <div
                   id={item.iconId}
