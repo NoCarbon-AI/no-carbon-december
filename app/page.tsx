@@ -205,7 +205,11 @@ useEffect(() => {
         <Link
           href={item.href}
           onClick={item.href === "#" ? handleInviteClick : undefined}
-          className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
+          className={`text-sm duration-500 ${
+            item.isMain 
+              ? 'text-green-400 hover:text-green-300' 
+              : 'text-zinc-500 hover:text-zinc-300'
+          }`}
         >
           {item.name}
         </Link>
