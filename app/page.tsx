@@ -195,7 +195,7 @@ useEffect(() => {
             stroke="currentColor" 
             strokeWidth="2"
           >
-            <path d="M12 5l0 14M5 12l7-7 7 7"/>
+            <path d="M12 19l0 -14M5 12l7 7 7-7"/>
           </svg>
         </div>
       )}
