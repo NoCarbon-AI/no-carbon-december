@@ -8,8 +8,8 @@ import InvitePopup from "./components/InvitePopup";
 import { gsap } from 'gsap';
 
 const navigation = [
-  { name: "Have an invite", href: "#", iconId: "flag-icon" },
-  { name: "What's that?", href: "/contact", iconId: "confused-icon" },
+  { name: "Have an invite", href: "#", iconId: "flag-icon", isMain: true },
+  { name: "What's that?", href: "/contact", iconId: "confused-icon", isMain: false },
 ];
 
 export default function Home() {
@@ -56,6 +56,55 @@ export default function Home() {
         }
       });
     }
+    useEffect(() => {
+      if (typeof window !== 'undefined') {
+        // Arrow animation
+        const arrow = document.getElementById('attention-arrow');
+        if (arrow) {
+          gsap.set(arrow, { opacity: 0, y: 10 });
+          
+          gsap.to(arrow, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power2.out",
+            repeat: -1,
+            yoyo: true
+          });
+        }
+    
+        // Pulse effect
+        const pulse = document.getElementById('pulse-effect');
+        if (pulse) {
+          gsap.to(pulse, {
+            scale: 1.2,
+            opacity: 0,
+            duration: 1.5,
+            repeat: -1,
+            ease: "power2.inOut"
+          });
+        }
+    
+        // Hover effect for main CTA
+        const mainCta = document.querySelector('.main-cta');
+        if (mainCta) {
+          mainCta.addEventListener('mouseenter', () => {
+            gsap.to(arrow, {
+              scale: 1.2,
+              duration: 0.3,
+              ease: "power2.out"
+            });
+          });
+    
+          mainCta.addEventListener('mouseleave', () => {
+            gsap.to(arrow, {
+              scale: 1,
+              duration: 0.3,
+              ease: "power2.in"
+            });
+          });
+        }
+      }
   }, []);
 
 useEffect(() => {
@@ -129,16 +178,43 @@ useEffect(() => {
       {/* Navigation */}
       <nav className="my-16 animate-fade-in">
         <ul className="flex items-center justify-center gap-4">
-          {navigation.map((item, index) => (
-            <li key={item.name}>
-              <div className="relative" id={`nav-item-${index}`}>
-                <Link
-                  href={item.href}
-                  onClick={item.href === "#" ? handleInviteClick : undefined}
-                  className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
-                >
-                  {item.name}
-                </Link>
+        {navigation.map((item, index) => (
+  <li key={item.name}>
+    <div 
+      className="relative" 
+      id={`nav-item-${index}`}
+    >
+      {item.isMain && (
+        <div className="attention-arrow" id="attention-arrow">
+          <svg 
+            width="24" 
+            height="24" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="2"
+          >
+            <path d="M12 5l0 14M5 12l7-7 7 7"/>
+          </svg>
+        </div>
+      )}
+      <div className={`invite-link-container ${item.isMain ? 'main-cta' : ''}`}>
+        <Link
+          href={item.href}
+          onClick={item.href === "#" ? handleInviteClick : undefined}
+          className={`text-sm duration-500 ${
+            item.isMain 
+              ? 'text-green-400 hover:text-green-300' 
+              : 'text-zinc-500 hover:text-zinc-300'
+          }`}
+        >
+          {item.name}
+        </Link>
+        {item.isMain && <div className="pulse-effect" id="pulse-effect" />}
+      </div>
+    </div>
+  </li>
+))}
                 <div
                   id={item.iconId}
                   className="absolute pointer-events-none text-white hidden md:block"

@@ -380,3 +380,29 @@ climate-clock-container {
       rgba(236, 72, 153, 0.2)
   );
 }
+
+/* Landing page animation for  name: "Have an invite" */
+
+.attention-arrow {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #00FF00;
+  opacity: 0;
+}
+
+.invite-link-container {
+  position: relative;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.pulse-effect {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: rgba(0, 255, 0, 0.1);
+  pointer-events: none;
+}
