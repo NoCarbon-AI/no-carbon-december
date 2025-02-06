@@ -11,6 +11,7 @@ import Image from "next/image";
 import { NotionSection } from "../components/NotionSection";
 import { ServiceArea } from "../components/ServiceArea";
 import Script from 'next/script';
+import { InfraPartners } from "../components/InfraPartners";
 
 const redis = Redis.fromEnv();
 
