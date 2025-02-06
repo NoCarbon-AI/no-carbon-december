@@ -12,6 +12,8 @@ import { NotionSection } from "../components/NotionSection";
 import { ServiceArea } from "../components/ServiceArea";
 import Script from 'next/script';
 import { InfraPartners } from "../components/InfraPartners";
+import { Footer } from '../components/Footer';
+
 
 const redis = Redis.fromEnv();
 
@@ -132,6 +134,7 @@ export default async function ProjectsPage() {
     © NoCarbon Ltd, 2025
   </div>
 </div>
+<Footer />
     </div>
   );
 }
