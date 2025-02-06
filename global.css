@@ -411,9 +411,20 @@ climate-clock-container {
 .partner-logo {
   opacity: 1;
   transition: all 0.3s ease-in-out;
+  filter: grayscale(100%);
+}
+
+.partner-logo:hover {
+  filter: grayscale(0%);
 }
 
 .partner-logo img {
   max-width: 100%;
   height: auto;
+  opacity: 0.75;
+  transition: all 0.3s ease-in-out;
+}
+
+.partner-logo:hover img {
+  opacity: 1;
 }

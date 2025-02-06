@@ -47,13 +47,13 @@ export const InfraPartners = () => {
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="partner-logo w-32 h-20 relative grayscale hover:grayscale-0 transition-all duration-300"
+              className="partner-logo w-32 h-20 relative filter grayscale hover:grayscale-0 transition-all duration-300"
             >
               <Image
                 src={partner.logo}
                 alt={`${partner.name} logo`}
                 fill
-                className="object-contain filter brightness-75 hover:brightness-100 transition-all duration-300"
+                className="object-contain transition-all duration-300 hover:scale-105"
                 onLoad={() => setImagesLoaded(true)}
                 onError={(e) => {
                   console.error(`Error loading ${partner.name} logo:`, e);
