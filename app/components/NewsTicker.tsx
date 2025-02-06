@@ -37,6 +37,7 @@ export const NewsTicker = () => {
             "Follow us for more updates",
             "•",
             "Get in touch today",
+            "•",
           ].map((text, index) => (
             <span
               key={index}
