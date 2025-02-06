@@ -8,12 +8,12 @@ export const InfraPartners = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const partners = [
-    { name: 'AWS', logo: '/aws-logo.svg' },
-    { name: 'Azure', logo: '/azure-logo.svg' },
-    { name: 'Google Cloud', logo: '/gcp-logo.svg' },
-    { name: 'Oracle Cloud', logo: '/oracle-logo.svg' },
-    { name: 'Alibaba Cloud', logo: '/alibaba-logo.svg' },
-    { name: 'Digital Ocean', logo: '/digitalocean-logo.svg' }
+    { name: 'AWS', logo: '/aws-logo.png' },
+    { name: 'Azure', logo: '/azure-logo.png' },
+    { name: 'Google Cloud', logo: '/gcp-logo.png' },
+    { name: 'Oracle Cloud', logo: '/oracle-logo.png' },
+    { name: 'Alibaba Cloud', logo: '/alibaba-logo.png' },
+    { name: 'Digital Ocean', logo: '/digitalocean-logo.png' }
   ];
 
   useEffect(() => {
