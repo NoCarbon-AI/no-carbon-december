@@ -1,7 +1,8 @@
+"use client";
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
-const NewsTicker = () => {
+export const NewsTicker = () =>
   const tickerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
