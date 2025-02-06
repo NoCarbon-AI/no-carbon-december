@@ -90,6 +90,9 @@ export default async function ProjectsPage() {
 {/* Divider line */}
 <div className="w-full h-px bg-zinc-800" />
 
+{/* Parteners */}
+<InfraPartners />
+
 {/* Climate Clock Footer */}
 <footer className="w-full py-4 md:py-8 overflow-hidden">
   <div className="max-w-7xl mx-auto px-4">
