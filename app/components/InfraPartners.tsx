@@ -11,7 +11,6 @@ export const InfraPartners = () => {
   const partners = [
     { name: 'AWS', logo: '/aws-logo.png' },
     { name: 'Azure', logo: '/azure-logo.png' },
-    { name: 'Google Cloud', logo: '/gcp-logo.png' },
     { name: 'Oracle Cloud', logo: '/oracle-logo.png' },
     { name: 'Alibaba Cloud', logo: '/alibaba-logo.png' },
     { name: 'Digital Ocean', logo: '/digitalocean-logo.png' }
