@@ -7,6 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 export const InfraPartners = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [loadedImages, setLoadedImages] = useState<{[key: string]: boolean}>({});
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   const partners = [
     { name: 'AWS', logo: '/aws-logo.png' },
