@@ -409,22 +409,15 @@ climate-clock-container {
 
 /* Add these styles to make the partner logo section */
 .partner-logo {
-  opacity: 1;
-  transition: all 0.3s ease-in-out;
-  filter: grayscale(100%);
+  opacity: 0; /* Initial state */
+  transition: filter 0.3s ease-in-out;
+  will-change: filter, opacity;
 }
 
-.partner-logo:hover {
-  filter: grayscale(0%);
+.partner-logo.loaded {
+  opacity: 1;
 }
 
 .partner-logo img {
-  max-width: 100%;
-  height: auto;
-  opacity: 0.75;
-  transition: all 0.3s ease-in-out;
-}
-
-.partner-logo:hover img {
-  opacity: 1;
+  opacity: 1 !important;
 }
