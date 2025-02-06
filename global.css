@@ -406,3 +406,14 @@ climate-clock-container {
   background: rgba(0, 255, 0, 0.1);
   pointer-events: none;
 }
+
+/* Add these styles to make the partner logo section */
+.partner-logo {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.partner-logo img {
+  max-width: 100%;
+  height: auto;
+}

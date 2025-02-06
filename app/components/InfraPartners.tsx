@@ -1,11 +1,12 @@
 "use client";
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export const InfraPartners = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   const partners = [
     { name: 'AWS', logo: '/aws-logo.png' },
@@ -17,23 +18,25 @@ export const InfraPartners = () => {
   ];
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    
-    if (containerRef.current) {
-      gsap.from('.partner-logo', {
-        opacity: 0,
-        y: 20,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top center+=100",
-          toggleActions: "play none none reverse"
-        }
-      });
+    if (typeof window !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+      
+      if (containerRef.current && imagesLoaded) {
+        gsap.from('.partner-logo', {
+          opacity: 0,
+          y: 20,
+          duration: 0.8,
+          stagger: 0.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top center+=100",
+            toggleActions: "play none none reverse"
+          }
+        });
+      }
     }
-  }, []);
+  }, [imagesLoaded]);
 
   return (
     <div ref={containerRef} className="py-16 bg-gradient-to-t from-zinc-900/0 via-zinc-900/50 to-zinc-900/0">
@@ -52,6 +55,11 @@ export const InfraPartners = () => {
                 alt={`${partner.name} logo`}
                 fill
                 className="object-contain filter brightness-75 hover:brightness-100 transition-all duration-300"
+                onLoad={() => setImagesLoaded(true)}
+                onError={(e) => {
+                  console.error(`Error loading ${partner.name} logo:`, e);
+                }}
+                priority={true}
               />
             </div>
           ))}
