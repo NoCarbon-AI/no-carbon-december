@@ -421,7 +421,7 @@ climate-clock-container {
 .partner-logo img {
   opacity: 1 !important;
 }
-/* loading animation */
+/* loading animation aftrer verify */
 @keyframes spin {
   from {
     transform: rotate(0deg);
