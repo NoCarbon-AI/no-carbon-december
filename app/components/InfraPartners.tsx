@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export const InfraPartners = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [loadedImages, setLoadedImages] = useState<{[key: string]: boolean}>({});
 
   const partners = [
     { name: 'AWS', logo: '/aws-logo.png' },
@@ -21,6 +21,12 @@ export const InfraPartners = () => {
       gsap.registerPlugin(ScrollTrigger);
       
       if (containerRef.current && imagesLoaded) {
+        // Set initial state
+        gsap.set('.partner-logo', {
+          opacity: 1 // Set initial opacity to 1
+        });
+  
+        // Then animate from a different starting point
         gsap.from('.partner-logo', {
           opacity: 0,
           y: 20,
