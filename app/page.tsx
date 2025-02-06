@@ -152,6 +152,23 @@ useEffect(() => {
 
   return (
     <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black main-container">
+      {/* Loading Overlay */}
+      <div 
+        id="loading-overlay" 
+        className="fixed inset-0 z-50 hidden opacity-0 bg-black/90 flex items-center justify-center"
+      >
+        <div className="flex flex-col items-center space-y-4">
+          <div className="relative">
+            {/* Spinning circle */}
+            <div className="w-16 h-16 border-t-2 border-green-500 border-solid rounded-full animate-spin"></div>
+            {/* Pulsing dot */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+            </div>
+          </div>
+          <p className="text-zinc-400 text-sm font-medium">Preparing your workspace...</p>
+        </div>
+      </div>
       {/* Logo */}
       <div className="absolute top-4 left-4 z-50">
         <Image
@@ -283,6 +300,8 @@ useEffect(() => {
           />
         </h2>
       </div>
+
+
 
       <InvitePopup 
         isOpen={isPopupOpen} 

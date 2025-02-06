@@ -421,3 +421,16 @@ climate-clock-container {
 .partner-logo img {
   opacity: 1 !important;
 }
+/* loading animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}

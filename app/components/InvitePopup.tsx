@@ -42,10 +42,26 @@ export default function InvitePopup({ isOpen, onClose }: InvitePopupProps) {
       const data = await response.json();
 
       if (response.ok) {
-        localStorage.setItem('isVerified', 'true');
-        localStorage.setItem('userData', JSON.stringify(data.user));
-        onClose();
-        router.push('/projects');
+        gsap.to(".popup-container", {
+          scale: 0.8,
+          opacity: 0,
+          duration: 0.3,
+          ease: "power3.in",
+          onComplete: () => {
+            localStorage.setItem('isVerified', 'true');
+            localStorage.setItem('userData', JSON.stringify(data.user));
+            onClose();
+            // Show loading overlay
+            document.getElementById('loading-overlay')?.classList.remove('hidden');
+            gsap.to("#loading-overlay", {
+              opacity: 1,
+              duration: 0.3,
+              onComplete: () => {
+                router.push('/projects');
+              }
+            });
+          }
+        });
       } else {
         setError(data.message || 'Invalid invite code');
       }
