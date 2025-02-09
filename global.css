@@ -438,12 +438,23 @@ climate-clock-container {
 @keyframes gradientFlow {
   0% {
     background-position: 0% 50%;
+    background-size: 200% 200%;
+  }
+  25% {
+    background-position: 100% 30%;
+    background-size: 150% 150%;
   }
   50% {
-    background-position: 100% 50%;
+    background-position: 50% 100%;
+    background-size: 200% 200%;
+  }
+  75% {
+    background-position: 0% 70%;
+    background-size: 150% 150%;
   }
   100% {
     background-position: 0% 50%;
+    background-size: 200% 200%;
   }
 }
 
@@ -451,13 +462,28 @@ climate-clock-container {
   background: linear-gradient(
     45deg,
     #D8B4FE,
-    #C77DFF,
-    #FF6B6B
+    #C77DFF 45%,
+    #FF6B6B 55%
   );
   background-size: 200% 200%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: gradientFlow 3s ease infinite;
+  animation: gradientFlow 1.5s ease-in-out infinite;
   display: inline-block;
+  position: relative;
+  font-weight: bold;
+}
+
+.gradient-text-ai::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  filter: blur(8px);
+  opacity: 0.3;
+  z-index: -1;
 }
