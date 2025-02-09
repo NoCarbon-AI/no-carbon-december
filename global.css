@@ -468,3 +468,25 @@ climate-clock-container {
   opacity: 0.7;
   z-index: -1;
 }
+/*Submenu animation*/
+/* Add to your global.css */
+.submenu-enter {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.submenu-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 200ms, transform 200ms;
+}
+
+.submenu-exit {
+  opacity: 1;
+}
+
+.submenu-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 200ms, transform 200ms;
+}
