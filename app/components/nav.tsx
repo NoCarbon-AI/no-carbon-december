@@ -2,6 +2,7 @@
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
 
 const serviceItems = [
   {
@@ -21,22 +22,9 @@ const serviceItems = [
 export const Navigation: React.FC = () => {
   const ref = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+  const submenuRef = useRef<HTMLDivElement>(null);
   const [isIntersecting, setIntersecting] = useState(true);
   const [showSubmenu, setShowSubmenu] = useState(false);
-
-  // Handle clicks outside the menu to close it
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setShowSubmenu(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
 
   useEffect(() => {
     if (!ref.current) return;
@@ -48,13 +36,51 @@ export const Navigation: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Handle keyboard navigation
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      setShowSubmenu(!showSubmenu);
-    } else if (e.key === 'Escape') {
-      setShowSubmenu(false);
+  // GSAP animations for submenu
+  useEffect(() => {
+    if (!submenuRef.current) return;
+
+    if (showSubmenu) {
+      gsap.fromTo(
+        submenuRef.current,
+        {
+          opacity: 0,
+          y: -10,
+          scale: 0.95,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.2,
+          ease: "power2.out",
+        }
+      );
+    }
+  }, [showSubmenu]);
+
+  const handleMouseEnter = () => {
+    setShowSubmenu(true);
+  };
+
+  const handleMouseLeave = (e: React.MouseEvent) => {
+    const submenuElement = submenuRef.current;
+    const menuElement = menuRef.current;
+    
+    // Check if the mouse is moving to the submenu
+    if (submenuElement && menuElement) {
+      const submenuRect = submenuElement.getBoundingClientRect();
+      const menuRect = menuElement.getBoundingClientRect();
+      
+      // If mouse is not moving towards submenu, hide it
+      if (
+        e.clientX < submenuRect.left ||
+        e.clientX > submenuRect.right ||
+        e.clientY < menuRect.bottom ||
+        e.clientY > submenuRect.bottom
+      ) {
+        setShowSubmenu(false);
+      }
     }
   };
 
@@ -76,44 +102,32 @@ export const Navigation: React.FC = () => {
               Pricing
             </Link>
             
-            {/* Services Menu with Submenu */}
             <div 
               ref={menuRef}
               className="relative"
-              onMouseEnter={() => setShowSubmenu(true)}
-              onKeyDown={handleKeyDown}
-              tabIndex={0}
-              role="button"
-              aria-expanded={showSubmenu}
-              aria-haspopup="true"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
               <button
                 className="duration-200 text-zinc-400 hover:text-zinc-100"
-                onClick={() => setShowSubmenu(!showSubmenu)}
               >
                 Services
               </button>
 
-              {/* Submenu */}
               {showSubmenu && (
                 <div 
-                  className="absolute top-full left-0 mt-2 w-48 rounded-md shadow-lg bg-zinc-800 ring-1 ring-black ring-opacity-5 z-50"
+                  ref={submenuRef}
+                  className="absolute top-full left-0 mt-2 w-48 rounded-md shadow-lg bg-zinc-800/90 backdrop-blur-sm ring-1 ring-black ring-opacity-5 z-50"
                   onMouseLeave={() => setShowSubmenu(false)}
                 >
                   <div className="py-1" role="menu">
-                    {serviceItems.map((item, index) => (
+                    {serviceItems.map((item) => (
                       <Link
                         key={item.title}
                         href={item.href}
-                        className="block px-4 py-2 text-sm text-zinc-300 hover:bg-zinc-700 hover:text-white duration-200"
+                        className="block px-4 py-2 text-sm text-zinc-300 hover:bg-zinc-700/50 hover:text-white duration-200"
                         role="menuitem"
-                        tabIndex={0}
                         onClick={() => setShowSubmenu(false)}
-                        onKeyDown={(e) => {
-                          if (e.key === 'Enter') {
-                            setShowSubmenu(false);
-                          }
-                        }}
                       >
                         {item.title}
                       </Link>
