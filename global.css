@@ -470,10 +470,15 @@ climate-clock-container {
 }
 
 /* Dead symbol on heading */
-small-emoji {
-  font-family: "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols;
-  font-size: 0.85em; /* Reduced from the default size */
-  line-height: 1;
-  vertical-align: middle;
+.dead-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+
+.dead-text .skull-emoji {
+  font-size: 0.7em; /* Even smaller size */
+  transform: translateY(1px); /* Fine-tune vertical alignment */
   display: inline-block;
+  line-height: 1;
 }
