@@ -134,6 +134,7 @@ export default async function ProjectsPage() {
     © NoCarbon Ltd, 2025
   </div>
 </div>
+{/* Footer */}
 <Footer />
     </div>
   );
