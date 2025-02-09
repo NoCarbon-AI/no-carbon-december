@@ -28,7 +28,7 @@ export const Footer = () => {
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="flex items-center">
               <Image
-                src="/logo.png"
+                src="/NoCarbon-Logo.png"
                 alt="NoCarbon Logo"
                 width={40}
                 height={40}
