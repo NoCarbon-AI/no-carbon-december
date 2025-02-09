@@ -434,3 +434,30 @@ climate-clock-container {
 .animate-spin {
   animation: spin 1s linear infinite;
 }
+/* AI word gradient in heading on landing page */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-text-ai {
+  background: linear-gradient(
+    45deg,
+    #D8B4FE,
+    #C77DFF,
+    #FF6B6B
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientFlow 3s ease infinite;
+  display: inline-block;
+}
