@@ -271,7 +271,7 @@ useEffect(() => {
       />
 
       <h1 className="py-3.5 px-0.5 z-10 text-2xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-4xl md:text-6xl whitespace-nowrap bg-clip-text ">
-        No <AIGradientText /> on a De☠️d Planet
+        No <AIGradientText /> on a De💀d Planet
       </h1>
 
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
