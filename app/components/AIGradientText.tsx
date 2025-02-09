@@ -4,8 +4,9 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
 export default function AIGradientText() {
-  const textRef = useRef(null);
-  const containerRef = useRef(null);
+    const textRef = useRef<HTMLSpanElement>(null);
+    const containerRef = useRef<HTMLSpanElement>(null);
+  
 
   useEffect(() => {
     if (!textRef.current || !containerRef.current) return;
