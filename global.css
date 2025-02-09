@@ -468,17 +468,3 @@ climate-clock-container {
   opacity: 0.7;
   z-index: -1;
 }
-
-/* Dead symbol on heading */
-.dead-text {
-  display: inline-flex;
-  align-items: center;
-  gap: 0;
-}
-
-.dead-text .skull-emoji {
-  font-size: 0.7em; /* Even smaller size */
-  transform: translateY(1px); /* Fine-tune vertical alignment */
-  display: inline-block;
-  line-height: 1;
-}
