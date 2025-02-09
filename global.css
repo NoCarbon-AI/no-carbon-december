@@ -468,3 +468,12 @@ climate-clock-container {
   opacity: 0.7;
   z-index: -1;
 }
+
+/* Dead symbol on heading */
+small-emoji {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols;
+  font-size: 0.85em; /* Reduced from the default size */
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-block;
+}
