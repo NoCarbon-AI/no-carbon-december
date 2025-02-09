@@ -6,6 +6,7 @@ import Image from "next/image";
 import TypewriterEffect from "./components/TypewriterEffect";
 import InvitePopup from "./components/InvitePopup";
 import { gsap } from 'gsap';
+import AIGradientText from './components/AIGradientText';
 
 const navigation = [
   { name: "Have an invite", href: "#", iconId: "flag-icon", isMain: true },
@@ -166,7 +167,7 @@ useEffect(() => {
               <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
             </div>
           </div>
-          <p className="text-zinc-400 text-sm font-medium">Preparing your workspace...</p>
+          <p className="text-zinc-400 text-sm font-medium">Wingardium Leviosa</p>
         </div>
       </div>
       {/* Logo */}
@@ -270,7 +271,7 @@ useEffect(() => {
       />
 
       <h1 className="py-3.5 px-0.5 z-10 text-2xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-4xl md:text-6xl whitespace-nowrap bg-clip-text ">
-        No <span className="gradient-text-ai">AI</span> on a Dead Planet
+        No <AIGradientText /> on a Dead Planet
       </h1>
 
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />

@@ -422,68 +422,49 @@ climate-clock-container {
   opacity: 1 !important;
 }
 /* loading animation aftrer verify */
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.animate-spin {
-  animation: spin 1s linear infinite;
-}
-/* AI word gradient in heading on landing page */
-@keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-    background-size: 200% 200%;
-  }
-  25% {
-    background-position: 100% 30%;
-    background-size: 150% 150%;
-  }
-  50% {
-    background-position: 50% 100%;
-    background-size: 200% 200%;
-  }
-  75% {
-    background-position: 0% 70%;
-    background-size: 150% 150%;
-  }
-  100% {
-    background-position: 0% 50%;
-    background-size: 200% 200%;
-  }
-}
-
 .gradient-text-ai {
+  display: inline-block;
   background: linear-gradient(
     45deg,
     #D8B4FE,
-    #C77DFF 45%,
-    #FF6B6B 55%
+    #C77DFF,
+    #FF6B6B
   );
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
   background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
-  animation: gradientFlow 1.5s ease-in-out infinite;
-  display: inline-block;
   position: relative;
   font-weight: bold;
 }
+/* AI flame in heading */
+.ai-gradient-text {
+  background: linear-gradient(
+    90deg,
+    #D8B4FE 0%,
+    #C77DFF 25%,
+    #FF6B6B 50%,
+    #C77DFF 75%,
+    #D8B4FE 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
 
-.gradient-text-ai::after {
+.ai-gradient-text::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
   background: inherit;
-  filter: blur(8px);
-  opacity: 0.3;
+  filter: blur(10px);
+  opacity: 0.7;
   z-index: -1;
 }
