@@ -30,11 +30,10 @@ export const Footer = () => {
               <Image
                 src="/NoCarbon-Logo.png"
                 alt="NoCarbon Logo"
-                width={40}
-                height={40}
+                width={60}
+                height={60}
                 className="rounded-full"
               />
-              <span className="ml-3 text-xl font-bold text-zinc-200">NoCarbon</span>
             </Link>
             <p className="mt-4 text-sm text-zinc-400">
               Empowering sustainable cloud solutions for a greener future.
