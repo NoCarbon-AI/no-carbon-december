@@ -4,6 +4,8 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import Faq from '../components/Faq';
 import { pricingFaqs } from '../lib/constants/faqData';
+import Image from 'next/image';
+
 
 const PricingSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -95,6 +97,14 @@ const PricingSection = () => {
             <div className="relative px-8 py-12 bg-zinc-900/80 backdrop-blur-sm ring-1 ring-white/10 rounded-lg leading-none"> {/* Added transparency and backdrop blur */}
                 <div className="flex flex-col h-full">
                   <div className="flex justify-between items-start mb-8">
+                  <div className="flex items-center gap-3"> {/* Added flex container */}
+            <Image
+              src="/Strategy-logo.png"
+              alt="Strategy Logo"
+              width={24}
+              height={24}
+              className="object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+            />    
                     <div>
                       <h3 className="text-3xl font-bold text-white">Strategy</h3>
                       <p className="text-5xl font-bold mt-2 text-white">
@@ -134,12 +144,21 @@ const PricingSection = () => {
             <div className="relative px-8 py-12 bg-zinc-900/80 backdrop-blur-sm ring-1 ring-white/10 rounded-lg leading-none"> {/* Added transparency and backdrop blur */}
                 <div className="flex flex-col h-full">
                   <div className="flex justify-between items-start mb-8">
+                  <div className="flex items-center gap-3">
                     <div>
                       <h3 className="text-3xl font-bold text-white">Development</h3>
                       <p className="text-5xl font-bold mt-2 text-white">
                         $9.99/hr
                         </p>
                     </div>
+                    <Image
+              src="/Development-Logo.png"
+              alt="Development Logo"
+              width={24}
+              height={24}
+              className="object-contain opacity-80 group-hover:opacity-100 transition-opacity ml-2"
+            />
+          </div>
                     <span className="px-3 py-1 text-xs font-semibold text-white bg-white/10 rounded-full">
                       Best Value ✨
                     </span>
