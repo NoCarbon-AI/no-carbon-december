@@ -145,14 +145,14 @@ const PricingSection = () => {
         <div className="flex justify-between items-start mb-8">
           <div>
             <div className="flex items-center gap-3 mb-2">
+              <h3 className="text-3xl font-bold text-white">Development</h3>
               <Image
                 src="/Development-Logo.png"
                 alt="Development Logo"
-                width={72}  // Increased from 24 to 72 (3x)
-                height={72} // Increased from 24 to 72 (3x)
+                width={72}
+                height={72}
                 className="object-contain opacity-80 group-hover:opacity-100 transition-opacity"
               />
-              <h3 className="text-3xl font-bold text-white">Development</h3>
             </div>
             <p className="text-5xl font-bold text-white">$9.99/hr</p>
           </div>
