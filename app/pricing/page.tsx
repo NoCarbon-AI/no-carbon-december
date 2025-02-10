@@ -80,25 +80,24 @@ const PricingSection = () => {
           />
         ))}
 
-<div className="flex flex-col items-center justify-center mb-8">
-  <div className="w-full max-w-2xl mx-auto"> {/* Container to control image width */}
-    <Image
-      src="/Pricing-Image.png"
-      alt="Pricing Illustration"
-      width={600}
-      height={400}
-      className="w-full h-auto object-contain mb-12 animate-fade-in"
-      priority
-    />
-
-<div className="text-center mb-16 relative">
-          <h1 className="text-6xl font-bold text-white mb-4">
-            Choose Your Path
-          </h1>
-          <p className="text-zinc-400 text-lg">
-            Transparent pricing for sustainable development
-          </p>
+<div className="flex flex-col items-center justify-center mb-16">
+        <div className="w-full max-w-2xl mx-auto">
+          <Image
+            src="/Pricing-Image.png"
+            alt="Pricing Illustration"
+            width={600}
+            height={400}
+            className="w-full h-auto object-contain mb-12"
+            priority
+          />
         </div>
+        <h1 className="text-6xl font-bold text-white mb-4">
+          Choose Your Path
+        </h1>
+        <p className="text-zinc-400 text-lg">
+          Transparent pricing for sustainable development
+        </p>
+      </div>
 
         <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
        {/* Strategy Card */}
