@@ -145,7 +145,7 @@ const PricingSection = () => {
         <div className="flex justify-between items-start mb-8">
           <div>
             <div className="flex items-center gap-3 mb-2">
-              <h3 className="text-3xl font-bold text-white">Build</h3>
+              <h3 className="text-3xl font-bold text-white">Production</h3>
               <Image
                 src="/Development-Logo.png"
                 alt="Development Logo"
