@@ -5,6 +5,9 @@ import { gsap } from 'gsap';
 import Faq from '../components/Faq';
 import { pricingFaqs } from '../lib/constants/faqData';
 import Image from 'next/image';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 
 const PricingSection = () => {
@@ -13,6 +16,28 @@ const PricingSection = () => {
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
+
+    // Select the image container
+  const imageContainer = container.querySelector('.pricing-image-container');
+
+  // Create GSAP scroll trigger for image scaling
+  gsap.to(imageContainer, {
+    scrollTrigger: {
+      trigger: imageContainer,
+      start: "top top",
+      end: "bottom top",
+      scrub: true, // Smooth animation that ties to scroll position
+      markers: false, // Set to true for debugging
+      onUpdate: (self) => {
+        // Scale down as we scroll up
+        const scale = 1 - (self.progress * 0.5); // This will scale between 1 and 0.5
+        gsap.set(imageContainer, {
+          scale: Math.max(0.5, scale), // Don't let it scale smaller than 0.5
+          transformOrigin: "center center"
+        });
+      }
+    }
+  });
 
     // GSAP Animations
     const cards = container.querySelectorAll('.pricing-card');
@@ -81,23 +106,23 @@ const PricingSection = () => {
         ))}
 
 <div className="flex flex-col items-center justify-center mb-16">
-        <div className="w-full max-w-2xl mx-auto">
-          <Image
-            src="/Pricing-Image.png"
-            alt="Pricing Illustration"
-            width={600}
-            height={400}
-            className="w-full h-auto object-contain mb-12"
-            priority
-          />
-        </div>
-        <h1 className="text-6xl font-bold text-white mb-4">
-          Choose Your Path
-        </h1>
-        <p className="text-zinc-400 text-lg">
-          Transparent pricing for sustainable development
-        </p>
-      </div>
+  <div className="w-full max-w-2xl mx-auto pricing-image-container"> {/* Added class name */}
+    <Image
+      src="/Pricing-Image.png"
+      alt="Pricing Illustration"
+      width={300}
+      height={200}
+      className="w-full h-auto object-contain mb-12"
+      priority
+    />
+  </div>
+  <h1 className="text-6xl font-bold text-white mb-4">
+    Choose Your Path
+  </h1>
+  <p className="text-zinc-400 text-lg">
+    Transparent pricing for sustainable development
+  </p>
+</div>
 
         <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
        {/* Strategy Card */}
