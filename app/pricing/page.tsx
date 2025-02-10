@@ -93,8 +93,7 @@ const PricingSection = () => {
        {/* Strategy Card */}
 <div className="pricing-card w-full md:w-1/2 max-w-md">
   <div className="relative group">
-    <div className="absolute -inset-1 bg-gradient-to-r from-white/20 to-zinc-500/20 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
-    <div className="relative px-8 py-12 bg-zinc-900/80 backdrop-blur-sm ring-1 ring-white/10 rounded-lg leading-none">
+  <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/30 to-purple-900/30 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />    <div className="relative px-8 py-12 bg-zinc-900/80 backdrop-blur-sm ring-1 ring-white/10 rounded-lg leading-none">
       <div className="flex flex-col h-full">
         <div className="flex justify-between items-start mb-8">
           <div>
@@ -139,8 +138,7 @@ const PricingSection = () => {
           {/* Development Card */}
 <div className="pricing-card w-full md:w-1/2 max-w-md">
   <div className="relative group">
-    <div className="absolute -inset-1 bg-gradient-to-r from-zinc-500/20 to-white/20 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
-    <div className="relative px-8 py-12 bg-zinc-900/80 backdrop-blur-sm ring-1 ring-white/10 rounded-lg leading-none">
+  <div className="absolute -inset-1 bg-gradient-to-r from-purple-900/30 to-purple-500/30 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />    <div className="relative px-8 py-12 bg-zinc-900/80 backdrop-blur-sm ring-1 ring-white/10 rounded-lg leading-none">
       <div className="flex flex-col h-full">
         <div className="flex justify-between items-start mb-8">
           <div>
