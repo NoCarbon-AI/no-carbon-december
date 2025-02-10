@@ -80,6 +80,17 @@ const PricingSection = () => {
           />
         ))}
 
+<div className="flex flex-col items-center justify-center mb-8">
+  <div className="w-full max-w-2xl mx-auto"> {/* Container to control image width */}
+    <Image
+      src="/Pricing-Image.png"
+      alt="Pricing Illustration"
+      width={600}
+      height={400}
+      className="w-full h-auto object-contain mb-12 animate-fade-in"
+      priority
+    />
+
 <div className="text-center mb-16 relative">
           <h1 className="text-6xl font-bold text-white mb-4">
             Choose Your Path
