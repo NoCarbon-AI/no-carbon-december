@@ -106,12 +106,12 @@ const PricingSection = () => {
         ))}
 
 <div className="flex flex-col items-center justify-center mb-16">
-  <div className="w-[40%] max-w-xl mx-auto pricing-image-container"> {/* Added class name */}
+  <div className="w-[20%] max-w-xl mx-auto pricing-image-container"> {/* Added class name */}
     <Image
       src="/Pricing-Image.png"
       alt="Pricing Illustration"
-      width={110}
-      height={40}
+      width={80}
+      height={10}
       className="w-full h-auto object-contain mb-12"
       priority
     />
