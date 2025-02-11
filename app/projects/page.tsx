@@ -95,6 +95,7 @@ export default async function ProjectsPage() {
 
 {/* Parteners */}
 <InfraPartners />
+<TechnologyPartners /> 
 
 {/* Climate Clock Footer */}
 <footer className="w-full py-4 md:py-8 overflow-hidden">
