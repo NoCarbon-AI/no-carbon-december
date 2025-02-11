@@ -106,7 +106,10 @@ const PricingSection = () => {
         ))}
 
 <div className="flex flex-col items-center justify-center mb-16">
-  <div className="w-full max-w-2xl mx-auto pricing-image-container"> {/* Added class name */}
+<div 
+    ref={imageContainerRef}
+    className="w-[70%] max-w-xl mx-auto pricing-image-container" // Added w-[70%] to reduce container width
+  >
     <Image
       src="/Pricing-Image.png"
       alt="Pricing Illustration"
