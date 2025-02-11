@@ -516,3 +516,30 @@ climate-clock-container {
   align-items: center;
   position: relative;
 }
+
+.sparkle-container {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+.sparkle-path {
+  fill: url(#sparkle-gradient);
+  transform-origin: center;
+  animation: sparkleRotate 3s infinite linear;
+}
+
+@keyframes sparkleRotate {
+  0% {
+      transform: scale(1);
+      opacity: 0.8;
+  }
+  50% {
+      transform: scale(1.2);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 0.8;
+  }
+}

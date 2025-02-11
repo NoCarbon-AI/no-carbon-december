@@ -99,13 +99,19 @@ export const ServiceArea = () => {
                         />
                     </div>
                     <Link href={`/projects/${service.slug}`} className="service-card w-full">
-                        <Card
-                            title={
-                              <div className="relative service-title">
-                                  {service.title}
-                                  <div className="sparkle absolute -top-1 -right-4 w-6 h-6 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full blur-sm" />
-                              </div>
-                          }
+                    <Card
+    title={
+        <div className="relative service-title flex items-center">
+            {service.title}
+            <div className="sparkle-container ml-2">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L14 10L22 12L14 14L12 22L10 14L2 12L10 10L12 2Z" 
+                          className="sparkle-path"
+                    />
+                </svg>
+            </div>
+        </div>
+    }                   
                             description={service.description}
                             className="w-full md:w-[400px]"
                         />

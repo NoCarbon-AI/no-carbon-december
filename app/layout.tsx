@@ -69,6 +69,14 @@ export default function RootLayout({
         className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
           }`}
       >
+        <svg style={{ position: 'absolute', width: 0, height: 0 }}>
+          <defs>
+            <linearGradient id="sparkle-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{ stopColor: '#A855F7' }} />
+              <stop offset="100%" style={{ stopColor: '#38BDF8' }} />
+            </linearGradient>
+          </defs>
+        </svg>
         {children}
       </body>
     </html>
