@@ -10,7 +10,7 @@ import {
 import { gsap } from 'gsap';
 
 interface CardProps extends PropsWithChildren {
-    title?: string;
+    title?: string | React.ReactNode;
     description?: string;
     className?: string;
 }
