@@ -490,3 +490,29 @@ climate-clock-container {
   transform: translateY(-10px);
   transition: opacity 200ms, transform 200ms;
 }
+/* Add these styles for service area sparkles */
+.sparkle {
+  animation: sparkle 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes sparkle {
+  0% {
+      opacity: 0.4;
+      transform: scale(1);
+  }
+  50% {
+      opacity: 0.8;
+      transform: scale(1.2);
+  }
+  100% {
+      opacity: 0.4;
+      transform: scale(1);
+  }
+}
+
+.service-title {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}

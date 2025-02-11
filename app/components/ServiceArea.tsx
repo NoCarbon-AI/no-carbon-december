@@ -7,20 +7,20 @@ import Link from 'next/link';
 
 const services = [
   {
-    title: "☁️ CloudOps",
+    title: "☁️ Intelligent CloudOps",
     image: "/No-Carbon-Cloud-UK-Management.png",
     description: "Cloud operations and management services for optimal performance",
     slug: "cloudops"
 
   },
   {
-    title: "⚙️ DevOps",
+    title: "⚙️ Intelligent DevOps",
     image: "/No-Carbon-Devops.png",
     description: "Streamlined development and operations integration",
     slug: "devops"
   },
   {
-    title: "🤖 AIOps",
+    title: "🤖 Nextgen AIOps",
     image: "/No-Carbon-UK-AI-OPS.png",
     description: "AI-powered operational intelligence and automation",
     slug: "aiops"
@@ -70,6 +70,19 @@ export const ServiceArea = () => {
       });
     });
 
+     // Add sparkle animation for service titles with sparkles
+  const titles = container.querySelectorAll('.service-title');
+  titles.forEach((title) => {
+    gsap.to(title.querySelector('.sparkle'), {
+      opacity: 0.8,
+      scale: 1.2,
+      duration: 1.5,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+    });
+  });
+
   }, []);
 
   return (
@@ -87,7 +100,12 @@ export const ServiceArea = () => {
                     </div>
                     <Link href={`/projects/${service.slug}`} className="service-card w-full">
                         <Card
-                            title={service.title}
+                            title={
+                              <div className="relative service-title">
+                                  {service.title}
+                                  <div className="sparkle absolute -top-1 -right-4 w-6 h-6 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full blur-sm" />
+                              </div>
+                          }
                             description={service.description}
                             className="w-full md:w-[400px]"
                         />
