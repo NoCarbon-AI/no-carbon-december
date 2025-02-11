@@ -101,28 +101,28 @@ export const ServiceArea = () => {
                     <Link href={`/projects/${service.slug}`} className="service-card w-full">
                     <Card
   title={
-    <div className="relative service-title flex items-center">
-      {service.title}
-      <div className="sparkle-container absolute -top-4 -right-8">
+    <div className="relative service-title flex items-center group">
+      <span>{service.title}</span>
+      <div className="sparkle-group absolute -top-1 -right-6 flex">
         {/* Large sparkle */}
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="sparkle">
           <path
             d="M12 2L14 10L22 12L14 14L12 22L10 14L2 12L10 10L12 2Z"
-            className="sparkle-path"
+            className="sparkle-path sparkle-large"
           />
         </svg>
         {/* Medium sparkle */}
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute -right-2 top-1">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="sparkle translate-y-[-2px]">
           <path
             d="M12 2L14 10L22 12L14 14L12 22L10 14L2 12L10 10L12 2Z"
-            className="sparkle-path"
+            className="sparkle-path sparkle-medium"
           />
         </svg>
         {/* Small sparkle */}
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute -right-4 top-3">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="sparkle translate-y-[2px]">
           <path
             d="M12 2L14 10L22 12L14 14L12 22L10 14L2 12L10 10L12 2Z"
-            className="sparkle-path"
+            className="sparkle-path sparkle-small"
           />
         </svg>
       </div>
