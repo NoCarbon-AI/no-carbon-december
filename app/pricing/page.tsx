@@ -92,6 +92,7 @@ const PricingSection = () => {
 
   return (
     <div className="min-h-screen bg-zinc-950/95 overflow-hidden"> {/* Changed from pure black */}
+    <Navigation />
       <div ref={containerRef} className="max-w-7xl mx-auto px-4 py-20 relative">
         {/* Enhance floating particles visibility */}
         {[...Array(20)].map((_, i) => (
