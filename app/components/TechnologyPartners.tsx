@@ -49,7 +49,7 @@ export const TechnologyPartners = () => {
           {partners.map((partner) => (
             <div
               key={partner.name}
-              className="tech-partner-logo w-32 h-20 relative filter grayscale hover:grayscale-0 transition-all duration-300"
+              className="tech-partner-logo w-40 h-24 relative filter grayscale hover:grayscale-0 transition-all duration-300 bg-white rounded-lg p-2"
             >
               <Image
                 src={partner.logo}
