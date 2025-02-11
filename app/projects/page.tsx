@@ -13,6 +13,7 @@ import { ServiceArea } from "../components/ServiceArea";
 import Script from 'next/script';
 import { InfraPartners } from "../components/InfraPartners";
 import { Footer } from '../components/Footer';
+import { TechnologyPartners } from "../components/TechnologyPartners";
 
 
 const redis = Redis.fromEnv();
