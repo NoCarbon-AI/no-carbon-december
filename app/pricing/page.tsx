@@ -6,6 +6,7 @@ import Faq from '../components/Faq';
 import { pricingFaqs } from '../lib/constants/faqData';
 import Image from 'next/image';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Navigation } from "../components/nav";
 
 gsap.registerPlugin(ScrollTrigger);
 
