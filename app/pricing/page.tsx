@@ -110,8 +110,8 @@ const PricingSection = () => {
     <Image
       src="/Pricing-Image.png"
       alt="Pricing Illustration"
-      width={160}
-      height={90}
+      width={110}
+      height={40}
       className="w-full h-auto object-contain mb-12"
       priority
     />
