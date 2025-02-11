@@ -521,6 +521,8 @@ climate-clock-container {
   display: inline-flex;
   align-items: center;
   position: relative;
+  width: 40px;
+  height: 40px;
 }
 
 .sparkle-path {
@@ -529,17 +531,33 @@ climate-clock-container {
   animation: sparkleRotate 3s infinite linear;
 }
 
+/* Different animations for each sparkle size */
+.sparkle-container svg:nth-child(1) .sparkle-path {
+  animation-duration: 3s;
+  animation-delay: 0s;
+}
+
+.sparkle-container svg:nth-child(2) .sparkle-path {
+  animation-duration: 3.5s;
+  animation-delay: 0.2s;
+}
+
+.sparkle-container svg:nth-child(3) .sparkle-path {
+  animation-duration: 4s;
+  animation-delay: 0.4s;
+}
+
 @keyframes sparkleRotate {
   0% {
-      transform: scale(1);
+      transform: scale(1) rotate(0deg);
       opacity: 0.8;
   }
   50% {
-      transform: scale(1.2);
+      transform: scale(1.2) rotate(180deg);
       opacity: 1;
   }
   100% {
-      transform: scale(1);
+      transform: scale(1) rotate(360deg);
       opacity: 0.8;
   }
 }
