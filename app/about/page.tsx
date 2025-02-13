@@ -5,6 +5,8 @@ import { Footer } from "../components/Footer";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Script from 'next/script';
+import { Gradient } from "@/components/Gradient";
+
 
 
 // Dynamically import the Map component to handle client-side rendering
@@ -21,8 +23,17 @@ export default function AboutPage() {
       <div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
         <div className="max-w-2xl mx-auto lg:mx-0">
           <h1 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
-            Revolutionizing Cloud Operations with AI
-          </h1>
+          Revolutionizing Cloud Operations with{" "}
+          <span className="relative inline-block">
+            AI
+            <Gradient
+              width={100}
+              height={100}
+              className="absolute top-[-20px] left-[-10px] w-[120%] h-[120%] opacity-50"
+              conic
+              small
+            />
+          </span>
           <p className="mt-4 text-zinc-400">
             We're not just another cloud company. We're pioneering the future of sustainable cloud operations through innovative AI solutions and global expertise.
           </p>
