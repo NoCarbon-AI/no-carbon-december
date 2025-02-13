@@ -31,17 +31,17 @@ const WorldMap = () => {
   const polylinePositions = locations.map(loc => loc.coords);
 
   return (
-    <div className="h-[400px] w-full rounded-lg overflow-hidden">
+    <div className="h-[400px] w-[100%] rounded-lg overflow-hidden mx-auto max-w-[1200px]">
       <MapContainer
-        center={[30, 0]}
-        zoom={2}
-        minZoom={2} // Prevent zooming out too far
-        maxZoom={18} // Limit maximum zoom
-        maxBounds={[[-90, -180], [90, 180]]} // Restrict map bounds
-        maxBoundsViscosity={1.0} // Make bounds completely rigid
-        style={{ height: '100%', width: '100%' }}
-        className="z-0"
-      >
+  center={[30, 0]}
+  zoom={2}
+  minZoom={2}
+  maxZoom={18}
+  maxBounds={[[-90, -180], [90, 180]]}
+  maxBoundsViscosity={1.0}
+  style={{ height: '100%', width: '100%', margin: '0 auto' }}  // Added margin: '0 auto'
+  className="z-0"
+>
         {/* Dark theme map tiles */}
         <TileLayer
           url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
