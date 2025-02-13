@@ -28,7 +28,9 @@
     "rehype-pretty-code": "^0.10.1",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "3.0.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "leaflet": "^1.9.4",
+    "react-leaflet": "^4.2.1"
   },
   "devDependencies": {
     "@opentelemetry/api": "1.4.1",

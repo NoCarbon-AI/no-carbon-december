@@ -1,102 +1,85 @@
 // app/components/WorldMap.tsx
 "use client";
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
+import React from 'react';
+import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
 
+// Fix for default markers in Leaflet
+import icon from 'leaflet/dist/images/marker-icon.png';
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+
+// Actual geographical coordinates for each city
 const locations = [
-  { city: "Chicago", coords: { x: 30, y: 35 } },
-  { city: "Toronto", coords: { x: 35, y: 32 } },
-  { city: "London", coords: { x: 45, y: 30 } },
-  { city: "Bristol", coords: { x: 44, y: 31 } },
-  { city: "Chennai", coords: { x: 70, y: 50 } },
-  { city: "Mumbai", coords: { x: 68, y: 48 } }
+  { city: "Chicago", coords: [41.8781, -87.6298] },
+  { city: "Toronto", coords: [43.6532, -79.3832] },
+  { city: "London", coords: [51.5074, -0.1278] },
+  { city: "Bristol", coords: [51.4545, -2.5879] },
+  { city: "Mumbai", coords: [19.0760, 72.8777] },
+  { city: "Chennai", coords: [13.0827, 80.2707] }
 ];
 
 const WorldMap = () => {
-  const mapRef = useRef(null);
-
-  useEffect(() => {
-    const markers = document.querySelectorAll('.location-marker');
-    const lines = document.querySelectorAll('.connection-line');
-
-    gsap.set(markers, { scale: 0, opacity: 0 });
-    gsap.set(lines, { scaleX: 0, opacity: 0 });
-
-    gsap.timeline()
-      .to(markers, {
-        scale: 1,
-        opacity: 1,
-        duration: 0.5,
-        stagger: 0.1,
-        ease: "back.out(1.7)"
-      })
-      .to(lines, {
-        scaleX: 1,
-        opacity: 0.5,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power2.out"
-      }, "-=0.5");
-
-    // Pulsing animation for markers
-    markers.forEach(marker => {
-      gsap.to(marker, {
-        scale: 1.2,
-        duration: 0.8,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut"
-      });
+  // Fix for default markers
+  React.useEffect(() => {
+    const DefaultIcon = L.icon({
+      iconUrl: icon.src,
+      shadowUrl: iconShadow.src,
+      iconSize: [25, 41],
+      iconAnchor: [12, 41]
     });
+    L.Marker.prototype.options.icon = DefaultIcon;
   }, []);
 
+  // Create polyline coordinates
+  const polylinePositions = locations.map(loc => loc.coords);
+
+  // Custom marker style
+  const customMarkerIcon = new L.Icon({
+    iconUrl: '/marker-icon.png', // Add your custom marker icon
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+  });
+
   return (
-    <div ref={mapRef} className="relative w-full h-full bg-zinc-900/50 rounded-lg overflow-hidden">
-      <div className="absolute inset-0">
-        <svg width="100%" height="100%" viewBox="0 0 100 100">
-          {/* World map path - simplified version */}
-          <path
-            d="M10,50 Q30,45 50,50 T90,50"
-            fill="none"
-            stroke="rgba(255,255,255,0.1)"
-            strokeWidth="0.5"
-          />
-          
-          {/* Location markers and connections */}
-          {locations.map((location, index) => (
-            <React.Fragment key={location.city}>
-              <circle
-                className="location-marker"
-                cx={location.coords.x}
-                cy={location.coords.y}
-                r="1"
-                fill="#00ff88"
-              />
-              {index < locations.length - 1 && (
-                <line
-                  className="connection-line"
-                  x1={location.coords.x}
-                  y1={location.coords.y}
-                  x2={locations[index + 1].coords.x}
-                  y2={locations[index + 1].coords.y}
-                  stroke="#00ff88"
-                  strokeWidth="0.2"
-                  strokeDasharray="1"
-                />
-              )}
-              <text
-                x={location.coords.x}
-                y={location.coords.y - 2}
-                fill="white"
-                fontSize="2"
-                textAnchor="middle"
-              >
+    <div className="h-[400px] w-full rounded-lg overflow-hidden">
+      <MapContainer
+        center={[30, 0]} // Center of the map
+        zoom={2} // Initial zoom level
+        style={{ height: '100%', width: '100%' }}
+        className="z-0"
+      >
+        {/* Dark theme map tiles */}
+        <TileLayer
+          url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        />
+
+        {/* Markers for each location */}
+        {locations.map((location) => (
+          <Marker
+            key={location.city}
+            position={location.coords as [number, number]}
+            icon={customMarkerIcon}
+          >
+            <Popup>
+              <div className="text-black">
                 {location.city}
-              </text>
-            </React.Fragment>
-          ))}
-        </svg>
-      </div>
+              </div>
+            </Popup>
+          </Marker>
+        ))}
+
+        {/* Connection lines between locations */}
+        <Polyline
+          positions={polylinePositions as [number, number][]}
+          color="#00ff88"
+          weight={2}
+          opacity={0.5}
+          dashArray="5, 10"
+        />
+      </MapContainer>
     </div>
   );
 };
