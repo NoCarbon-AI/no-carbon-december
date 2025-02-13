@@ -556,3 +556,15 @@ climate-clock-container {
 .leaflet-popup-tip {
   background-color: rgba(255, 255, 255, 0.9);
 }
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .h-[400px] {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .h-[400px] {
+    height: 250px;
+  }
+}
