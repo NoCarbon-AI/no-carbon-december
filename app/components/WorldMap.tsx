@@ -55,8 +55,12 @@ const WorldMap = () => {
   return (
     <div className="h-[400px] w-full rounded-lg overflow-hidden">
       <MapContainer
-        center={[30, 0]} // Center of the map
-        zoom={2} // Initial zoom level
+        center={[30, 0]}
+        zoom={2}
+        minZoom={2} // Prevent zooming out too far
+        maxZoom={18} // Limit maximum zoom
+        maxBounds={[[-90, -180], [90, 180]]} // Restrict map bounds
+        maxBoundsViscosity={1.0} // Make bounds completely rigid
         style={{ height: '100%', width: '100%' }}
         className="z-0"
       >
@@ -64,6 +68,8 @@ const WorldMap = () => {
         <TileLayer
           url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          noWrap={true} // Prevent tile repetition
+          bounds={[[-90, -180], [90, 180]]} // Restrict tile loading to these bounds
         />
 
         {/* Markers for each location */}
