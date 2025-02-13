@@ -15,7 +15,7 @@ const OfficeMap = () => {
       <div className="map-container relative w-full h-0 pb-[75%] md:pb-[56.25%] rounded-lg overflow-hidden">
         <iframe
           className="absolute top-0 left-0 w-full h-full border-0"
-          src="https://maps.google.com/maps?width=100%&height=100%&hl=en&q=5%20KEW%20ROAD%20LONDON+(NoCarbon%20UK)&t=&z=16&ie=UTF8&iwloc=B&output=embed"
+          src="https://maps.google.com/maps?width=408&amp;height=234&amp;hl=en&amp;q=5%20KEW%20ROAD%20LONDON+(NoCarbon%20UK)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           title="NoCarbon London Office Location"
@@ -26,3 +26,6 @@ const OfficeMap = () => {
 };
 
 export default OfficeMap;
+
+
+
