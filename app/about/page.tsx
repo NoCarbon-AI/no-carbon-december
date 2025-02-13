@@ -5,7 +5,8 @@ import { Footer } from "../components/Footer";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Script from 'next/script';
-import { Gradient } from "@/components/Gradient";
+import { AIGradientText } from "@/components/AIGradientText";
+
 
 
 
@@ -26,7 +27,7 @@ export default function AboutPage() {
           Revolutionizing Cloud Operations with{" "}
           <span className="relative inline-block">
             AI
-            <Gradient
+            <AIGradientText
               width={100}
               height={100}
               className="absolute top-[-20px] left-[-10px] w-[120%] h-[120%] opacity-50"
