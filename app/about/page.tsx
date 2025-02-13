@@ -5,6 +5,8 @@ import { Footer } from "../components/Footer";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Script from 'next/script';
+import OfficeMap from './components/OfficeMap';
+
 
 // Dynamically import the Map component to handle client-side rendering
 const WorldMap = dynamic(() => import("../components/WorldMap"), {
@@ -85,18 +87,21 @@ export default function AboutPage() {
         </div>
       </div>
 
+      {/* Office Map Section */}
+      <OfficeMap />
+
       {/* Climate Clock Footer */}
       <footer className="w-full py-4 md:py-8 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="climate-clock-container">
-            <Script 
-              src="https://climateclock.world/widget-v2.js" 
-              strategy="afterInteractive"
-            />
-            <climate-clock />
-          </div>
-        </div>
-      </footer>
+  <div className="max-w-7xl mx-auto px-4">
+    <div className="climate-clock-container">
+      <Script 
+        src="https://climateclock.world/widget-v2.js" 
+        strategy="afterInteractive"
+      />
+      <climate-clock />
+    </div>
+  </div>
+</footer>
 
       {/* Footer Image */}
       <div className="absolute bottom-0 left-0 right-0 w-full">
