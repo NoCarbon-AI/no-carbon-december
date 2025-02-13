@@ -34,6 +34,7 @@ export default function AboutPage() {
               small
             />
           </span>
+        </h1>
           <p className="mt-4 text-zinc-400">
             We're not just another cloud company. We're pioneering the future of sustainable cloud operations through innovative AI solutions and global expertise.
           </p>
