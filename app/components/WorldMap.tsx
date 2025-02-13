@@ -4,53 +4,31 @@ import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import markerIcon from 'leaflet/dist/images/marker-icon.png';
-import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
-import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 
-// Fix the default icon issue
-L.Icon.Default.mergeOptions({
-    iconUrl: markerIcon.src,
-    iconRetinaUrl: markerIcon2x.src,
-    shadowUrl: markerShadow.src,
-});
-
-// Fix for default markers in Leaflet
-import icon from 'leaflet/dist/images/marker-icon.png';
-import iconShadow from 'leaflet/dist/images/marker-shadow.png';
-
-// Actual geographical coordinates for each city
+// Locations data
 const locations = [
-  { city: "Chicago", coords: [41.8781, -87.6298] },
-  { city: "Toronto", coords: [43.6532, -79.3832] },
-  { city: "London", coords: [51.5074, -0.1278] },
-  { city: "Bristol", coords: [51.4545, -2.5879] },
-  { city: "Mumbai", coords: [19.0760, 72.8777] },
-  { city: "Chennai", coords: [13.0827, 80.2707] }
-];
+    { city: "Chicago", coords: [41.8781, -87.6298] },
+    { city: "Toronto", coords: [43.6532, -79.3832] },
+    { city: "London", coords: [51.5074, -0.1278] },
+    { city: "Bristol", coords: [51.4545, -2.5879] },
+    { city: "Mumbai", coords: [19.0760, 72.8777] },
+    { city: "Chennai", coords: [13.0827, 80.2707] }
+  ];
 
 const WorldMap = () => {
-  // Fix for default markers
-  React.useEffect(() => {
-    const DefaultIcon = L.icon({
-      iconUrl: icon.src,
-      shadowUrl: iconShadow.src,
-      iconSize: [25, 41],
-      iconAnchor: [12, 41]
-    });
-    L.Marker.prototype.options.icon = DefaultIcon;
-  }, []);
+  // Simple SVG marker icon
+  const customIcon = L.divIcon({
+    html: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="8" fill="#00ff88" fillOpacity="0.4" />
+      <circle cx="12" cy="12" r="4" fill="#00ff88" />
+    </svg>`,
+    className: "",
+    iconSize: [24, 24],
+    iconAnchor: [12, 12],
+  });
 
   // Create polyline coordinates
   const polylinePositions = locations.map(loc => loc.coords);
-
-  // Custom marker style
-  const customMarkerIcon = new L.Icon({
-    iconUrl: '/marker-icon.png', // Add your custom marker icon
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-  });
 
   return (
     <div className="h-[400px] w-full rounded-lg overflow-hidden">
@@ -70,14 +48,13 @@ const WorldMap = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           noWrap={true} // Prevent tile repetition
           bounds={[[-90, -180], [90, 180]]} // Restrict tile loading to these bounds
-        />
+        />  
 
-        {/* Markers for each location */}
-        {locations.map((location) => (
+{locations.map((location) => (
           <Marker
             key={location.city}
             position={location.coords as [number, number]}
-            icon={customMarkerIcon}
+            icon={customIcon}
           >
             <Popup>
               <div className="text-black">
@@ -86,7 +63,7 @@ const WorldMap = () => {
             </Popup>
           </Marker>
         ))}
-
+        
         {/* Connection lines between locations */}
         <Polyline
           positions={polylinePositions as [number, number][]}
