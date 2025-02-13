@@ -5,8 +5,7 @@ import { Footer } from "../components/Footer";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Script from 'next/script';
-import AIGradientText from './components/AIGradientText';
-
+import AIGradientText from '../components/AIGradientText';
 
 
 // Dynamically import the Map component to handle client-side rendering
