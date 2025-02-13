@@ -12,14 +12,14 @@ export const metadata: Metadata = {
   },
   description: "Co-founder of unkey.dev and founder of planetfall.io",
   openGraph: {
-    title: "chronark.com",
+    title: "NoCarbon AI",
     description:
       "Co-founder of unkey.dev and founder of planetfall.io",
-    url: "https://chronark.com",
-    siteName: "chronark.com",
+    url: "https://nocarbon.uk",
+    siteName: "nocarbon.uk",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "https://nocarbon.uk/NoCarbon-Uk-green.svg",
         width: 1920,
         height: 1080,
       },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Chronark",
+    title: "NoCarbon AI",
     card: "summary_large_image",
   },
   icons: {
