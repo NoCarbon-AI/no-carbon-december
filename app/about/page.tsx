@@ -5,7 +5,7 @@ import { Footer } from "../components/Footer";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Script from 'next/script';
-import OfficeMap from './components/OfficeMap';
+import OfficeMap from '../components/OfficeMap' 
 
 
 // Dynamically import the Map component to handle client-side rendering
