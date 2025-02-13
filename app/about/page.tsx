@@ -65,9 +65,9 @@ export default function AboutPage() {
           </p>
           
           {/* World Map Component */}
-          <div className="mt-8 h-[400px] relative">
-            <WorldMap />
-          </div>
+          <div className="max-w-[1000px] mx-auto px-4"> // Adjust max-width as needed
+  <WorldMap />
+</div>
         </div>
 
         {/* Why Choose Us Section */}
