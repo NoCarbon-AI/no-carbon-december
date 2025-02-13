@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
-import { Navigation } from '../components/Navigation';
+import { Navigation } from '../components/nav';
 import { Footer } from '../components/Footer';
 import AIGradientText from '../components/AIGradientText';
 
