@@ -1,160 +1,131 @@
 // app/about/page.tsx
-"use client";
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Image from 'next/image';
-import { Navigation } from '../components/nav';
-import { Footer } from '../components/Footer';
-import AIGradientText from '../components/AIGradientText';
+import React from "react";
+import { Navigation } from "../components/nav";
+import { Footer } from "../components/Footer";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import Script from 'next/script';
 
-gsap.registerPlugin(ScrollTrigger);
-
-const teamLocations = [
-  { city: 'Chicago', coords: { lat: 41.8781, lng: -87.6298 } },
-  { city: 'Toronto', coords: { lat: 43.6532, lng: -79.3832 } },
-  { city: 'London', coords: { lat: 51.5074, lng: -0.1278 } },
-  { city: 'Bristol', coords: { lat: 51.4545, lng: -2.5879 } },
-  { city: 'Chennai', coords: { lat: 13.0827, lng: 80.2707 } },
-  { city: 'Mumbai', coords: { lat: 19.0760, lng: 72.8777 } },
-];
+// Dynamically import the Map component to handle client-side rendering
+const WorldMap = dynamic(() => import("../components/WorldMap"), {
+  ssr: false,
+});
 
 export default function AboutPage() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const mapRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Hero section animation
-      gsap.from('.hero-content', {
-        opacity: 0,
-        y: 50,
-        duration: 1,
-        ease: 'power3.out',
-      });
-
-      // Team locations animation
-      teamLocations.forEach((location, index) => {
-        gsap.from(`.location-marker-${index}`, {
-          scale: 0,
-          opacity: 0,
-          duration: 0.5,
-          delay: 0.2 * index,
-          ease: 'back.out',
-          scrollTrigger: {
-            trigger: '.world-map-section',
-            start: 'top center',
-          },
-        });
-      });
-
-      // Stats counter animation
-      const stats = document.querySelectorAll('.stat-number');
-      stats.forEach((stat) => {
-        const target = parseInt(stat.getAttribute('data-target') || '0');
-        gsap.to(stat, {
-          innerHTML: target,
-          duration: 2,
-          snap: { innerHTML: 1 },
-          scrollTrigger: {
-            trigger: stat,
-            start: 'top 80%',
-          },
-        });
-      });
-    }
-  }, []);
-
   return (
-    <div ref={containerRef} className="min-h-screen bg-zinc-900">
+    <div className="relative pb-16">
       <Navigation />
-
+      
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center text-center px-4">
-        <div className="hero-content max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Empowering Sustainable Tech with <AIGradientText />
+      <div className="px-6 pt-20 mx-auto space-y-8 max-w-7xl lg:px-8 md:space-y-16 md:pt-24 lg:pt-32">
+        <div className="max-w-2xl mx-auto lg:mx-0">
+          <h1 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
+            Revolutionizing Cloud Operations with AI
           </h1>
-          <p className="text-zinc-400 text-lg md:text-xl mb-8">
-            We're revolutionizing cloud operations with AI-driven solutions while keeping our planet green.
+          <p className="mt-4 text-zinc-400">
+            We're not just another cloud company. We're pioneering the future of sustainable cloud operations through innovative AI solutions and global expertise.
           </p>
         </div>
-      </section>
 
-      {/* Stats Section */}
-      <section className="py-20 bg-zinc-800/50">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="stat-number text-4xl font-bold text-green-400" data-target="85">0</div>
-              <p className="text-zinc-400 mt-2">Carbon Reduction %</p>
+        {/* AI Innovation Section */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-semibold text-zinc-100">Our AI Advantage</h2>
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-6 bg-zinc-800/50 rounded-lg">
+              <h3 className="text-xl font-medium text-zinc-200">Predictive Analytics</h3>
+              <p className="mt-2 text-zinc-400">
+                Our AI systems predict and prevent cloud infrastructure issues before they impact your business.
+              </p>
             </div>
-            <div className="text-center">
-              <div className="stat-number text-4xl font-bold text-green-400" data-target="24">0</div>
-              <p className="text-zinc-400 mt-2">Global Team Members</p>
+            <div className="p-6 bg-zinc-800/50 rounded-lg">
+              <h3 className="text-xl font-medium text-zinc-200">Cost Optimization</h3>
+              <p className="mt-2 text-zinc-400">
+                Smart algorithms continuously analyze and optimize your cloud spending.
+              </p>
             </div>
-            <div className="text-center">
-              <div className="stat-number text-4xl font-bold text-green-400" data-target="150">0</div>
-              <p className="text-zinc-400 mt-2">Projects Delivered</p>
+            <div className="p-6 bg-zinc-800/50 rounded-lg">
+              <h3 className="text-xl font-medium text-zinc-200">Automated Operations</h3>
+              <p className="mt-2 text-zinc-400">
+                AI-powered automation handles routine tasks, reducing human error and operational costs.
+              </p>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* World Map Section */}
-      <section className="world-map-section py-20 px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Our Global Presence</h2>
-        <div className="relative max-w-4xl mx-auto">
-          <Image
-            src="/world-map.png"
-            alt="World Map"
-            width={1200}
-            height={600}
-            className="opacity-20"
-          />
-          {teamLocations.map((location, index) => (
-            <div
-              key={location.city}
-              className={`location-marker-${index} absolute w-3 h-3 bg-green-400 rounded-full`}
-              style={{
-                left: `${((location.coords.lng + 180) / 360) * 100}%`,
-                top: `${((90 - location.coords.lat) / 180) * 100}%`,
-              }}
-            >
-              <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap text-sm text-zinc-400">
-                {location.city}
-              </div>
-            </div>
-          ))}
+        {/* Global Team Section */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-semibold text-zinc-100">Global Expertise, Local Impact</h2>
+          <p className="mt-4 text-zinc-400">
+            Our distributed team brings together the best talent from across the globe, operating in key tech hubs to deliver exceptional service 24/7.
+          </p>
+          
+          {/* World Map Component */}
+          <div className="mt-8 h-[400px] relative">
+            <WorldMap />
+          </div>
         </div>
-      </section>
 
-      {/* London Office Section */}
-      <section className="py-20 px-4 bg-zinc-800/30">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Our London Hub</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-green-400">NoCarbon UK</h3>
-              <p className="text-zinc-400">330, 5 Kew Road, Richmond</p>
-              <p className="text-zinc-400">London, TW92PR</p>
+        {/* Why Choose Us Section */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-semibold text-zinc-100">Why Choose NoCarbon</h2>
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-6 bg-zinc-800/50 rounded-lg">
+              <h3 className="text-xl font-medium text-zinc-200">Sustainable Solutions</h3>
+              <p className="mt-2 text-zinc-400">
+                We're committed to reducing carbon footprints while maximizing cloud efficiency.
+              </p>
             </div>
-            <div className="w-full h-[400px] rounded-lg overflow-hidden">
-              <iframe
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                scrolling="no"
-                marginHeight={0}
-                marginWidth={0}
-                id="gmap_canvas"
-                src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=5%20Kew%20Road%20London+(NoCarbon%20UK)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-              />
+            <div className="p-6 bg-zinc-800/50 rounded-lg">
+              <h3 className="text-xl font-medium text-zinc-200">Cost-Effective Excellence</h3>
+              <p className="mt-2 text-zinc-400">
+                Our global team structure allows us to provide enterprise-grade solutions at competitive prices.
+              </p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
+      {/* Climate Clock Footer */}
+      <footer className="w-full py-4 md:py-8 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="climate-clock-container">
+            <Script 
+              src="https://climateclock.world/widget-v2.js" 
+              strategy="afterInteractive"
+            />
+            <climate-clock />
+          </div>
+        </div>
+      </footer>
+
+      {/* Footer Image */}
+      <div className="absolute bottom-0 left-0 right-0 w-full">
+        <Image
+          src="/Footer-image.png"
+          alt="Footer"
+          width={1920}
+          height={100}
+          className="w-full h-[100px]"
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            right: 0,
+            objectFit: 'contain',
+            objectPosition: 'bottom center'
+          }}
+          priority
+        />
+      </div>
+
+      {/* Copyright notice */}
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-0.5 md:mb-1">
+        <div className="text-[8px] md:text-[10px] text-zinc-500 hover:text-zinc-400 transition-colors duration-300 opacity-70">
+          © NoCarbon Ltd, 2025
+        </div>
+      </div>
+
+      {/* Footer */}
       <Footer />
     </div>
   );
