@@ -8,6 +8,8 @@ import { Redis } from "@upstash/redis";
 import ProtectedRoute from "@/app/components/ProtectedRoute";
 import { cloudOpsFaqs, devOpsFaqs, aiOpsFaqs } from '@/app/lib/constants/faqData';
 import Faq from '@/app/components/Faq';
+import { AITools } from '@/components/AITools';
+
 
 export const revalidate = 60;
 
@@ -46,6 +48,8 @@ export default async function PostPage({ params }: Props) {
         <article className="px-4 py-12 mx-auto prose prose-zinc prose-quoteless">
           <Mdx code={project.body.code} />
         </article>
+        {/* Add AITools section before FAQ */}
+        {project.slug === 'cloudops' && <AITools />}
         {/* FAQ sections - now at the bottom */}
       {project.slug === 'cloudops' && <Faq faqs={cloudOpsFaqs} />}
       {project.slug === 'devops' && <Faq faqs={devOpsFaqs} />}
