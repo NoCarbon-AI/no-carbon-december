@@ -47,8 +47,7 @@ export const AITools = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
       <h2 className="text-black text-2xl font-semibold flex items-center gap-1">
       <AIGradientText />
-       <span>-Powered Tools we use</span>
-        </h2>
+       <span>-Powered Tools we use</span></h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
           {tools.map((tool) => (
             <Link
