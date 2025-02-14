@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import AIGradientText from './AIGradientText';
 
 export const AITools = () => {
   const containerRef = useRef<HTMLDivElement>(null);
