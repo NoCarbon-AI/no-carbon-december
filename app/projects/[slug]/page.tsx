@@ -9,6 +9,8 @@ import ProtectedRoute from "@/app/components/ProtectedRoute";
 import { cloudOpsFaqs, devOpsFaqs, aiOpsFaqs } from '@/app/lib/constants/faqData';
 import Faq from '@/app/components/Faq';
 import { AITools } from '@/app/components/AITools';
+import AIToolsDevOps from '../components/AIToolsDevOps';
+import AIToolsAIOps from '../components/AIToolsAIOps';
 
 
 export const revalidate = 60;
@@ -50,6 +52,8 @@ export default async function PostPage({ params }: Props) {
         </article>
         {/* Add AITools section before FAQ */}
         {project.slug === 'cloudops' && <AITools />}
+        {project.slug === 'devops' && <AIToolsDevOps />}
+        {project.slug === 'aiops' && <AIToolsAIOps />}
         {/* FAQ sections - now at the bottom */}
       {project.slug === 'cloudops' && <Faq faqs={cloudOpsFaqs} />}
       {project.slug === 'devops' && <Faq faqs={devOpsFaqs} />}
