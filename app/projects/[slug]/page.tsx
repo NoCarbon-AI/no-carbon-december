@@ -8,7 +8,7 @@ import { Redis } from "@upstash/redis";
 import ProtectedRoute from "@/app/components/ProtectedRoute";
 import { cloudOpsFaqs, devOpsFaqs, aiOpsFaqs } from '@/app/lib/constants/faqData';
 import Faq from '@/app/components/Faq';
-import { AITools } from '@/components/AITools';
+import { AITools } from '@/app/components/AITools';
 
 
 export const revalidate = 60;
