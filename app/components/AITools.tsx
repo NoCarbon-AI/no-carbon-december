@@ -45,9 +45,10 @@ export const AITools = () => {
   return (
     <div ref={containerRef} className="py-16 bg-gradient-to-t from-zinc-900/0 via-zinc-900/50 to-zinc-900/0">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <h2 className="text-center text-2xl font-bold text-zinc-200 mb-12">
-          AI-Powered Tools & Solutions
-        </h2>
+      h2 className="text-black text-2xl font-semibold flex items-center gap-1">
+  <AIGradientText />
+  <span>-Powered Tools we use</span>
+</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
           {tools.map((tool) => (
             <Link
