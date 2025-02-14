@@ -9,8 +9,8 @@ import ProtectedRoute from "@/app/components/ProtectedRoute";
 import { cloudOpsFaqs, devOpsFaqs, aiOpsFaqs } from '@/app/lib/constants/faqData';
 import Faq from '@/app/components/Faq';
 import { AITools } from '@/app/components/AITools';
-import AIToolsDevOps from '@/components/AIToolsDevOps';
-import AIToolsAIOps from '@/components/AIToolsAIOps';
+import AIToolsDevOps from '@app/components/AIToolsDevOps';
+import AIToolsAIOps from '@app/components/AIToolsAIOps';
 
 
 export const revalidate = 60;
