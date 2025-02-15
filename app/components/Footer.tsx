@@ -111,22 +111,22 @@ export const Footer = () => {
     © {currentYear} NoCarbon. All rights reserved.
   </p>
 </div>
-      {/* Footer Image - Added as part of the footer */}
+      {/* Footer Image - Modified positioning */}
       <div className="relative w-full h-[100px]">
-        <Image
-          src="/Footer-image.png"
-          alt="Footer"
-          width={1920}
-          height={100}
-          className="w-full h-[100px]"
-          style={{
-            objectFit: 'contain',
-            objectPosition: 'bottom center'
-          }}
-          priority
-        />
+          <Image
+            src="/Footer-image.png"
+            alt="Footer"
+            width={1920}
+            height={100}
+            className="w-full h-[100px] absolute bottom-0"
+            style={{
+              objectFit: 'contain',
+              objectPosition: 'bottom center'
+            }}
+            priority
+          />
+        </div>
       </div>
-    </div>
     </footer>
   );
 };
