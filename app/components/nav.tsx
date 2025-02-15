@@ -1,8 +1,8 @@
 "use client";
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { ArrowLeft, ChevronDown } from "lucide-react";
 
 const serviceItems = [
   {
@@ -108,22 +108,17 @@ export const Navigation: React.FC = () => {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <Link href="/projects">
-    <button
-      className="flex items-center gap-2 text-sm font-medium hover:text-zinc-200 transition-colors"
-      onClick={(e) => {
-        // If they click specifically on the arrow or want the submenu, prevent navigation
-        if (e.target !== e.currentTarget) {
-          e.preventDefault();
-        }
-        setShowSubmenu(!showSubmenu);
-      }}
-    >
-      Services
-      <ChevronDown className="h-4 w-4" />
-    </button>
-  </Link>
-
+              <Link
+    href="/projects"  // Add this Link wrapper
+    className="duration-200 text-zinc-400 hover:text-zinc-100"
+  >
+              <button
+                className="duration-200 text-zinc-400 hover:text-zinc-100"
+              >
+                Services
+              </button>
+              </Link>
+              
               {showSubmenu && (
                 <div 
                   ref={submenuRef}
