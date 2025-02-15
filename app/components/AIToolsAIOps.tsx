@@ -7,27 +7,27 @@ const AIToolsAIOps = () => {
   const tools = [
     {
       name: 'Moogsoft',
-      logo: '/moogsoft.png',
+      logo: '/Moogsoft-logo.png',
       url: 'https://moogsoft.com'
     },
     {
       name: 'OpsRamp',
-      logo: '/opsramp.png',
+      logo: '/OpsRamp-logo.jpeg',
       url: 'https://www.opsramp.com'
     },
     {
       name: 'Greptile',
-      logo: '/greptile.png',
+      logo: '/greptile-logo.png',
       url: 'https://Greptile.com'
     },
     {
       name: 'BigPanda',
       logo: '/bigpanda.png',
-      url: 'https://www.bigpanda.io'
+      url: 'https://BigPanda-logo.jpeg'
     },
     {
       name: 'ScienceLogic',
-      logo: '/sciencelogic.png',
+      logo: '/ScienceLogic-logo.jpeg',
       url: 'https://sciencelogic.com'
     }
   ];
