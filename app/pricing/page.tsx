@@ -7,6 +7,7 @@ import { pricingFaqs } from '../lib/constants/faqData';
 import Image from 'next/image';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Navigation } from "../components/nav";
+import { Footer } from '../components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -218,6 +219,28 @@ const PricingSection = () => {
           </div>
         </div>
       </div>
+      <div className="absolute bottom-0 left-0 right-0 w-full">
+        <Image
+          src="/Footer-image.png"
+          alt="Footer"
+          width={1920}
+          height={100}
+          className="w-full h-[100px]"
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            right: 0,
+            objectFit: 'contain',
+            objectPosition: 'bottom center'
+          }}
+          priority
+        />
+      </div>
+      <Footer />
+    </div>
+  );
+};
     </div>
   );
 };
