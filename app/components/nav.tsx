@@ -108,15 +108,21 @@ export const Navigation: React.FC = () => {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <Link
-    href="/projects"  // Add this Link wrapper
-    className="duration-200 text-zinc-400 hover:text-zinc-100"
-  ></Link>
-              <button
-                className="duration-200 text-zinc-400 hover:text-zinc-100"
-              >
-                Services
-              </button>
+              <Link href="/projects">
+    <button
+      className="flex items-center gap-2 text-sm font-medium hover:text-zinc-200 transition-colors"
+      onClick={(e) => {
+        // If they click specifically on the arrow or want the submenu, prevent navigation
+        if (e.target !== e.currentTarget) {
+          e.preventDefault();
+        }
+        setShowSubmenu(!showSubmenu);
+      }}
+    >
+      Services
+      <ChevronDown className="h-4 w-4" />
+    </button>
+  </Link>
 
               {showSubmenu && (
                 <div 
