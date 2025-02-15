@@ -112,9 +112,13 @@ export default async function ProjectsPage() {
 </footer>
 
       </div>
-{/* Footer */}
-<div className="w-full absolute bottom-0">
-  <Footer />
-</div>
+      
+      {/* Footer */}
+      <div className="w-full absolute bottom-0">
+        <Footer />
+      </div>
+    </div>
+  );
+}
   );
 }
