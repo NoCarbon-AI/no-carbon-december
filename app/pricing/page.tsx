@@ -241,9 +241,6 @@ const PricingSection = () => {
     </div>
   );
 };
-    </div>
-  );
-};
 
 // Only export PricingPage as default
 const PricingPage = () => {
