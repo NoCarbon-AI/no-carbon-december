@@ -28,7 +28,7 @@ const AIToolsAIOps = () => {
     },
     {
       name: 'BigPanda',
-      logo: '/bigpanda.png',
+      logo: '/BigPanda-logo.jpeg',
       url: 'https://BigPanda-logo.jpeg'
     },
     {
@@ -68,7 +68,7 @@ const AIToolsAIOps = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <h2 className="text-black text-2xl font-bold flex items-center justify-center gap-1 text-center w-full mb-8">
           <AIGradientText />
-          <span>-Powered AIOps Tools</span>
+          <span>-Powered AIOps Tools we use</span>
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center justify-items-center">
           {tools.map((tool) => (
