@@ -11,6 +11,7 @@ import Faq from '@/app/components/Faq';
 import { AITools } from '@/app/components/AITools';
 import AIToolsDevOps from '../../components/AIToolsDevOps';
 import AIToolsAIOps from '../../components/AIToolsAIOps';
+import { Footer } from '../components/Footer';
 
 
 export const revalidate = 60;
