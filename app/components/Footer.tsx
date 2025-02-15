@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { MdEmail, MdPhone } from 'react-icons/md';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -83,32 +83,25 @@ export const Footer = () => {
             <h3 className="text-sm font-semibold text-zinc-200 tracking-wider uppercase mb-4">
               Connect
             </h3>
-            <div className="flex space-x-6">
-              <a
-                href="https://github.com/Samarjayee"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-zinc-400 hover:text-zinc-200 transition-colors duration-200"
-              >
-                <FaGithub className="h-6 w-6" />
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-zinc-400 hover:text-zinc-200 transition-colors duration-200"
-              >
-                <FaLinkedin className="h-6 w-6" />
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-zinc-400 hover:text-zinc-200 transition-colors duration-200"
-              >
-                <FaTwitter className="h-6 w-6" />
-              </a>
-            </div>
+            <div className="flex space-x-4">
+      {/* Email Icon */}
+      <a 
+        href="mailto:hello@nocarbon.uk"
+        className="text-zinc-400 hover:text-zinc-100 transition duration-200"
+        aria-label="Email"
+      >
+        <MdEmail className="h-6 w-6" />
+      </a>
+      
+      {/* Phone Icon (placeholder for now) */}
+      <a 
+        href="#" // This will be updated later with the actual phone number
+        className="text-zinc-400 hover:text-zinc-100 transition duration-200"
+        aria-label="Phone"
+      >
+        <MdPhone className="h-6 w-6" />
+      </a>
+    </div>
           </div>
         </div>
 
