@@ -11,7 +11,7 @@ import Faq from '@/app/components/Faq';
 import { AITools } from '@/app/components/AITools';
 import AIToolsDevOps from '../../components/AIToolsDevOps';
 import AIToolsAIOps from '../../components/AIToolsAIOps';
-import { Footer } from '../components/Footer';
+import
 
 
 export const revalidate = 60;
@@ -60,8 +60,8 @@ export default async function PostPage({ params }: Props) {
       {project.slug === 'devops' && <Faq faqs={devOpsFaqs} />}
       {project.slug === 'aiops' && <Faq faqs={aiOpsFaqs} />}
       </div>
-    </ProtectedRoute>
     {/* Add Footer component */}
     <Footer />
+    </ProtectedRoute>
   );
 }
