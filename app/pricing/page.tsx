@@ -113,8 +113,8 @@ const PricingSection = () => {
     <Image
       src="/Pricing-Image.svg"
       alt="Pricing Illustration"
-      width={80}
-      height={10}
+      width={120}
+      height={50}
       className="w-full h-auto object-contain mb-12"
       priority
     />
