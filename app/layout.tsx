@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NoCarbon AI",
     description:
-      "Co-founder of unkey.dev and founder of planetfall.io",
+      "Driving a sustainable future with AI-powered innovations for a low-carbon world.",
     url: "https://nocarbon.uk",
     siteName: "nocarbon.uk",
     images: [
