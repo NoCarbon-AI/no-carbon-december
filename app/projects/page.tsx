@@ -72,7 +72,7 @@ export default async function ProjectsPage() {
 {/* Header Image */}
           <div className="w-full relative h-[260px] rounded-lg overflow-hidden">
             <Image
-              src="/Page-Header.png"
+              src="/Page-Header-3.png"
               alt="Tower Bridge London Clay Model"
               fill
               className="object-cover"
