@@ -65,6 +65,18 @@ export const TechnologyPartners = () => {
             </div>
           ))}
         </div>
+        <Image
+          src="/Footer-image.svg"
+          alt="Footer"
+          width={1920}
+          height={100}
+          className="w-full h-[100px]"
+          style={{
+            objectFit: 'contain',
+            objectPosition: 'bottom center'
+          }}
+          priority
+        />
       </div>
     </div>
   );

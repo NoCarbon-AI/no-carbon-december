@@ -8,20 +8,19 @@ import Link from 'next/link';
 const services = [
   {
     title: "☁️ Intelligent CloudOps",
-    image: "/No-Carbon-Cloud-UK-Management.png",
+    image: "/No-Carbon-Cloud-UK-Management.svg",
     description: "Cloud operations and management services for optimal performance",
     slug: "cloudops"
-
   },
   {
     title: "⚙️ Intelligent DevOps",
-    image: "/No-Carbon-Devops.png",
+    image: "/No-Carbon-Devops.svg",
     description: "Streamlined development and operations integration",
     slug: "devops"
   },
   {
     title: "🤖 Nextgen AIOps",
-    image: "/No-Carbon-UK-AI-OPS.png",
+    image: "/No-Carbon-UK-AI-OPS.svg",
     description: "AI-powered operational intelligence and automation",
     slug: "aiops"
   }

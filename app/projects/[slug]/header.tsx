@@ -241,7 +241,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 					<div className="absolute -bottom-[225px] left-0 lg:left-4 z-20 hidden md:block">
 						{project.slug === 'cloudops' && (
 							<Image
-								src="/invite-nocarbon-uk.png"
+								src="/invite-nocarbon-uk.svg"
 								alt="CloudOps"
 								width={300}
 								height={225}
