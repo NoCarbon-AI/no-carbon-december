@@ -235,7 +235,6 @@ const PricingSection = () => {
         </div>
         <Footer />
       </div>
-    </>
   );
 };
 
