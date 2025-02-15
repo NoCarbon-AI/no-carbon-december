@@ -111,12 +111,7 @@ export const Navigation: React.FC = () => {
               <Link
     href="/projects"  // Add this Link wrapper
     className="duration-200 text-zinc-400 hover:text-zinc-100"
-  ></Link>
-              <button
-                className="duration-200 text-zinc-400 hover:text-zinc-100"
-              >
-                Services
-              </button>
+></Link>
 
               {showSubmenu && (
                 <div 
