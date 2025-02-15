@@ -173,7 +173,7 @@ useEffect(() => {
       {/* Logo */}
       <div className="absolute top-4 left-4 z-50">
         <Image
-          src="/NoCarbon-Logo.png"
+          src="/NoCarbon-Logo.svg"
           alt="NoCarbon Logo"
           width={120}
           height={120}
