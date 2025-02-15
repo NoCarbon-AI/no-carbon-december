@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     default: "NoCarbon",
     template: "%s | NoCarbon",
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
+  description: "Driving a sustainable future with AI-powered innovations for a low-carbon world.",
   openGraph: {
     title: "NoCarbon AI",
     description:
