@@ -129,27 +129,6 @@ export default function AboutPage() {
     </div>
   </div>
 </footer>
-
-      {/* Footer Image */}
-      <div className="absolute bottom-0 left-0 right-0 w-full">
-        <Image
-          src="/Footer-image.png"
-          alt="Footer"
-          width={1920}
-          height={100}
-          className="w-full h-[100px]"
-          style={{
-            position: 'absolute',
-            bottom: 0,
-            left: 0,
-            right: 0,
-            objectFit: 'contain',
-            objectPosition: 'bottom center'
-          }}
-          priority
-        />
-      </div>
-
       {/* Copyright notice */}
       <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-0.5 md:mb-1">
         <div className="text-[8px] md:text-[10px] text-zinc-500 hover:text-zinc-400 transition-colors duration-300 opacity-70">
