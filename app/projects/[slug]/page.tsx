@@ -60,5 +60,7 @@ export default async function PostPage({ params }: Props) {
       {project.slug === 'aiops' && <Faq faqs={aiOpsFaqs} />}
       </div>
     </ProtectedRoute>
+    {/* Add Footer component */}
+    <Footer />
   );
 }
