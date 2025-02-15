@@ -105,27 +105,28 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-<div className="mt-2 pt-4 border-t border-zinc-800">
-  <p className="text-center text-sm text-zinc-400">
-    © {currentYear} NoCarbon. All rights reserved.
-  </p>
-</div>
-      {/* Footer Image - Modified positioning */}
-      <div className="relative w-full h-[100px]">
-          <Image
-            src="/Footer-image.png"
-            alt="Footer"
-            width={1920}
-            height={100}
-            className="w-full h-[100px] absolute bottom-0"
-            style={{
-              objectFit: 'contain',
-              objectPosition: 'bottom center'
-            }}
-            priority
-          />
+       {/* Bottom Bar */}
+       <div className="mt-2 pt-4 border-t border-zinc-800">
+          <p className="text-center text-sm text-zinc-400">
+            © {currentYear} NoCarbon. All rights reserved.
+          </p>
         </div>
+      </div>
+
+      {/* Footer Image - Added as part of the footer */}
+      <div className="relative w-full h-[100px]">
+        <Image
+          src="/Footer-image.png"
+          alt="Footer"
+          width={1920}
+          height={100}
+          className="w-full h-[100px]"
+          style={{
+            objectFit: 'contain',
+            objectPosition: 'bottom center'
+          }}
+          priority
+        />
       </div>
     </footer>
   );
