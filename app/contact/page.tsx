@@ -14,21 +14,21 @@ const socials = [
 	  href: "https://invite.nocarbon.uk",
 	  label: "Yup! right swipe",
 	  handle: "Get me an Invite code",
-	  image: "/invite-nocarbon-uk.png"
+	  image: "/invite-nocarbon-uk.svg"
 	},
 	{
 	  icon: <Mail size={20} />,
 	  href: "mailto:hello@nocarbon.uk",
 	  label: "Expect a reply within 12 hours!",
 	  handle: "hello@nocarbon.uk",
-	  image: "/Email-Nocarbon-UK.png"
+	  image: "/Email-Nocarbon-UK.svg"
 	},
 	{
 	  icon: <Calendar size={20} />,
 	  href: "https://calendly.com/samarjayee/15-mins-quick-call-nocarbon-uk",
 	  label: "A quick 15 mins call to discuss",
 	  handle: "Schedule a call",
-	  image: "/Schedule-Nocarbon-Uk.png"
+	  image: "/Schedule-Nocarbon-Uk.svg"
 	},
   ];
 
