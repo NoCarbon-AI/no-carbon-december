@@ -1,5 +1,5 @@
 // constants/faqData.ts
-export const faqData = [
+export const cloudOpsFaqs = [
     {
       category: "CloudOps",
       questions: [
@@ -23,11 +23,9 @@ export const faqData = [
           question: "What industries benefit most from NoCarbon’s CloudOps services?",
           answer: "Our solutions cater to industries like finance, healthcare, e-commerce, and more, ensuring secure, scalable, and sustainable cloud operations."
         }
-      ]
-    },
-    {
-      category: "DevOps",
-      questions: [
+    ];
+
+    export const aiOpsFaqs = [
         {
           question: "How does NoCarbon’s AI integration enhance DevOps processes?",
           answer: "Our AI-driven DevOps solutions automate CI/CD pipelines, optimize code quality, and ensure faster deployments with reduced resource consumption."
@@ -48,11 +46,8 @@ export const faqData = [
           question: "How does NoCarbon’s DevOps service reduce development cycles?",
           answer: "By automating repetitive tasks and optimizing resource usage through AI, we significantly reduce development time and costs."
         }
-      ]
-    },
-    {
-      category: "AIOps",
-      questions: [
+    ];
+    export const pricingFaqs = [
         {
           question: "How does NoCarbon’s AIOps solution use AI to reduce the carbon footprint?",
           answer: "Our AI models analyze and optimize cloud operations, ensuring minimal energy consumption and sustainable infrastructure management."
