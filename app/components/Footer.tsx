@@ -116,7 +116,7 @@ export const Footer = () => {
       {/* Footer Image - Added as part of the footer */}
       <div className="relative w-full h-[100px]">
         <Image
-          src="/Footer-image.png"
+          src="/Footer-image.svg"
           alt="Footer"
           width={1920}
           height={100}
