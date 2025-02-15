@@ -111,7 +111,7 @@ const PricingSection = () => {
 <div className="flex flex-col items-center justify-center mb-16">
   <div className="w-[20%] max-w-xl mx-auto pricing-image-container"> {/* Added class name */}
     <Image
-      src="/Pricing-Image.png"
+      src="/Pricing-Image.svg"
       alt="Pricing Illustration"
       width={80}
       height={10}
