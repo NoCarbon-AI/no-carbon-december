@@ -106,7 +106,7 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-zinc-800">
+        <div className="mt-6 pt-8 border-t border-zinc-800">
           <p className="text-center text-sm text-zinc-400">
             © {currentYear} NoCarbon. All rights reserved.
           </p>
