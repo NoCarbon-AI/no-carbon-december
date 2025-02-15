@@ -251,7 +251,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 						)}
 						{project.slug === 'devops' && (
 							<Image
-								src="/Email-Nocarbon-UK.png"
+								src="/Email-Nocarbon-UK.svg"
 								alt="DevOps"
 								width={300}
 								height={225}
@@ -261,7 +261,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
 						)}
 						{project.slug === 'aiops' && (
 							<Image
-								src="/Schedule-Nocarbon-Uk.png"
+								src="/Schedule-Nocarbon-Uk.svg"
 								alt="AIOps"
 								width={300}
 								height={225}
