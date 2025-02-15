@@ -126,6 +126,7 @@ export const Footer = () => {
           priority
         />
       </div>
+    </div>
     </footer>
   );
 };
