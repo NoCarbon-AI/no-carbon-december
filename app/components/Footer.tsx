@@ -112,6 +112,22 @@ export const Footer = () => {
           </p>
         </div>
       </div>
+
+      {/* Footer Image - Added as part of the footer */}
+      <div className="relative w-full h-[100px]">
+        <Image
+          src="/Footer-image.png"
+          alt="Footer"
+          width={1920}
+          height={100}
+          className="w-full h-[100px]"
+          style={{
+            objectFit: 'contain',
+            objectPosition: 'bottom center'
+          }}
+          priority
+        />
+      </div>
     </footer>
   );
 };
