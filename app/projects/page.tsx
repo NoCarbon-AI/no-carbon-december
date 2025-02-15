@@ -111,12 +111,9 @@ export default async function ProjectsPage() {
   </div>
 </footer>
 
-      </div>
-      
-      {/* Footer */}
-     <Footer />
+</div>
+{/* Footer */}
+<Footer />
     </div>
-  );
-}
   );
 }
