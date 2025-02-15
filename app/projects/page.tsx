@@ -112,24 +112,6 @@ export default async function ProjectsPage() {
 </footer>
 
       </div>
-      <div className="absolute bottom-0 left-0 right-0 w-full">
-  <Image
-    src="/Footer-image.png"
-    alt="Footer"
-    width={1920}
-    height={100} // Set to desired max height
-    className="w-full h-[100px]" // Fixed height of 30px
-    style={{
-      position: 'absolute',
-      bottom: 0,
-      left: 0,
-      right: 0,
-      objectFit: 'contain', // Changed to 'contain' to prevent vertical cropping
-      objectPosition: 'bottom center' // Ensure image stays at bottom and centered
-    }}
-    priority
-  />
-</div>
 {/* Footer */}
 <Footer />
     </div>
