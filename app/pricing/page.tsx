@@ -138,7 +138,7 @@ const PricingSection = () => {
             <div className="flex items-center gap-3 mb-2">
               <h3 className="text-3xl font-bold text-white">Strategy</h3>
               <Image
-                src="/Strategy-logo.png"
+                src="/Strategy-logo.svg"
                 alt="Strategy Logo"
                 width={72}  // Increased from 24 to 72 (3x)
                 height={72} // Increased from 24 to 72 (3x)
