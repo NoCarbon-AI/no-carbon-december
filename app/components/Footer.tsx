@@ -106,13 +106,11 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-2 pt-8 border-t border-zinc-800">
-          <p className="text-center text-sm text-zinc-400">
-            © {currentYear} NoCarbon. All rights reserved.
-          </p>
-        </div>
-      </div>
-
+<div className="mt-2 pt-4 border-t border-zinc-800">
+  <p className="text-center text-sm text-zinc-400">
+    © {currentYear} NoCarbon. All rights reserved.
+  </p>
+</div>
       {/* Footer Image - Added as part of the footer */}
       <div className="relative w-full h-[100px]">
         <Image
