@@ -138,6 +138,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
+			<Link href="/projects">
               <button
                 className={`duration-200 hover:font-medium ${
                   isIntersecting
@@ -147,6 +148,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
               >
                 Services
               </button>
+			  </Link>
 
               {showSubmenu && (
                 <div 
