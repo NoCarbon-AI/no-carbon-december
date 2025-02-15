@@ -7,7 +7,7 @@ const AIToolsDevOps = () => {
   const tools = [
     {
       name: 'Kubiya',
-      logo: '/kubiya.png',
+      logo: '/Kubiya-logo.jpeg',
       url: 'https://www.kubiya.ai'
     },
     {
@@ -17,17 +17,17 @@ const AIToolsDevOps = () => {
     },
     {
       name: 'Rely.io',
-      logo: '/rely.png',
+      logo: '/Rely-logo.jpeg',
       url: 'https://rely.io'
     },
     {
       name: 'Qodo',
-      logo: '/qodo.png',
+      logo: '/Kodo-logo.png',
       url: 'https://qodo.ai'
     },
     {
       name: 'Testsigma',
-      logo: '/testsigma.png',
+      logo: '/Testsigma-png.png',
       url: 'https://testsigma.com'
     }
   ];
