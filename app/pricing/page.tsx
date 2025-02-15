@@ -219,7 +219,18 @@ const PricingSection = () => {
           </div>
         </div>
       </div>
-      <div className="w-full">
+    </div>
+  );
+};
+
+// Only export PricingPage as default
+const PricingPage = () => {
+    return (
+      <>
+        <PricingSection />
+        <Faq faqs={pricingFaqs} />
+        {/* Footer image and Footer component should be last */}
+        <div className="w-full">
           <Image
             src="/Footer-image.png"
             alt="Footer"
@@ -234,16 +245,6 @@ const PricingSection = () => {
           />
         </div>
         <Footer />
-      </div>
-  );
-};
-
-// Only export PricingPage as default
-const PricingPage = () => {
-    return (
-      <>
-        <PricingSection />
-        <Faq faqs={pricingFaqs} />
       </>
     );
   };
