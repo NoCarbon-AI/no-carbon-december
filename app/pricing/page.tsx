@@ -225,13 +225,13 @@ const PricingSection = () => {
 
 // Only export PricingPage as default
 const PricingPage = () => {
-  return (
-    <>
-      <PricingSection />
-      <Faq faqs={pricingFaqs} />
-      <Footer />
-    </>
-  );
-};
+    return (
+      <div>
+        <PricingSection />
+        <Faq faqs={pricingFaqs} />
+        <Footer />
+      </div>
+    );
+  };
   
 export default PricingPage;
