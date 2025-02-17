@@ -118,7 +118,7 @@ export default function AboutPage() {
 
 
       {/* Climate Clock Footer */}
-      <footer className="w-full py-4 md:py-8 overflow-hidden">
+<footer className="w-full py-4 md:py-8 overflow-hidden">
   <div className="max-w-7xl mx-auto px-4">
     <div className="climate-clock-container">
       <Script 
@@ -129,8 +129,10 @@ export default function AboutPage() {
     </div>
   </div>
 </footer>
-      {/* Footer */}
-      <Footer />
+
+</div>
+{/* Footer */}
+<Footer />
     </div>
   );
 }
