@@ -130,9 +130,7 @@ export default function AboutPage() {
   </div>
 </footer>
 
-</div>
-{/* Footer */}
-<Footer />
+      <Footer />
     </div>
   );
 }
