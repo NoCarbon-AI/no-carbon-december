@@ -11,7 +11,7 @@ import { NewsTicker } from "../components/NewsTicker";
 const socials = [
 	{
 	  icon: <Ticket size={20} />,
-	  href: "https://invite.nocarbon.uk",
+	  href: "https://xonglcloud.typeform.com/to/O3Ht5fXb",
 	  label: "Yup! right swipe",
 	  handle: "Get me an Invite code",
 	  image: "/invite-nocarbon-uk.svg"
