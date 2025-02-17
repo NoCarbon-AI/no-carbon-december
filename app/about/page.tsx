@@ -15,7 +15,7 @@ const WorldMap = dynamic(() => import("../components/WorldMap"), {
 
 export default function AboutPage() {
   return (
-    <div className="relative pb-16">
+    <div className="relative pb-8">
       <Navigation />
       
       {/* Hero Section */}
