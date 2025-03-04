@@ -23,6 +23,21 @@ export function Analytics() {
         `}
       </Script>
 
+      {/* SalesGear Tracking Code */}
+      <Script
+        src="https://cdn.salesgear.io/js/script.js"
+        strategy="afterInteractive"
+      />
+      <Script id="salesgear-init" strategy="afterInteractive">
+        {`
+          if (window && window.sg) {
+            var sg = window.sg;
+            sg.init("SG-1740345577252-37876");
+          }
+        `}
+      </Script>
+
+
       {/* Existing Beam Analytics */}
       {token && (
         <script
