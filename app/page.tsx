@@ -325,7 +325,7 @@ useEffect(() => {
 
       {/* NVIDIA Inception Program Badge */}
 <div className="fixed bottom-4 left-4 z-40">
-  <div className="relative w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] opacity-80 hover:opacity-100 transition-opacity duration-300">
+  <div className="relative w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] opacity-40 hover:opacity-100 transition-opacity duration-300">
     <Image
       src="/nvidia-inception-program-badge-rgb-for-screen.png"
       alt="NVIDIA Inception Program Member"
