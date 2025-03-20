@@ -7,6 +7,8 @@ import TypewriterEffect from "./components/TypewriterEffect";
 import InvitePopup from "./components/InvitePopup";
 import { gsap } from 'gsap';
 import AIGradientText from './components/AIGradientText';
+import Image from "next/image";
+
 
 const navigation = [
   { name: "Have an invite", href: "#", iconId: "flag-icon", isMain: true },
@@ -321,6 +323,20 @@ useEffect(() => {
           </span>
         </div>
       </div>
+
+      {/* NVIDIA Inception Program Badge */}
+<div className="fixed bottom-4 left-4 z-40">
+  <div className="relative w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] opacity-80 hover:opacity-100 transition-opacity duration-300">
+    <Image
+      src="/nvidia-inception-program-badge-rgb-for-screen.png"
+      alt="NVIDIA Inception Program Member"
+      fill
+      style={{ objectFit: 'contain' }}
+      className="drop-shadow-lg filter brightness-90"
+      priority
+    />
+  </div>
+</div>
 
       {/* Copyright notice */}
       <div className="fixed bottom-2 left-1/2 transform -translate-x-1/2 z-50">
