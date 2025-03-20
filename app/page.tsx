@@ -341,7 +341,7 @@ useEffect(() => {
       {/* Copyright notice */}
       <div className="fixed bottom-2 left-1/2 transform -translate-x-1/2 z-50">
         <div className="text-[10px] text-zinc-500 hover:text-zinc-400 transition-colors duration-300 opacity-70">
-          © NoCarbon Ltd, 2025
+          © NoCarbon Ltd, 2025.
         </div>
       </div>
     </div>
